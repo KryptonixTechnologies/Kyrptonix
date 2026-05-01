@@ -1,9 +1,21 @@
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone, Youtube } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { siteConfig } from "@/config/site";
 import { serviceCategories } from "@/data/services";
 import { Button } from "@/components/ui/button";
+
+const socialIcons = {
+  LinkedIn: Linkedin,
+  X: () => (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+      <path d="M13.9 10.5 21.3 2h-1.8l-6.4 7.3L8 2H2.1l7.8 11.1L2.1 22h1.8l6.8-7.8 5.4 7.8H22l-8.1-11.5Zm-2.4 2.7-.8-1.1L4.4 3.3h2.7l5 7 .8 1.1 6.6 9.3h-2.7l-5.3-7.5Z" />
+    </svg>
+  ),
+  Facebook,
+  Instagram,
+  YouTube: Youtube,
+};
 
 export function SiteFooter() {
   return (
@@ -70,11 +82,20 @@ export function SiteFooter() {
         <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Kyptonix Technologies. All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
-            {siteConfig.socialLinks.map((link) => (
-              <a key={link.label} href={link.href} className="transition hover:text-white">
-                {link.label}
+            {siteConfig.socialLinks.map((link) => {
+              const Icon = socialIcons[link.label as keyof typeof socialIcons];
+
+              return (
+              <a
+                key={link.label}
+                href={link.href}
+                aria-label={link.label}
+                className="grid h-9 w-9 place-items-center rounded-md border border-white/10 bg-white/[0.04] text-slate-400 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+              >
+                <Icon className="h-4 w-4" aria-hidden="true" />
               </a>
-            ))}
+              );
+            })}
           </div>
         </div>
       </Container>

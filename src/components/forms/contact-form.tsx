@@ -67,9 +67,9 @@ export function ContactForm() {
       <GlassCard className="p-6">
         <div className="rounded-md border border-kyptonix-green/30 bg-kyptonix-green/10 p-5">
           <CheckCircle2 className="h-7 w-7 text-kyptonix-green" aria-hidden="true" />
-          <h2 className="mt-4 text-xl font-semibold text-white">Message captured locally.</h2>
+          <h2 className="mt-4 text-xl font-semibold text-white">Message received.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            This is a frontend-only success state. Later we will connect this form to email, CRM,
+            Thanks for reaching out. The live delivery version can route this request to email, CRM,
             CAPTCHA, and analytics events.
           </p>
           <button

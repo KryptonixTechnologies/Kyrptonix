@@ -191,6 +191,6 @@ export const serviceFaqs = [
   },
   {
     question: "Is implementation available without a backend on this website yet?",
-    answer: "Yes. The website is frontend-only for V1, but the services themselves can later connect to CRM, email, analytics, live chat, and other integrations.",
+    answer: "Yes. The public website is built for a fast first release, and the platform is ready for CRM, email, analytics, live chat, and other integrations as needed.",
   },
 ];

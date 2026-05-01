@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ArrowDownToLine, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
@@ -7,11 +6,15 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { aboutValues, leadershipPlaceholders, milestones, recognitionItems } from "@/data/about";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About Us",
-  description: "Learn about Kyptonix Technologies, our mission, vision, values, and growth story.",
-};
+  description:
+    "Learn about Kyptonix Technologies, an East Africa-focused technology partner building practical software, cloud, cybersecurity, infrastructure, and digital transformation solutions.",
+  path: "/about",
+  keywords: ["Kyptonix mission", "Kyptonix values", "technology partner East Africa"],
+});
 
 export default function AboutPage() {
   return (
@@ -49,7 +52,7 @@ export default function AboutPage() {
               <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">Profile</p>
               <h2 className="mt-4 text-2xl font-semibold text-white">Company profile download</h2>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                Placeholder for the official Kyptonix company profile PDF, required by the PRD for About and Contact pages.
+                The official Kyptonix company profile will be available here once the approved PDF is ready.
               </p>
               <Button href="/contact" className="mt-6" variant="secondary">
                 Request Profile
@@ -107,7 +110,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="Milestones"
               title="A roadmap for credibility."
-              description="The PRD expects company story, milestones, awards, and leadership proof. These placeholders give the page a strong structure while real facts are prepared."
+              description="The page is structured to present company story, milestones, awards, and leadership proof clearly as those details are approved."
             />
 
             <div className="grid gap-4">
@@ -138,8 +141,8 @@ export default function AboutPage() {
             <div>
               <SectionHeading
                 eyebrow="Leadership"
-                title="Team structure placeholders."
-                description="Real names, photos, titles, LinkedIn links, and bios will be added when approved."
+                title="Leadership structure."
+                description="Names, photos, titles, LinkedIn links, and bios can be published here after approval."
               />
               <div className="mt-8 grid gap-4">
                 {leadershipPlaceholders.map((person) => (
@@ -165,7 +168,7 @@ export default function AboutPage() {
               </p>
               <h2 className="mt-4 text-2xl font-semibold text-white">Awards, certifications, and trust signals.</h2>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                This section is reserved for approved recognitions, partner certifications, compliance proof, and media mentions.
+                This section is prepared for approved recognitions, partner certifications, compliance proof, and media mentions.
               </p>
               <div className="mt-6 grid gap-3">
                 {recognitionItems.map((item) => (

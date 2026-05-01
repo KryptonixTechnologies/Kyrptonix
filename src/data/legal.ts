@@ -1,7 +1,7 @@
 export const legalContent = {
   privacy: {
     title: "Privacy Policy",
-    description: "KDPA 2019 and GDPR-aligned privacy content placeholder.",
+    description: "KDPA 2019 and GDPR-aligned privacy content prepared for legal review.",
     sections: [
       {
         heading: "Information We Collect",
@@ -23,7 +23,7 @@ export const legalContent = {
   },
   terms: {
     title: "Terms of Service",
-    description: "Website usage and service terms placeholder.",
+    description: "Website usage and service terms prepared for legal review.",
     sections: [
       {
         heading: "Website Use",
@@ -45,7 +45,7 @@ export const legalContent = {
   },
   cookies: {
     title: "Cookie Policy",
-    description: "Cookie consent and analytics tracking policy placeholder.",
+    description: "Cookie consent and analytics tracking policy prepared for legal review.",
     sections: [
       {
         heading: "What Cookies Are",

@@ -13,10 +13,10 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-950/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-900/80 shadow-[0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="Kyptonix Technologies home">
-          <span className="grid h-9 w-9 place-items-center rounded-md border border-white/10 bg-white/[0.06] text-sm font-bold text-white shadow-glow">
+          <span className="grid h-9 w-9 place-items-center rounded-md border border-white/15 bg-white/[0.09] text-sm font-bold text-white shadow-glow">
             K
           </span>
           <span className="font-display text-base font-semibold text-white">{siteConfig.shortName}</span>

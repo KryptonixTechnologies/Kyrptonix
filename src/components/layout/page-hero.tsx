@@ -12,15 +12,15 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, className }: PageHeroProps) {
   return (
-    <Section className={cn("relative border-b border-white/10 py-20 sm:py-24", className)}>
+    <Section className={cn("relative border-b border-white/10 py-16 sm:py-20 lg:py-24", className)}>
       <div className="ambient-grid pointer-events-none absolute inset-0 opacity-25" />
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-kyptonix-violet/20 blur-3xl" />
-      <Container className="relative z-10">
+      <Container data-reveal className="relative z-10">
         <GlowBadge>{eyebrow}</GlowBadge>
-        <h1 className="mt-8 max-w-4xl font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+        <h1 className="mt-7 max-w-4xl font-display text-3xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
           {title}
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{description}</p>
+        <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">{description}</p>
       </Container>
     </Section>
   );

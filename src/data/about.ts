@@ -40,9 +40,9 @@ export const milestones = [
     description: "Kyptonix positions itself as a broad IT solutions and software development partner.",
   },
   {
-    year: "V1 Website",
+    year: "Website V1",
     title: "Digital presence launch",
-    description: "The first frontend-only corporate website establishes structure, services, and lead paths.",
+    description: "The first corporate website establishes structure, services, credibility, and lead paths.",
   },
   {
     year: "Next",
@@ -52,7 +52,7 @@ export const milestones = [
   {
     year: "Future",
     title: "Integrated business platform",
-    description: "CRM, analytics, live chat, CMS, and client portal features can be layered in later phases.",
+    description: "CRM, analytics, live chat, CMS, and client portal features can be layered in as the platform matures.",
   },
 ];
 
@@ -75,8 +75,8 @@ export const leadershipPlaceholders = [
 ];
 
 export const recognitionItems = [
-  "Technology partner certifications placeholder",
-  "Security and compliance readiness placeholder",
-  "Client success recognition placeholder",
-  "Vendor/partner programme placeholder",
+  "Technology partner certifications in review",
+  "Security and compliance readiness in review",
+  "Client success recognition in review",
+  "Vendor and partner programme in review",
 ];

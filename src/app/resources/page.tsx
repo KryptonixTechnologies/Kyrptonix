@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Mail, Search } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
@@ -7,11 +6,15 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { featuredResource, resourceCategories, resources } from "@/data/resources";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Resources",
-  description: "Read Kyptonix Technologies articles, guides, and future resources.",
-};
+  description:
+    "Read Kyptonix Technologies insights, guides, articles, whitepapers, and webinars about software, cloud, cybersecurity, automation, data, and practical IT strategy.",
+  path: "/resources",
+  keywords: ["technology guides", "cloud insights", "cybersecurity resources"],
+});
 
 export default function ResourcesPage() {
   return (
@@ -19,7 +22,7 @@ export default function ResourcesPage() {
       <PageHero
         eyebrow="Resources"
         title="Insights, guides, and practical technology content."
-        description="Blog posts, whitepapers, e-books, webinars, and how-to guides will live here. For V1, the content cards are placeholders."
+        description="A resource library for articles, guides, whitepapers, webinars, and practical technology insights."
       />
       <Section>
         <Container>
@@ -54,11 +57,11 @@ export default function ResourcesPage() {
             <SectionHeading
               eyebrow="Library"
               title="Content structure for launch and beyond."
-              description="Search and categories are visual placeholders in V1. The page is ready for real articles, guides, webinars, and downloadable resources later."
+              description="Search, categories, articles, guides, webinars, and downloadable resources are organised for future publishing."
             />
             <div className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-500">
               <Search className="h-4 w-4" aria-hidden="true" />
-              Search placeholder
+              Search coming soon
             </div>
           </div>
 
@@ -97,7 +100,7 @@ export default function ResourcesPage() {
             <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
               <div>
                 <Mail className="h-6 w-6 text-kyptonix-cyan" aria-hidden="true" />
-                <h2 className="mt-4 text-2xl font-semibold text-white">Newsletter placeholder</h2>
+                <h2 className="mt-4 text-2xl font-semibold text-white">Newsletter updates</h2>
                 <p className="mt-2 text-sm leading-6 text-slate-400">
                   Frontend-only email capture area. Later this can connect to Mailchimp, Brevo, or a CRM.
                 </p>

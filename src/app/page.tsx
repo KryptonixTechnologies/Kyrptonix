@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { GlowBadge } from "@/components/ui/glow-badge";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Floating3DObjects } from "@/components/visuals/floating-3d-objects";
 import {
   blogPosts,
   differentiators,
@@ -32,7 +33,8 @@ export default function Home() {
       <Section className="relative flex min-h-[calc(100vh-4rem)] items-center py-20 text-center sm:py-24">
         <div className="ambient-grid pointer-events-none absolute inset-0 opacity-40" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-kyptonix-purple/80 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[30rem] bg-[linear-gradient(180deg,rgba(137,87,229,0.20),transparent)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[34rem] bg-[linear-gradient(180deg,rgba(137,87,229,0.28),transparent)]" />
+        <Floating3DObjects />
 
         <Container className="relative z-10 flex flex-col items-center">
           <Reveal>
@@ -123,8 +125,9 @@ deploy({
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10 bg-ink-950/55">
-        <Container>
+      <Section className="relative overflow-hidden border-t border-white/10 bg-ink-950/45">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_center,rgba(47,129,247,0.14),transparent_58%)]" />
+        <Container className="relative z-10">
           <Reveal>
             <SectionHeading
               eyebrow="Services"
@@ -196,8 +199,8 @@ deploy({
           <Reveal>
             <SectionHeading
               eyebrow="Featured Work"
-              title="Placeholder projects for the first release."
-              description="These cards reserve the portfolio structure. Once you provide real projects, we will replace the placeholders and add detailed case study pages."
+              title="Project stories taking shape."
+              description="A first set of project cards is in place, ready for approved client work, measurable outcomes, and detailed case studies."
               align="center"
             />
           </Reveal>
@@ -222,8 +225,9 @@ deploy({
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10">
-        <Container>
+      <Section className="relative overflow-hidden border-t border-white/10">
+        <Floating3DObjects variant="security" className="opacity-70" />
+        <Container className="relative z-10">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <Reveal>
               <SectionHeading
@@ -254,7 +258,7 @@ deploy({
                 <div className="mt-5 rounded-md border border-white/10 bg-ink-950/70 p-4">
                   <div className="flex items-center gap-2 text-sm text-slate-400">
                     <Sparkles className="h-4 w-4 text-kyptonix-purple" aria-hidden="true" />
-                    Frontend-only V1 today. CRM, analytics, chat, and email integrations can be added in later agile phases.
+                    V1 is built as a fast, polished public website. CRM, analytics, chat, and email integrations are ready to be layered in when needed.
                   </div>
                 </div>
               </GlassCard>
@@ -268,8 +272,8 @@ deploy({
           <Reveal>
             <SectionHeading
               eyebrow="Social Proof"
-              title="Client proof placeholders."
-              description="Real quotes and logos will land here once you provide approved testimonials and partner/client details."
+              title="Client proof area."
+              description="This area is prepared for approved testimonials, client logos, and partner signals as the brand story grows."
               align="center"
             />
           </Reveal>
@@ -307,8 +311,8 @@ deploy({
             <Reveal>
               <SectionHeading
                 eyebrow="Insights"
-                title="Blog and resources placeholders."
-                description="We have the content slots ready. Later we will replace this with your real articles, guides, whitepapers, and case study summaries."
+                title="Insights and resources."
+                description="The publishing structure is ready for articles, guides, whitepapers, and case study summaries."
               />
             </Reveal>
             <Reveal>
@@ -332,8 +336,9 @@ deploy({
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10 bg-[linear-gradient(180deg,rgba(13,17,23,0.9),rgba(1,4,9,1))]">
-        <Container>
+      <Section className="relative overflow-hidden border-t border-white/10 bg-[linear-gradient(180deg,rgba(22,27,34,0.78),rgba(1,4,9,0.98))]">
+        <Floating3DObjects variant="team" className="opacity-60" />
+        <Container className="relative z-10">
           <Reveal>
             <GlassCard className="relative overflow-hidden p-8 text-center sm:p-12">
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-kyptonix-cyan to-transparent" />

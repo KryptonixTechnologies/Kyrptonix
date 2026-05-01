@@ -7,7 +7,9 @@ import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { siteConfig } from "@/config/site";
 import { serviceCategories, serviceFaqs, serviceProcess } from "@/data/services";
+import { absoluteUrl, jsonLd, pageMetadata } from "@/lib/seo";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -27,10 +29,21 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     };
   }
 
-  return {
-    title: service.title,
-    description: service.description,
-  };
+  return pageMetadata({
+    title: `${service.title} Services`,
+    description: `${service.summary} Kyptonix supports ${service.audiences.join(", ").toLowerCase()} with ${service.offerings
+      .slice(0, 3)
+      .join(", ")
+      .toLowerCase()}, and practical implementation support.`,
+    path: service.href,
+    keywords: [
+      service.title,
+      service.category,
+      ...service.offerings,
+      ...service.tools,
+      ...service.audiences,
+    ],
+  });
 }
 
 export default async function ServiceDetailPage({ params }: ServicePageProps) {
@@ -42,9 +55,94 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   }
 
   const Icon = service.icon;
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${service.title} Services`,
+    serviceType: service.title,
+    category: service.category,
+    description: service.summary,
+    url: absoluteUrl(service.href),
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      email: siteConfig.email,
+      telephone: siteConfig.phone,
+    },
+    areaServed: ["Kenya", "East Africa", "Africa", "Global"],
+    audience: service.audiences.map((audience) => ({
+      "@type": "Audience",
+      audienceType: audience,
+    })),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.title} offerings`,
+      itemListElement: service.offerings.map((offering, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: offering,
+          description: `${offering} delivered as part of Kyptonix ${service.title.toLowerCase()} services.`,
+        },
+      })),
+    },
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: serviceFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: absoluteUrl("/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: absoluteUrl("/services"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: absoluteUrl(service.href),
+      },
+    ],
+  };
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={jsonLd(serviceJsonLd)}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={jsonLd(faqJsonLd)}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd)}
+      />
       <PageHero eyebrow={`${service.category} Service`} title={service.title} description={service.description} />
 
       <Section>

@@ -27,19 +27,19 @@ export const differentiators = [
 export const featuredProjects = [
   {
     name: "SME Growth Platform",
-    client: "Placeholder client",
+    client: "Client approval in progress",
     category: "Web Application",
     outcome: "A responsive business platform prepared for CRM and payment integrations.",
   },
   {
     name: "Cloud Migration Program",
-    client: "Placeholder client",
+    client: "Client approval in progress",
     category: "Cloud Services",
     outcome: "A staged migration roadmap designed for uptime, backups, and cost control.",
   },
   {
     name: "Cybersecurity Readiness Audit",
-    client: "Placeholder client",
+    client: "Client approval in progress",
     category: "Cybersecurity",
     outcome: "A practical risk report covering endpoints, networks, access, and staff awareness.",
   },
@@ -49,19 +49,19 @@ export const testimonials = [
   {
     quote:
       "Kyptonix helped us translate a messy operational challenge into a clear digital roadmap.",
-    name: "Placeholder Name",
+    name: "Client leader",
     role: "Operations Lead",
   },
   {
     quote:
       "The team understood both the technical side and the business urgency behind our project.",
-    name: "Placeholder Name",
+    name: "Startup founder",
     role: "Founder",
   },
   {
     quote:
       "We needed a partner who could think beyond one tool. Kyptonix gave us the bigger picture.",
-    name: "Placeholder Name",
+    name: "IT manager",
     role: "IT Manager",
   },
 ];
@@ -69,17 +69,17 @@ export const testimonials = [
 export const blogPosts = [
   {
     title: "How SMEs Can Choose the Right Technology Partner",
-    date: "Coming soon",
+    date: "Publishing soon",
     excerpt: "A practical guide for evaluating cost, reliability, support, and long-term fit.",
   },
   {
     title: "Cloud Migration Checklist for Growing Teams",
-    date: "Coming soon",
+    date: "Publishing soon",
     excerpt: "What to prepare before moving workloads, data, backups, and operations to the cloud.",
   },
   {
     title: "Cybersecurity Basics Every Organisation Should Prioritise",
-    date: "Coming soon",
+    date: "Publishing soon",
     excerpt: "A simple security starting point covering access, devices, people, and recovery.",
   },
 ];

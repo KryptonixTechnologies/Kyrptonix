@@ -76,9 +76,9 @@ export function QuoteWizard() {
       <GlassCard className="p-6">
         <div className="rounded-md border border-kyptonix-green/30 bg-kyptonix-green/10 p-5">
           <CheckCircle2 className="h-7 w-7 text-kyptonix-green" aria-hidden="true" />
-          <h2 className="mt-4 text-xl font-semibold text-white">Quote request staged locally.</h2>
+          <h2 className="mt-4 text-xl font-semibold text-white">Quote request prepared.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Your frontend flow is complete. Later this summary will be sent to sales through email or CRM.
+            Your request summary is ready. The live delivery version can send it directly to the sales team through email or CRM.
           </p>
           <button
             type="button"

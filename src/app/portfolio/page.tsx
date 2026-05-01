@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
@@ -7,11 +6,15 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { featuredCaseStudy, portfolioProjects, projectFilters } from "@/data/portfolio";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Portfolio",
-  description: "Explore placeholder Kyptonix Technologies portfolio entries and future case study structure.",
-};
+  description:
+    "Explore Kyptonix Technologies portfolio structure for software, cloud, cybersecurity, IT infrastructure, public sector, and digital transformation project case studies.",
+  path: "/portfolio",
+  keywords: ["Kyptonix portfolio", "technology case studies", "software project gallery"],
+});
 
 export default function PortfolioPage() {
   return (
@@ -19,7 +22,7 @@ export default function PortfolioPage() {
       <PageHero
         eyebrow="Portfolio"
         title="Project gallery structure is ready."
-        description="This page will become the filterable portfolio and case study hub. Current entries are placeholders until real approved projects are provided."
+        description="Explore the project gallery framework for software, cloud, cybersecurity, public sector, and digital work."
       />
       <Section>
         <Container>
@@ -28,7 +31,7 @@ export default function PortfolioPage() {
               <div className="min-h-72 bg-[radial-gradient(circle_at_30%_20%,rgba(47,129,247,0.35),transparent_36%),radial-gradient(circle_at_75%_70%,rgba(137,87,229,0.34),transparent_42%),linear-gradient(135deg,rgba(13,17,23,0.92),rgba(1,4,9,0.98))]" />
               <div className="p-6 sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
-                  Featured case study placeholder
+                  Featured case study
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold text-white">{featuredCaseStudy.name}</h2>
                 <p className="mt-2 text-sm text-slate-500">
@@ -58,7 +61,7 @@ export default function PortfolioPage() {
             <SectionHeading
               eyebrow="Gallery"
               title="Project cards ready for approved work."
-              description="Filters are visual placeholders for V1. Once real case studies are approved, we can add interactive filtering and detailed pages."
+              description="Filter categories and project cards are prepared for approved case studies, measurable outcomes, and detailed pages."
             />
             <div className="flex flex-wrap gap-2">
               {projectFilters.map((filter) => (

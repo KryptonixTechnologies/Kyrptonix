@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ArrowUpRight, CheckCircle2, SlidersHorizontal } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
@@ -7,11 +6,15 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { serviceCategories } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Services",
-  description: "Explore Kyptonix Technologies services across software, cloud, cybersecurity, IT infrastructure, support, digital transformation, and more.",
-};
+  description:
+    "Explore Kyptonix Technologies services across software development, cloud, cybersecurity, IT infrastructure, managed support, digital transformation, data, and SME technology packages.",
+  path: "/services",
+  keywords: ["Kyptonix services", "IT service catalogue", "SME technology packages"],
+});
 
 export default function ServicesPage() {
   return (

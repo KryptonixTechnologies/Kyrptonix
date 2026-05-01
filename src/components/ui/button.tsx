@@ -8,9 +8,9 @@ type ButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 const variants = {
   primary:
-    "bg-white text-ink-950 shadow-glow-blue hover:bg-slate-200 focus-visible:ring-white",
+    "bg-kyptonix-green text-ink-950 shadow-[0_0_32px_rgba(63,185,80,0.24)] hover:-translate-y-0.5 hover:bg-[#56d364] focus-visible:ring-kyptonix-green",
   secondary:
-    "border border-white/15 bg-white/[0.05] text-white backdrop-blur hover:border-white/25 hover:bg-white/[0.09] focus-visible:ring-kyptonix-blue",
+    "border border-white/18 bg-white/[0.07] text-white backdrop-blur hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.11] focus-visible:ring-kyptonix-blue",
   ghost:
     "text-slate-300 hover:bg-white/[0.06] hover:text-white focus-visible:ring-kyptonix-violet",
 };
@@ -25,7 +25,7 @@ export function Button({
   return (
     <a
       className={cn(
-        "inline-flex h-11 items-center justify-center rounded-md px-4 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950",
+        "inline-flex min-h-11 items-center justify-center rounded-md px-4 py-2 text-center text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950",
         variants[variant],
         className,
       )}

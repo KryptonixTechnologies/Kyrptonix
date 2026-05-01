@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ArrowUpRight, BriefcaseBusiness, CheckCircle2, GraduationCap } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
@@ -7,11 +6,15 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { careerBenefits, careerFilters, cultureHighlights, openRoles } from "@/data/careers";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Careers",
-  description: "Explore future roles, internships, and culture information at Kyptonix Technologies.",
-};
+  description:
+    "Explore Kyptonix Technologies careers, internships, future roles, culture, and opportunities to build software, cloud, cybersecurity, and IT solutions for real organisations.",
+  path: "/careers",
+  keywords: ["Kyptonix careers", "technology internships Kenya", "IT jobs Kenya"],
+});
 
 export default function CareersPage() {
   return (
@@ -19,7 +22,7 @@ export default function CareersPage() {
       <PageHero
         eyebrow="Careers"
         title="Build meaningful technology with Kyptonix."
-        description="This page is prepared for job listings, internships, culture photos, benefits, and application forms."
+        description="Explore future roles, internships, benefits, and the kind of technology work Kyptonix is building around."
       />
 
       <Section>
@@ -31,7 +34,7 @@ export default function CareersPage() {
                 className="mt-6"
                 eyebrow="Open Roles"
                 title="A hiring structure ready for real vacancies."
-                description="These are frontend placeholders. Once roles are approved, we can add detailed job pages and connected application forms."
+                description="Current openings are presented as upcoming roles. Detailed job pages and application flows can be added as hiring begins."
               />
               <div className="mt-6 flex flex-wrap gap-2">
                 {careerFilters.map((filter) => (
@@ -84,7 +87,7 @@ export default function CareersPage() {
           <SectionHeading
             eyebrow="Life at Kyptonix"
             title="Built for people who like useful technology."
-            description="Culture photography and real employee stories can be added later. For now, this section frames the working environment the PRD expects."
+            description="This section frames the working environment, with culture photography and employee stories ready to follow as the team grows."
             align="center"
           />
 
@@ -111,7 +114,7 @@ export default function CareersPage() {
               <SectionHeading
                 eyebrow="Benefits"
                 title="Reasons to build here."
-                description="This is a V1 benefits structure. Compensation, perks, policies, and role-specific benefits can be added once approved."
+                description="A benefits structure is in place for compensation, perks, policies, and role-specific details as they are approved."
               />
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {careerBenefits.map((benefit) => {
@@ -135,7 +138,7 @@ export default function CareersPage() {
               </p>
               <h2 className="mt-4 text-2xl font-semibold text-white">A pathway for early talent.</h2>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                The PRD includes internships and graduate opportunities. This area is reserved for eligibility,
+                The PRD includes internships and graduate opportunities. This area is prepared for eligibility,
                 tracks, duration, mentorship approach, and application windows.
               </p>
               <div className="mt-6 grid gap-3">
@@ -159,7 +162,7 @@ export default function CareersPage() {
               Do not see the right role yet?
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-400">
-              Send a general inquiry for future opportunities. Backend application handling will come in a later phase.
+              Send a general inquiry for future opportunities. A full application workflow can be connected when hiring opens.
             </p>
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
               <Button href="/contact" showArrow>

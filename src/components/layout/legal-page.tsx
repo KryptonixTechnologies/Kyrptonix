@@ -23,9 +23,9 @@ export function LegalPage({ title, description, sections }: LegalPageProps) {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
                 Review Required
               </p>
-              <h2 className="mt-4 text-xl font-semibold text-white">Content pending legal approval</h2>
+              <h2 className="mt-4 text-xl font-semibold text-white">Prepared for legal approval</h2>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                This V1 copy is a structured placeholder. Final wording should be reviewed by legal counsel before launch.
+                This page is structured for review. Final wording should be approved by legal counsel before launch.
               </p>
             </GlassCard>
 

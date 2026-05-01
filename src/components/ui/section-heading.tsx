@@ -16,7 +16,7 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
+    <div data-reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow ? (
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
           {eyebrow}

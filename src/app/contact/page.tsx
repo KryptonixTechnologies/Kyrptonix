@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Container } from "@/components/layout/container";
@@ -6,11 +5,15 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/layout/section";
 import { GlassCard } from "@/components/ui/glass-card";
 import { siteConfig } from "@/config/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us",
-  description: "Contact Kyptonix Technologies for sales, support, partnerships, careers, and general inquiries.",
-};
+  description:
+    "Contact Kyptonix Technologies for software development, cloud services, cybersecurity, IT support, infrastructure, partnerships, sales, quote requests, and general inquiries.",
+  path: "/contact",
+  keywords: ["contact Kyptonix", "Kyptonix support", "IT consultation Kenya"],
+});
 
 export default function ContactPage() {
   return (
@@ -18,7 +21,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk about what you need to build, secure, or improve."
-        description="Use the frontend-only contact form for now. Later we will connect it to email, CRM notifications, CAPTCHA, and analytics events."
+        description="Send a message, request direction, or start a conversation about the right technology path for your organisation."
       />
       <Section>
         <Container>
@@ -39,7 +42,7 @@ export default function ContactPage() {
               <GlassCard className="p-5">
                 <MapPin className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
                 <p className="mt-4 text-sm font-semibold text-white">Office</p>
-                <p className="mt-1 text-sm text-slate-400">Kenya address and map embed placeholder.</p>
+                <p className="mt-1 text-sm text-slate-400">Kenya office details and map location will be published after confirmation.</p>
               </GlassCard>
             </div>
           </div>

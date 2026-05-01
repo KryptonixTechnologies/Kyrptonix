@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { SiteUtilities } from "@/components/layout/site-utilities";
+import { ScrollReveal } from "@/components/motion/scroll-reveal";
+import { siteConfig } from "@/config/site";
+import { jsonLd, organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,9 +13,9 @@ export const metadata: Metadata = {
     template: "%s | Kyptonix Technologies",
   },
   description:
-    "Kyptonix Technologies builds reliable IT solutions, software products, cloud systems, cybersecurity programs, and digital platforms for modern organisations.",
-  metadataBase: new URL("https://kyptonix.com"),
-  applicationName: "Kyptonix Technologies",
+    "Kyptonix Technologies provides software development, cloud services, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for organisations in Kenya, East Africa, and beyond.",
+  metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
   keywords: [
     "Kyptonix Technologies",
     "IT solutions Kenya",
@@ -21,26 +25,26 @@ export const metadata: Metadata = {
     "managed IT support",
     "digital transformation",
   ],
-  authors: [{ name: "Kyptonix Technologies" }],
-  creator: "Kyptonix Technologies",
-  publisher: "Kyptonix Technologies",
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_KE",
-    url: "https://kyptonix.com",
-    siteName: "Kyptonix Technologies",
-    title: "Kyptonix Technologies",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
     description:
-      "Reliable software, cloud, cybersecurity, IT infrastructure, and digital transformation solutions.",
+      "Software development, cloud, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for growing organisations.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kyptonix Technologies",
+    title: siteConfig.name,
     description:
-      "Reliable software, cloud, cybersecurity, IT infrastructure, and digital transformation solutions.",
+      "Software development, cloud, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for growing organisations.",
   },
   robots: {
     index: true,
@@ -65,25 +69,12 @@ export default function RootLayout({
         <SiteHeader />
         <div id="site-content">{children}</div>
         <SiteFooter />
+        <SiteUtilities />
+        <ScrollReveal />
         <script
           type="application/ld+json"
           suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Kyptonix Technologies",
-              url: "https://kyptonix.com",
-              email: "hello@kyptonix.com",
-              areaServed: ["Kenya", "East Africa", "Africa", "Global"],
-              sameAs: [
-                "https://www.linkedin.com",
-                "https://x.com",
-                "https://www.facebook.com",
-                "https://www.instagram.com",
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={jsonLd(organizationJsonLd())}
         />
       </body>
     </html>
