@@ -94,6 +94,7 @@ export function ContactForm() {
         <div className="grid gap-4 sm:grid-cols-2">
           <FieldError label="Name" error={attemptedSubmit ? errors.name : undefined}>
             <input
+              aria-invalid={Boolean(attemptedSubmit && errors.name)}
               className={cn(inputClass, attemptedSubmit && errors.name && "border-red-400")}
               placeholder="Your name"
               value={values.name}
@@ -102,6 +103,7 @@ export function ContactForm() {
           </FieldError>
           <FieldError label="Email" error={attemptedSubmit ? errors.email : undefined}>
             <input
+              aria-invalid={Boolean(attemptedSubmit && errors.email)}
               className={cn(inputClass, attemptedSubmit && errors.email && "border-red-400")}
               type="email"
               placeholder="you@example.com"
@@ -132,6 +134,7 @@ export function ContactForm() {
 
         <FieldError label="Subject" error={attemptedSubmit ? errors.subject : undefined}>
           <input
+            aria-invalid={Boolean(attemptedSubmit && errors.subject)}
             className={cn(inputClass, attemptedSubmit && errors.subject && "border-red-400")}
             placeholder="How can we help?"
             value={values.subject}
@@ -141,6 +144,7 @@ export function ContactForm() {
 
         <FieldError label="Message" error={attemptedSubmit ? errors.message : undefined}>
           <textarea
+            aria-invalid={Boolean(attemptedSubmit && errors.message)}
             className={cn(textareaClass, attemptedSubmit && errors.message && "border-red-400")}
             placeholder="Tell us about your project or support need."
             value={values.message}

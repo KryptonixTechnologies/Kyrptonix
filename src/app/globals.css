@@ -37,6 +37,23 @@ a {
   text-decoration: none;
 }
 
+button,
+input,
+textarea,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(57, 197, 207, 0.9);
+  outline-offset: 3px;
+}
+
 ::selection {
   background: rgba(47, 129, 247, 0.45);
   color: #ffffff;
@@ -52,10 +69,55 @@ a {
   }
 
   .glass-panel {
+    position: relative;
     border: 1px solid var(--border);
     background: linear-gradient(135deg, rgba(22, 27, 34, 0.82), rgba(13, 17, 23, 0.58));
-    box-shadow: 0 24px 80px rgba(1, 4, 9, 0.42);
+    box-shadow:
+      0 24px 80px rgba(1, 4, 9, 0.42),
+      0 0 36px rgba(47, 129, 247, 0.045),
+      0 0 44px rgba(137, 87, 229, 0.045);
     backdrop-filter: blur(22px);
+  }
+
+  .glow-edge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(47, 129, 247, 0.26),
+      rgba(137, 87, 229, 0.2) 34%,
+      rgba(191, 122, 240, 0.16) 58%,
+      rgba(57, 197, 207, 0.18)
+    );
+    opacity: 0.55;
+    pointer-events: none;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .glow-edge::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(circle at 20% 0%, rgba(47, 129, 247, 0.12), transparent 38%),
+      radial-gradient(circle at 85% 100%, rgba(137, 87, 229, 0.12), transparent 40%);
+    opacity: 0.45;
+    filter: blur(18px);
+    pointer-events: none;
+  }
+
+  .glow-edge > * {
+    position: relative;
+    z-index: 1;
   }
 
   .gradient-text {

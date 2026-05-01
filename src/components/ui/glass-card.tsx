@@ -3,5 +3,5 @@ import { cn } from "@/lib/utils";
 type GlassCardProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function GlassCard({ className, ...props }: GlassCardProps) {
-  return <div className={cn("glass-panel rounded-lg", className)} {...props} />;
+  return <div className={cn("glass-panel glow-edge rounded-lg", className)} {...props} />;
 }

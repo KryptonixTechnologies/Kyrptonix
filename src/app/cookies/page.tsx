@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/layout/legal-page";
+import { legalContent } from "@/data/legal";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
@@ -7,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function CookiesPage() {
-  return <LegalPage title="Cookie Policy" description="Cookie consent and analytics tracking policy placeholder." />;
+  return <LegalPage {...legalContent.cookies} />;
 }

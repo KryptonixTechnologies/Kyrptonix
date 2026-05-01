@@ -134,6 +134,7 @@ export function QuoteWizard() {
                   )}
                 >
                   <input
+                    aria-label={`Select ${service.title}`}
                     type="checkbox"
                     className="h-4 w-4 accent-kyptonix-cyan"
                     checked={values.services.includes(service.slug)}
@@ -150,6 +151,7 @@ export function QuoteWizard() {
           <div>
             <h2 className="text-xl font-semibold text-white">Project brief</h2>
             <textarea
+              aria-label="Project brief"
               className="mt-4 min-h-52 w-full rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-white outline-none placeholder:text-slate-600 focus:border-kyptonix-cyan"
               placeholder="Describe your project, current challenge, audience, goals, and any known requirements."
               value={values.brief}
@@ -163,6 +165,7 @@ export function QuoteWizard() {
             <h2 className="text-xl font-semibold text-white">Budget and timeline</h2>
             <div className="mt-4 grid gap-4 lg:grid-cols-2">
               <select
+                aria-label="Budget range"
                 className={inputClass}
                 value={values.budget}
                 onChange={(event) => setValues((current) => ({ ...current, budget: event.target.value }))}
@@ -175,6 +178,7 @@ export function QuoteWizard() {
                 <option>Not sure yet</option>
               </select>
               <select
+                aria-label="Project timeline"
                 className={inputClass}
                 value={values.timeline}
                 onChange={(event) => setValues((current) => ({ ...current, timeline: event.target.value }))}
@@ -194,12 +198,14 @@ export function QuoteWizard() {
             <h2 className="text-xl font-semibold text-white">Contact details</h2>
             <div className="mt-4 grid gap-4 lg:grid-cols-3">
               <input
+                aria-label="Your name"
                 className={inputClass}
                 placeholder="Your name"
                 value={values.name}
                 onChange={(event) => setValues((current) => ({ ...current, name: event.target.value }))}
               />
               <input
+                aria-label="Email address"
                 className={inputClass}
                 type="email"
                 placeholder="Email address"
@@ -207,6 +213,7 @@ export function QuoteWizard() {
                 onChange={(event) => setValues((current) => ({ ...current, email: event.target.value }))}
               />
               <select
+                aria-label="Preferred contact method"
                 className={inputClass}
                 value={values.contactMethod}
                 onChange={(event) => setValues((current) => ({ ...current, contactMethod: event.target.value }))}

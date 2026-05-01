@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/layout/legal-page";
+import { legalContent } from "@/data/legal";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -7,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  return <LegalPage title="Privacy Policy" description="KDPA 2019 and GDPR-aligned privacy content placeholder." />;
+  return <LegalPage {...legalContent.privacy} />;
 }
