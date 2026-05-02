@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Mail, Phone, Youtube } from "lucide-react";
+import { CompanyLogo } from "@/components/brand/company-logo";
 import { Container } from "@/components/layout/container";
 import { siteConfig } from "@/config/site";
 import { serviceCategories } from "@/data/services";
@@ -23,11 +24,9 @@ export function SiteFooter() {
       <Container className="py-12">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
-            <Link href="/" className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-white/[0.06] text-sm font-bold text-white">
-                K
-              </span>
-              <span className="font-display text-lg font-semibold text-white">{siteConfig.name}</span>
+            <Link href="/" className="inline-flex items-center" aria-label="Kyptonix Technologies home">
+              <CompanyLogo variant="footer" />
+              <span className="sr-only">{siteConfig.name}</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">{siteConfig.description}</p>
             <div className="mt-6 flex flex-col gap-3 text-sm text-slate-300">

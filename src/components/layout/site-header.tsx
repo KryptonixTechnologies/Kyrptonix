@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { CompanyLogo } from "@/components/brand/company-logo";
 import { siteConfig } from "@/config/site";
 import { serviceCategories } from "@/data/services";
 import { cn } from "@/lib/utils";
@@ -16,10 +17,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-900/80 shadow-[0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="Kyptonix Technologies home">
-          <span className="grid h-9 w-9 place-items-center rounded-md border border-white/15 bg-white/[0.09] text-sm font-bold text-white shadow-glow">
-            K
-          </span>
-          <span className="font-display text-base font-semibold text-white">{siteConfig.shortName}</span>
+          <CompanyLogo priority />
+          <span className="sr-only">{siteConfig.shortName}</span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">

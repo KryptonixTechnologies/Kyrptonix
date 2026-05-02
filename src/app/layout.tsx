@@ -16,6 +16,15 @@ export const metadata: Metadata = {
     "Kyptonix Technologies provides software development, cloud services, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for organisations in Kenya, East Africa, and beyond.",
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   keywords: [
     "Kyptonix Technologies",
     "IT solutions Kenya",
@@ -49,6 +58,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: "t6lv0JbZvKIYuiICDBtYhbqwbS0jqmvUcmC3lS5XoMw",
   },
 };
 
