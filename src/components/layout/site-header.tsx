@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { CompanyLogo } from "@/components/brand/company-logo";
@@ -12,6 +13,15 @@ import { Container } from "@/components/layout/container";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  function isActive(href: string) {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-900/80 shadow-[0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl">
@@ -22,12 +32,17 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
-          {siteConfig.navItems.map((item) =>
-            item.label === "Services" ? (
+          {siteConfig.navItems.map((item) => {
+            const active = isActive(item.href);
+
+            return item.label === "Services" ? (
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
-                  className="inline-flex h-10 items-center gap-1 rounded-md px-3 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white"
+                  className={cn(
+                    "inline-flex h-10 items-center gap-1 rounded-md px-3 text-sm font-medium transition hover:bg-white/[0.06] hover:text-white",
+                    active ? "bg-white/[0.07] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" : "text-slate-300",
+                  )}
                 >
                   Services
                   <ChevronDown className="h-4 w-4" aria-hidden="true" />
@@ -62,12 +77,15 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="inline-flex h-10 items-center rounded-md px-3 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white"
+                className={cn(
+                  "inline-flex h-10 items-center rounded-md px-3 text-sm font-medium transition hover:bg-white/[0.06] hover:text-white",
+                  active ? "bg-white/[0.07] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" : "text-slate-300",
+                )}
               >
                 {item.label}
               </Link>
-            ),
-          )}
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -97,13 +115,33 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/[0.06]"
+                className={cn(
+                  "rounded-md px-3 py-3 text-sm font-medium transition hover:bg-white/[0.06]",
+                  isActive(item.href) ? "bg-white/[0.07] text-white" : "text-slate-200",
+                )}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
+          <div className="mt-4 border-t border-white/10 pt-4">
+            <p className="px-3 text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+              Popular services
+            </p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              {serviceCategories.slice(0, 4).map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="rounded-md border border-white/10 bg-white/[0.035] px-3 py-3 text-sm text-slate-300 transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {service.title}
+                </Link>
+              ))}
+            </div>
+          </div>
           <div className="mt-4 grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2">
             <Button href="/contact" variant="secondary">
               Talk to us

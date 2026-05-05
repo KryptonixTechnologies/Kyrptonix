@@ -20,7 +20,7 @@ const socialIcons = {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-ink-950">
+    <footer className="border-t border-white/10 bg-[linear-gradient(180deg,rgba(13,17,23,0.92),rgba(1,4,9,1))]">
       <Container className="py-12">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
@@ -85,14 +85,16 @@ export function SiteFooter() {
               const Icon = socialIcons[link.label as keyof typeof socialIcons];
 
               return (
-              <a
-                key={link.label}
-                href={link.href}
-                aria-label={link.label}
-                className="grid h-9 w-9 place-items-center rounded-md border border-white/10 bg-white/[0.04] text-slate-400 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
-              >
-                <Icon className="h-4 w-4" aria-hidden="true" />
-              </a>
+                <a
+                  key={link.label}
+                  href={link.href}
+                  aria-label={link.label}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="grid h-9 w-9 place-items-center rounded-md border border-white/10 bg-white/[0.04] text-slate-400 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                </a>
               );
             })}
           </div>

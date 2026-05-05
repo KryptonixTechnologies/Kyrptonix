@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { GlowBadge } from "@/components/ui/glow-badge";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Floating3DObjects } from "@/components/visuals/floating-3d-objects";
+import { HeroBackgroundVideo } from "@/components/visuals/hero-background-video";
 import {
   blogPosts,
   differentiators,
@@ -30,11 +30,16 @@ import { serviceCategories } from "@/data/services";
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden">
-      <Section className="relative flex min-h-[calc(100vh-4rem)] items-center py-20 text-center sm:py-24">
+      <Section className="relative flex min-h-[24rem] items-center py-8 text-center sm:min-h-[28rem] sm:py-10 lg:min-h-[32rem]">
+        <div className="pointer-events-none absolute inset-x-0 top-[7.25rem] h-[20rem] overflow-hidden sm:inset-0 sm:h-full">
+          <HeroBackgroundVideo className="opacity-64 sm:opacity-60" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(1,4,9,0.28),rgba(13,17,23,0.54)_42%,rgba(1,4,9,0.9))]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(137,87,229,0.36),transparent_34rem),radial-gradient(circle_at_20%_42%,rgba(47,129,247,0.24),transparent_28rem)]" />
+        </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[18rem] bg-[linear-gradient(180deg,transparent,rgba(1,4,9,0.88)_52%,rgba(1,4,9,0.98))] sm:hidden" />
         <div className="ambient-grid pointer-events-none absolute inset-0 opacity-40" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-kyptonix-purple/80 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[34rem] bg-[linear-gradient(180deg,rgba(137,87,229,0.28),transparent)]" />
-        <Floating3DObjects />
 
         <Container className="relative z-10 flex flex-col items-center">
           <Reveal>
@@ -226,7 +231,6 @@ deploy({
       </Section>
 
       <Section className="relative overflow-hidden border-t border-white/10">
-        <Floating3DObjects variant="security" className="opacity-70" />
         <Container className="relative z-10">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <Reveal>
@@ -337,7 +341,6 @@ deploy({
       </Section>
 
       <Section className="relative overflow-hidden border-t border-white/10 bg-[linear-gradient(180deg,rgba(22,27,34,0.78),rgba(1,4,9,0.98))]">
-        <Floating3DObjects variant="team" className="opacity-60" />
         <Container className="relative z-10">
           <Reveal>
             <GlassCard className="relative overflow-hidden p-8 text-center sm:p-12">

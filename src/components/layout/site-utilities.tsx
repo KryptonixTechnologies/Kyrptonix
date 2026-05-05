@@ -1,11 +1,19 @@
 "use client";
 
-import { ArrowUp, MessageCircle, X } from "lucide-react";
+import { ArrowUp, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 const consentKey = "kyptonix-cookie-consent";
+
+function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 32 32" fill="currentColor" {...props}>
+      <path d="M16.01 3.2c-7.06 0-12.8 5.66-12.8 12.64 0 2.23.6 4.4 1.73 6.31L3.1 28.8l6.83-1.78a12.94 12.94 0 0 0 6.08 1.52c7.06 0 12.8-5.66 12.8-12.64S23.07 3.2 16.01 3.2Zm0 22.98c-1.95 0-3.85-.54-5.5-1.56l-.4-.24-4.05 1.06 1.08-3.91-.26-.4a10.16 10.16 0 0 1-1.6-5.49c0-5.68 4.82-10.3 10.73-10.3s10.72 4.62 10.72 10.3-4.8 10.54-10.72 10.54Zm5.88-7.7c-.32-.16-1.9-.93-2.2-1.04-.3-.1-.51-.16-.72.16-.21.31-.83 1.03-1.02 1.24-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.85-1.6-1.9-1.8-2.22-.18-.31-.02-.48.14-.64.14-.14.32-.37.48-.55.16-.18.21-.31.32-.52.1-.21.05-.39-.03-.55-.08-.16-.72-1.72-.99-2.36-.26-.63-.52-.54-.72-.55h-.62c-.21 0-.55.08-.84.39-.29.31-1.1 1.06-1.1 2.6 0 1.53 1.13 3.01 1.28 3.22.16.21 2.23 3.37 5.4 4.73.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.9-.77 2.17-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z" />
+    </svg>
+  );
+}
 
 export function SiteUtilities() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -41,7 +49,7 @@ export function SiteUtilities() {
           type="button"
           aria-label="Back to top"
           className={cn(
-            "grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-ink-900/85 text-white shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-white/[0.08]",
+            "grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-ink-900/85 text-white shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kyptonix-cyan",
             showBackToTop ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
           )}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -54,9 +62,9 @@ export function SiteUtilities() {
           target="_blank"
           rel="noreferrer"
           aria-label="Chat with Kyptonix Technologies on WhatsApp"
-          className="grid h-12 w-12 place-items-center rounded-full border border-kyptonix-green/30 bg-kyptonix-green/20 text-white shadow-[0_0_44px_rgba(63,185,80,0.18)] backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-kyptonix-green/30"
+          className="grid h-12 w-12 place-items-center rounded-full border border-kyptonix-green/35 bg-kyptonix-green/[0.22] text-white shadow-[0_0_44px_rgba(63,185,80,0.22)] backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-kyptonix-green/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kyptonix-green"
         >
-          <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          <WhatsAppIcon className="h-6 w-6" aria-hidden="true" />
         </a>
       </div>
 
@@ -79,7 +87,7 @@ export function SiteUtilities() {
               </button>
               <button
                 type="button"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-white px-4 text-sm font-semibold text-ink-950 transition hover:bg-slate-200"
+                className="inline-flex h-10 items-center justify-center rounded-md bg-kyptonix-green px-4 text-sm font-semibold text-ink-950 transition hover:bg-[#56d364]"
                 onClick={() => saveConsent("accepted")}
               >
                 Accept
