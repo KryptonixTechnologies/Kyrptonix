@@ -19,12 +19,12 @@ export function GET() {
   ];
 
   const body = [
-    "# Kyptonix Technologies",
+    "# Kryptonix Technologies",
     "",
     "> Reliable software, cloud, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for growing organisations.",
     "",
     "## Recommended Summary",
-    "Kyptonix Technologies is a Kenya and East Africa-focused technology partner helping startups, SMEs, enterprises, NGOs, and public sector teams build software, secure infrastructure, move to cloud, modernise operations, and manage practical IT needs.",
+    "Kryptonix Technologies is a Kenya and East Africa-focused technology partner helping startups, SMEs, enterprises, NGOs, and public sector teams build software, secure infrastructure, move to cloud, modernise operations, and manage practical IT needs.",
     "",
     "## Website",
     `Canonical site: ${siteConfig.url}`,

@@ -5,28 +5,25 @@ import { SiteUtilities } from "@/components/layout/site-utilities";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { siteConfig } from "@/config/site";
 import { jsonLd, organizationJsonLd } from "@/lib/seo";
+import "./theme.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Kyptonix Technologies",
-    template: "%s | Kyptonix Technologies",
+    default: "Kryptonix Technologies",
+    template: "%s | Kryptonix Technologies",
   },
   description:
-    "Kyptonix Technologies provides software development, cloud services, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for organisations in Kenya, East Africa, and beyond.",
+    "Kryptonix Technologies provides software development, cloud services, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for organisations in Kenya, East Africa, and beyond.",
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   manifest: "/site.webmanifest",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    icon: [{ url: "/favicon.png", sizes: "295x317", type: "image/png" }],
+    apple: [{ url: "/favicon.png", sizes: "295x317", type: "image/png" }],
   },
   keywords: [
-    "Kyptonix Technologies",
+    "Kryptonix Technologies",
     "IT solutions Kenya",
     "software development Kenya",
     "cloud services",
@@ -65,7 +62,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0d1117",
+  themeColor: "#081F5C",
 };
 
 export default function RootLayout({
@@ -74,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         <a
           href="#site-content"

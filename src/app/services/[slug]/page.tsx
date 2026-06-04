@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return pageMetadata({
     title: `${service.title} Services`,
-    description: `${service.summary} Kyptonix supports ${service.audiences.join(", ").toLowerCase()} with ${service.offerings
+    description: `${service.summary} Kryptonix supports ${service.audiences.join(", ").toLowerCase()} with ${service.offerings
       .slice(0, 3)
       .join(", ")
       .toLowerCase()}, and practical implementation support.`,
@@ -84,7 +84,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         itemOffered: {
           "@type": "Service",
           name: offering,
-          description: `${offering} delivered as part of Kyptonix ${service.title.toLowerCase()} services.`,
+          description: `${offering} delivered as part of Kryptonix ${service.title.toLowerCase()} services.`,
         },
       })),
     },
@@ -149,7 +149,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <Container>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <GlassCard className="p-6">
-              <Icon className="h-8 w-8 text-kyptonix-cyan" aria-hidden="true" />
+              <Icon className="h-8 w-8 text-kryptonix-cyan" aria-hidden="true" />
               <SectionHeading
                 className="mt-6"
                 eyebrow="Overview"
@@ -169,7 +169,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <div className="grid gap-4 sm:grid-cols-2">
               {service.offerings.map((offering) => (
                 <GlassCard key={offering} className="p-5">
-                  <CheckCircle2 className="h-5 w-5 text-kyptonix-green" aria-hidden="true" />
+                  <CheckCircle2 className="h-5 w-5 text-kryptonix-green" aria-hidden="true" />
                   <p className="mt-4 text-sm font-semibold text-white">{offering}</p>
                 </GlassCard>
               ))}
@@ -178,7 +178,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <GlassCard className="p-6">
-              <Layers3 className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+              <Layers3 className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
               <h2 className="mt-4 text-lg font-semibold text-white">How we work</h2>
               <div className="mt-4 grid gap-3">
                 {serviceProcess.map((step, index) => (
@@ -192,7 +192,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </div>
             </GlassCard>
             <GlassCard className="p-6">
-              <Target className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+              <Target className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
               <h2 className="mt-4 text-lg font-semibold text-white">Who it is for</h2>
               <div className="mt-4 grid gap-3">
                 {service.audiences.map((audience) => (
@@ -203,7 +203,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </div>
             </GlassCard>
             <GlassCard className="p-6">
-              <TrendingUp className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+              <TrendingUp className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
               <h2 className="mt-4 text-lg font-semibold text-white">Benefits and ROI</h2>
               <div className="mt-4 grid gap-3">
                 {service.benefits.map((benefit) => (
@@ -231,7 +231,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </GlassCard>
             <GlassCard className="p-6">
               <div className="flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+                <HelpCircle className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
                 <h2 className="text-lg font-semibold text-white">Service FAQs</h2>
               </div>
               <div className="mt-5 grid gap-4">
@@ -246,7 +246,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
 
           <GlassCard className="mt-10 p-6 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">Next step</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">Next step</p>
             <h2 className="mt-4 font-display text-3xl font-semibold text-white">Need help scoping {service.title.toLowerCase()}?</h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-400">
               Share your goals, constraints, and timeline. We will help you turn the requirement into a clear project path.

@@ -18,14 +18,14 @@ export function SectionHeading({
   return (
     <div data-reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-3xl font-semibold tracking-normal text-white sm:text-4xl">
+      <h2 className="font-display text-3xl font-semibold tracking-normal text-ink-950 sm:text-4xl">
         {title}
       </h2>
-      {description ? <p className="mt-4 text-base leading-7 text-slate-400">{description}</p> : null}
+      {description ? <p className="mt-4 text-base leading-7 text-slate-600">{description}</p> : null}
     </div>
   );
 }

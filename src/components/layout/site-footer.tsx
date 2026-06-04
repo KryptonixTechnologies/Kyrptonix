@@ -20,22 +20,22 @@ const socialIcons = {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-[linear-gradient(180deg,rgba(13,17,23,0.92),rgba(1,4,9,1))]">
+    <footer className="border-t border-white/10 bg-[linear-gradient(180deg,rgb(var(--color-primary-navy)/0.92),rgb(3 13 42/1))]">
       <Container className="py-12">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
-            <Link href="/" className="inline-flex items-center" aria-label="Kyptonix Technologies home">
+            <Link href="/" className="inline-flex items-center" aria-label="Kryptonix Technologies home">
               <CompanyLogo variant="footer" />
               <span className="sr-only">{siteConfig.name}</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">{siteConfig.description}</p>
             <div className="mt-6 flex flex-col gap-3 text-sm text-slate-300">
               <a className="inline-flex items-center gap-2 hover:text-white" href={`mailto:${siteConfig.email}`}>
-                <Mail className="h-4 w-4 text-kyptonix-cyan" aria-hidden="true" />
+                <Mail className="h-4 w-4 text-kryptonix-cyan" aria-hidden="true" />
                 {siteConfig.email}
               </a>
               <a className="inline-flex items-center gap-2 hover:text-white" href={`tel:${siteConfig.phone}`}>
-                <Phone className="h-4 w-4 text-kyptonix-cyan" aria-hidden="true" />
+                <Phone className="h-4 w-4 text-kryptonix-cyan" aria-hidden="true" />
                 {siteConfig.phone}
               </a>
             </div>
@@ -79,7 +79,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Kyptonix Technologies. All rights reserved.</p>
+          <p>© 2026 Kryptonix Technologies. All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
             {siteConfig.socialLinks.map((link) => {
               const Icon = socialIcons[link.label as keyof typeof socialIcons];

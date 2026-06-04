@@ -24,10 +24,10 @@ const initialValues: ContactValues = {
 };
 
 const inputClass =
-  "mt-2 h-11 w-full rounded-md border border-white/10 bg-white/[0.04] px-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-kyptonix-cyan";
+  "mt-2 h-11 w-full rounded-md border border-ink-950/10 bg-white px-3 text-sm text-ink-950 outline-none transition placeholder:text-slate-500 focus:border-kryptonix-cyan";
 
 const textareaClass =
-  "mt-2 min-h-36 w-full rounded-md border border-white/10 bg-white/[0.04] px-3 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-kyptonix-cyan";
+  "mt-2 min-h-36 w-full rounded-md border border-ink-950/10 bg-white px-3 py-3 text-sm text-ink-950 outline-none transition placeholder:text-slate-500 focus:border-kryptonix-cyan";
 
 export function ContactForm() {
   const [values, setValues] = useState<ContactValues>(initialValues);
@@ -65,8 +65,8 @@ export function ContactForm() {
   if (submitted) {
     return (
       <GlassCard className="p-6">
-        <div className="rounded-md border border-kyptonix-green/30 bg-kyptonix-green/10 p-5">
-          <CheckCircle2 className="h-7 w-7 text-kyptonix-green" aria-hidden="true" />
+        <div className="rounded-md border border-kryptonix-green/30 bg-kryptonix-green/10 p-5">
+          <CheckCircle2 className="h-7 w-7 text-kryptonix-green" aria-hidden="true" />
           <h2 className="mt-4 text-xl font-semibold text-white">Message received.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
             Thanks for reaching out. The live delivery version can route this request to email, CRM,
@@ -74,7 +74,7 @@ export function ContactForm() {
           </p>
           <button
             type="button"
-            className="mt-5 inline-flex h-10 items-center justify-center rounded-md border border-white/15 bg-white/[0.05] px-4 text-sm font-semibold text-white transition hover:bg-white/[0.09]"
+            className="mt-5 inline-flex h-10 items-center justify-center rounded-md border border-ink-950/15 bg-white px-4 text-sm font-semibold text-ink-950 transition hover:bg-kryptonix-gold/10"
             onClick={() => {
               setValues(initialValues);
               setSubmitted(false);
@@ -154,7 +154,7 @@ export function ContactForm() {
 
         <button
           type="submit"
-          className="mt-2 inline-flex h-11 w-fit items-center justify-center rounded-md bg-white px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-slate-200"
+          className="mt-2 inline-flex h-11 w-fit items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-kryptonix-green/90"
         >
           Submit Request
           <Send className="ml-2 h-4 w-4" aria-hidden="true" />

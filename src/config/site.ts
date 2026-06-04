@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Kyptonix Technologies",
-  shortName: "Kyptonix",
+  name: "Kryptonix Technologies",
+  shortName: "Kryptonix",
   description:
     "Reliable software, cloud, cybersecurity, IT infrastructure, and digital transformation solutions for growing organisations.",
-  url: "https://kyptonix.com",
-  email: "hello@kyptonix.com",
+  url: "https://kryptonix.com",
+  email: "manyisanewton26@gmail.com",
   phone: "+254 799 425 417",
   whatsapp: "254799425417",
   navItems: [

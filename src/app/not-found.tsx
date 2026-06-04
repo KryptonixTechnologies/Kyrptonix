@@ -9,7 +9,7 @@ export default function NotFound() {
       <Section className="min-h-[calc(100vh-4rem)]">
         <Container>
           <GlassCard className="mx-auto max-w-2xl p-8 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">404</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">404</p>
             <h1 className="mt-4 font-display text-4xl font-semibold text-white">Page not found</h1>
             <p className="mt-4 text-sm leading-6 text-slate-400">
               The page you are looking for is not available yet. Use the main navigation or return home.

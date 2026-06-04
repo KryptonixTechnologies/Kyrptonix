@@ -16,14 +16,14 @@ export function CompanyLogo({ className, priority = false, variant = "header" }:
   return (
     <span
       className={cn(
-        "relative block overflow-hidden rounded-md border border-white/10 bg-white/[0.03] shadow-[0_0_32px_rgba(47,129,247,0.12)]",
+        "relative block overflow-hidden",
         logoSizes[variant],
         className,
       )}
     >
       <Image
         src="/Kryptonix logo.png"
-        alt="Kyptonix Technologies"
+        alt="Kryptonix Technologies"
         fill
         priority={priority}
         sizes={variant === "header" ? "144px" : "176px"}

@@ -5,9 +5,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Cookie Policy",
   description:
-    "Read the Kyptonix Technologies cookie policy explaining essential cookies, preference storage, analytics readiness, and visitor control options.",
+    "Read the Kryptonix Technologies cookie policy explaining essential cookies, preference storage, analytics readiness, and visitor control options.",
   path: "/cookies",
-  keywords: ["Kyptonix cookie policy", "website cookies"],
+  keywords: ["Kryptonix cookie policy", "website cookies"],
 });
 
 export default function CookiesPage() {

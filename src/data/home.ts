@@ -48,7 +48,7 @@ export const featuredProjects = [
 export const testimonials = [
   {
     quote:
-      "Kyptonix helped us translate a messy operational challenge into a clear digital roadmap.",
+      "Kryptonix helped us translate a messy operational challenge into a clear digital roadmap.",
     name: "Client leader",
     role: "Operations Lead",
   },
@@ -60,7 +60,7 @@ export const testimonials = [
   },
   {
     quote:
-      "We needed a partner who could think beyond one tool. Kyptonix gave us the bigger picture.",
+      "We needed a partner who could think beyond one tool. Kryptonix gave us the bigger picture.",
     name: "IT manager",
     role: "IT Manager",
   },

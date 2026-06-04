@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-const consentKey = "kyptonix-cookie-consent";
+const consentKey = "kryptonix-cookie-consent";
 
 function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -49,7 +49,7 @@ export function SiteUtilities() {
           type="button"
           aria-label="Back to top"
           className={cn(
-            "grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-ink-900/85 text-white shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kyptonix-cyan",
+            "grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-ink-900/85 text-white shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kryptonix-cyan",
             showBackToTop ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
           )}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -58,11 +58,11 @@ export function SiteUtilities() {
         </button>
 
         <a
-          href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hello Kyptonix Technologies, I would like to discuss a project.")}`}
+          href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hello Kryptonix Technologies, I would like to discuss a project.")}`}
           target="_blank"
           rel="noreferrer"
-          aria-label="Chat with Kyptonix Technologies on WhatsApp"
-          className="grid h-12 w-12 place-items-center rounded-full border border-kyptonix-green/35 bg-kyptonix-green/[0.22] text-white shadow-[0_0_44px_rgba(63,185,80,0.22)] backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-kyptonix-green/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kyptonix-green"
+          aria-label="Chat with Kryptonix Technologies on WhatsApp"
+          className="grid h-12 w-12 place-items-center rounded-full border border-kryptonix-green/35 bg-kryptonix-green/[0.22] text-white shadow-[0_0_44px_rgb(var(--color-bright-gold)/0.22)] backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-kryptonix-green/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kryptonix-green"
         >
           <WhatsAppIcon className="h-6 w-6" aria-hidden="true" />
         </a>
@@ -87,7 +87,7 @@ export function SiteUtilities() {
               </button>
               <button
                 type="button"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-kyptonix-green px-4 text-sm font-semibold text-ink-950 transition hover:bg-[#56d364]"
+                className="inline-flex h-10 items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 transition hover:bg-kryptonix-green/90"
                 onClick={() => saveConsent("accepted")}
               >
                 Accept

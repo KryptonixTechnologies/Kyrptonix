@@ -20,7 +20,7 @@ export function LegalPage({ title, description, sections }: LegalPageProps) {
         <Container>
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <GlassCard className="p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
                 Review Required
               </p>
               <h2 className="mt-4 text-xl font-semibold text-white">Prepared for legal approval</h2>

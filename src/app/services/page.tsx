@@ -11,9 +11,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Explore Kyptonix Technologies services across software development, cloud, cybersecurity, IT infrastructure, managed support, digital transformation, data, and SME technology packages.",
+    "Explore Kryptonix Technologies services across software development, cloud, cybersecurity, IT infrastructure, managed support, digital transformation, data, and SME technology packages.",
   path: "/services",
-  keywords: ["Kyptonix services", "IT service catalogue", "SME technology packages"],
+  keywords: ["Kryptonix services", "IT service catalogue", "SME technology packages"],
 });
 
 export default function ServicesPage() {
@@ -22,14 +22,14 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="A complete technology catalogue for modern organisations."
-        description="Browse the Kyptonix service categories. Each category has its own frontend detail page ready for deeper content, FAQs, case studies, and quote CTAs."
+        description="Browse the Kryptonix service categories. Each category has its own frontend detail page ready for deeper content, FAQs, case studies, and quote CTAs."
       />
 
       <Section>
         <Container>
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <GlassCard className="sticky top-24 p-6">
-              <SlidersHorizontal className="h-6 w-6 text-kyptonix-cyan" aria-hidden="true" />
+              <SlidersHorizontal className="h-6 w-6 text-kryptonix-cyan" aria-hidden="true" />
               <SectionHeading
                 className="mt-6"
                 eyebrow="Find your fit"
@@ -39,7 +39,7 @@ export default function ServicesPage() {
               <div className="mt-6 grid gap-3">
                 {["Build", "Operate", "Protect", "Transform", "Grow", "Launch"].map((item) => (
                   <div key={item} className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3">
-                    <CheckCircle2 className="h-4 w-4 text-kyptonix-green" aria-hidden="true" />
+                    <CheckCircle2 className="h-4 w-4 text-kryptonix-green" aria-hidden="true" />
                     <span className="text-sm font-medium text-slate-300">{item}</span>
                   </div>
                 ))}
@@ -58,8 +58,8 @@ export default function ServicesPage() {
                   <GlassCard className="group h-full p-5 transition duration-200 hover:-translate-y-1 hover:border-white/20">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <Icon className="h-6 w-6 text-kyptonix-cyan" aria-hidden="true" />
-                        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-purple">
+                        <Icon className="h-6 w-6 text-kryptonix-cyan" aria-hidden="true" />
+                        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-purple">
                           {service.category}
                         </p>
                       </div>

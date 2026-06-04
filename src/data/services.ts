@@ -182,7 +182,7 @@ export const serviceProcess = [
 
 export const serviceFaqs = [
   {
-    question: "Can Kyptonix help if we are not sure what service we need?",
+    question: "Can Kryptonix help if we are not sure what service we need?",
     answer: "Yes. The first step is a discovery conversation where we clarify the business problem, urgency, budget, and best-fit solution path.",
   },
   {

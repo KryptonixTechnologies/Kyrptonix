@@ -7,9 +7,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Get a Quote",
   description:
-    "Request a quote from Kyptonix Technologies for software development, cloud migration, cybersecurity, IT support, infrastructure, automation, data, and digital transformation projects.",
+    "Request a quote from Kryptonix Technologies for software development, cloud migration, cybersecurity, IT support, infrastructure, automation, data, and digital transformation projects.",
   path: "/quote",
-  keywords: ["Kyptonix quote", "request IT quote", "software development quote Kenya"],
+  keywords: ["Kryptonix quote", "request IT quote", "software development quote Kenya"],
 });
 
 export default function QuotePage() {
@@ -18,7 +18,7 @@ export default function QuotePage() {
       <PageHero
         eyebrow="Get a Quote"
         title="Tell us what you want to build."
-        description="Select the services you need, describe your project, and shape an initial brief for the Kyptonix team."
+        description="Select the services you need, describe your project, and shape an initial brief for the Kryptonix team."
       />
       <Section>
         <Container>

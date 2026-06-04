@@ -10,9 +10,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact Us",
   description:
-    "Contact Kyptonix Technologies for software development, cloud services, cybersecurity, IT support, infrastructure, partnerships, sales, quote requests, and general inquiries.",
+    "Contact Kryptonix Technologies for software development, cloud services, cybersecurity, IT support, infrastructure, partnerships, sales, quote requests, and general inquiries.",
   path: "/contact",
-  keywords: ["contact Kyptonix", "Kyptonix support", "IT consultation Kenya"],
+  keywords: ["contact Kryptonix", "Kryptonix support", "IT consultation Kenya"],
 });
 
 export default function ContactPage() {
@@ -30,17 +30,17 @@ export default function ContactPage() {
 
             <div className="grid gap-4">
               <GlassCard className="p-5">
-                <Mail className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+                <Mail className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
                 <p className="mt-4 text-sm font-semibold text-white">Email</p>
                 <a className="mt-1 block text-sm text-slate-400 hover:text-white" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
               </GlassCard>
               <GlassCard className="p-5">
-                <Phone className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+                <Phone className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
                 <p className="mt-4 text-sm font-semibold text-white">Phone</p>
                 <a className="mt-1 block text-sm text-slate-400 hover:text-white" href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a>
               </GlassCard>
               <GlassCard className="p-5">
-                <MapPin className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+                <MapPin className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
                 <p className="mt-4 text-sm font-semibold text-white">Office</p>
                 <p className="mt-1 text-sm text-slate-400">Kenya office details and map location will be published after confirmation.</p>
               </GlassCard>

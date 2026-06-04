@@ -11,9 +11,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Portfolio",
   description:
-    "Explore Kyptonix Technologies portfolio structure for software, cloud, cybersecurity, IT infrastructure, public sector, and digital transformation project case studies.",
+    "Explore Kryptonix Technologies portfolio structure for software, cloud, cybersecurity, IT infrastructure, public sector, and digital transformation project case studies.",
   path: "/portfolio",
-  keywords: ["Kyptonix portfolio", "technology case studies", "software project gallery"],
+  keywords: ["Kryptonix portfolio", "technology case studies", "software project gallery"],
 });
 
 export default function PortfolioPage() {
@@ -28,9 +28,9 @@ export default function PortfolioPage() {
         <Container>
           <GlassCard className="overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="min-h-72 bg-[radial-gradient(circle_at_30%_20%,rgba(47,129,247,0.35),transparent_36%),radial-gradient(circle_at_75%_70%,rgba(137,87,229,0.34),transparent_42%),linear-gradient(135deg,rgba(13,17,23,0.92),rgba(1,4,9,0.98))]" />
+              <div className="min-h-72 bg-[radial-gradient(circle_at_30%_20%,rgb(var(--color-secondary-navy)/0.35),transparent_36%),radial-gradient(circle_at_75%_70%,rgb(var(--color-gold-accent)/0.34),transparent_42%),linear-gradient(135deg,rgb(var(--color-primary-navy)/0.92),rgb(3 13 42/0.98))]" />
               <div className="p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
                   Featured case study
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold text-white">{featuredCaseStudy.name}</h2>
@@ -55,7 +55,7 @@ export default function PortfolioPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10 bg-ink-950/55">
+      <Section className="border-t border-ink-950/10 bg-[var(--off-white)]">
         <Container>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
@@ -78,11 +78,11 @@ export default function PortfolioPage() {
           <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {portfolioProjects.map((project) => (
               <GlassCard key={project.name} className="group overflow-hidden">
-                <div className="h-32 border-b border-white/10 bg-[linear-gradient(135deg,rgba(47,129,247,0.22),rgba(137,87,229,0.18)_48%,rgba(57,197,207,0.12))]" />
+                <div className="h-32 border-b border-ink-950/10 bg-[linear-gradient(135deg,rgb(var(--color-secondary-navy)/0.22),rgb(var(--color-gold-accent)/0.18)_48%,rgb(var(--color-gold-accent)/0.12))]" />
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">{project.service}</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">{project.service}</p>
                       <h2 className="mt-4 text-lg font-semibold text-white">{project.name}</h2>
                     </div>
                     <ArrowUpRight className="h-4 w-4 text-slate-600 transition group-hover:text-white" aria-hidden="true" />
@@ -99,7 +99,7 @@ export default function PortfolioPage() {
                   <div className="mt-5 rounded-md border border-white/10 bg-white/[0.035] p-3">
                     <p className="text-xs leading-5 text-slate-400">&ldquo;{project.testimonial}&rdquo;</p>
                   </div>
-                  <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-kyptonix-cyan">
+                  <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-kryptonix-cyan">
                     <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                     {project.status}
                   </p>

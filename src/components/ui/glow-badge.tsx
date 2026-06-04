@@ -6,7 +6,7 @@ export function GlowBadge({ className, ...props }: GlowBadgeProps) {
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-300 shadow-glow backdrop-blur",
+        "inline-flex items-center rounded-full border border-kryptonix-gold/30 bg-white/85 px-4 py-2 text-sm font-medium text-ink-950 shadow-[0_10px_28px_rgb(var(--color-gold-accent)/0.14)] backdrop-blur",
         className,
       )}
       {...props}

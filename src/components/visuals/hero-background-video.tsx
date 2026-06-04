@@ -7,6 +7,12 @@ type HeroBackgroundVideoProps = {
   className?: string;
 };
 
+function playVideo(video: HTMLVideoElement) {
+  video.play().catch(() => {
+    // Browsers may delay autoplay until the first interaction.
+  });
+}
+
 export function HeroBackgroundVideo({ className }: HeroBackgroundVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -19,9 +25,7 @@ export function HeroBackgroundVideo({ className }: HeroBackgroundVideoProps) {
 
     video.muted = true;
     video.loop = true;
-    void video.play().catch(() => {
-      // Browsers may delay autoplay until the first interaction.
-    });
+    playVideo(video);
   }, []);
 
   return (
@@ -36,7 +40,7 @@ export function HeroBackgroundVideo({ className }: HeroBackgroundVideoProps) {
       aria-hidden="true"
       onEnded={(event) => {
         event.currentTarget.currentTime = 0;
-        void event.currentTarget.play();
+        playVideo(event.currentTarget);
       }}
     >
       <source src="/13522186-uhd_3840_2160_25fps.mp4" type="video/mp4" />

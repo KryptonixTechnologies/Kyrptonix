@@ -5,7 +5,7 @@ export const legalContent = {
     sections: [
       {
         heading: "Information We Collect",
-        body: "Kyptonix may collect contact details, company information, project requirements, form messages, and technical analytics data when users interact with the website.",
+        body: "Kryptonix may collect contact details, company information, project requirements, form messages, and technical analytics data when users interact with the website.",
       },
       {
         heading: "How We Use Information",
@@ -27,7 +27,7 @@ export const legalContent = {
     sections: [
       {
         heading: "Website Use",
-        body: "Visitors may use this website to learn about Kyptonix services, request information, submit inquiries, and access published resources.",
+        body: "Visitors may use this website to learn about Kryptonix services, request information, submit inquiries, and access published resources.",
       },
       {
         heading: "Service Engagements",
@@ -52,7 +52,7 @@ export const legalContent = {
         body: "Cookies and similar technologies help websites remember preferences, measure usage, and support secure or personalised experiences.",
       },
       {
-        heading: "How Kyptonix May Use Cookies",
+        heading: "How Kryptonix May Use Cookies",
         body: "Future cookies may support analytics, performance measurement, form tracking, live chat, marketing attribution, and security controls.",
       },
       {

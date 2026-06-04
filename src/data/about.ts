@@ -37,7 +37,7 @@ export const milestones = [
   {
     year: "Foundation",
     title: "Company direction defined",
-    description: "Kyptonix positions itself as a broad IT solutions and software development partner.",
+    description: "Kryptonix positions itself as a broad IT solutions and software development partner.",
   },
   {
     year: "Website V1",

@@ -24,9 +24,9 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-900/80 shadow-[0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-ink-950/10 bg-white/92 shadow-sm backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3" aria-label="Kyptonix Technologies home">
+        <Link href="/" className="flex items-center gap-3" aria-label="Kryptonix Technologies home">
           <CompanyLogo priority />
           <span className="sr-only">{siteConfig.shortName}</span>
         </Link>
@@ -40,8 +40,8 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "inline-flex h-10 items-center gap-1 rounded-md px-3 text-sm font-medium transition hover:bg-white/[0.06] hover:text-white",
-                    active ? "bg-white/[0.07] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" : "text-slate-300",
+                    "inline-flex h-10 items-center gap-1 rounded-md px-3 text-sm font-medium transition hover:bg-kryptonix-gold/10 hover:text-ink-950",
+                    active ? "bg-kryptonix-gold/15 text-ink-950 shadow-[inset_0_0_0_1px_rgb(var(--color-gold-accent)/0.18)]" : "text-slate-700",
                   )}
                 >
                   Services
@@ -59,7 +59,7 @@ export function SiteHeader() {
                           className="rounded-md p-3 transition hover:bg-white/[0.06]"
                         >
                           <div className="flex gap-3">
-                            <Icon className="mt-1 h-5 w-5 shrink-0 text-kyptonix-cyan" aria-hidden="true" />
+                            <Icon className="mt-1 h-5 w-5 shrink-0 text-kryptonix-cyan" aria-hidden="true" />
                             <div>
                               <p className="text-sm font-semibold text-white">{service.title}</p>
                               <p className="mt-1 line-clamp-2 text-xs leading-5 text-slate-400">
@@ -78,8 +78,8 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "inline-flex h-10 items-center rounded-md px-3 text-sm font-medium transition hover:bg-white/[0.06] hover:text-white",
-                  active ? "bg-white/[0.07] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" : "text-slate-300",
+                  "inline-flex h-10 items-center rounded-md px-3 text-sm font-medium transition hover:bg-kryptonix-gold/10 hover:text-ink-950",
+                  active ? "bg-kryptonix-gold/15 text-ink-950 shadow-[inset_0_0_0_1px_rgb(var(--color-gold-accent)/0.18)]" : "text-slate-700",
                 )}
               >
                 {item.label}
@@ -99,7 +99,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-white transition hover:bg-white/[0.08] lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ink-950/10 bg-white text-ink-950 shadow-sm transition hover:bg-kryptonix-gold/10 lg:hidden"
           aria-label="Toggle navigation"
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
@@ -108,7 +108,7 @@ export function SiteHeader() {
         </button>
       </Container>
 
-      <div className={cn("border-t border-white/10 lg:hidden", isOpen ? "block" : "hidden")}>
+      <div className={cn("border-t border-ink-950/10 bg-white lg:hidden", isOpen ? "block" : "hidden")}>
         <Container className="py-4">
           <nav className="grid gap-1" aria-label="Mobile navigation">
             {siteConfig.navItems.map((item) => (
@@ -116,8 +116,8 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-md px-3 py-3 text-sm font-medium transition hover:bg-white/[0.06]",
-                  isActive(item.href) ? "bg-white/[0.07] text-white" : "text-slate-200",
+                  "rounded-md px-3 py-3 text-sm font-medium transition hover:bg-kryptonix-gold/10",
+                  isActive(item.href) ? "bg-kryptonix-gold/15 text-ink-950" : "text-slate-700",
                 )}
                 onClick={() => setIsOpen(false)}
               >
@@ -126,7 +126,7 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="mt-4 border-t border-white/10 pt-4">
-            <p className="px-3 text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+            <p className="px-3 text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
               Popular services
             </p>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -134,7 +134,7 @@ export function SiteHeader() {
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="rounded-md border border-white/10 bg-white/[0.035] px-3 py-3 text-sm text-slate-300 transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+                  className="rounded-md border border-ink-950/10 bg-ink-950/[0.03] px-3 py-3 text-sm text-slate-700 transition hover:border-kryptonix-gold/30 hover:bg-kryptonix-gold/10 hover:text-ink-950"
                   onClick={() => setIsOpen(false)}
                 >
                   {service.title}
@@ -142,7 +142,7 @@ export function SiteHeader() {
               ))}
             </div>
           </div>
-          <div className="mt-4 grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2">
+          <div className="mt-4 grid gap-3 border-t border-ink-950/10 pt-4 sm:grid-cols-2">
             <Button href="/contact" variant="secondary">
               Talk to us
             </Button>

@@ -8,11 +8,11 @@ type ButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 const variants = {
   primary:
-    "bg-kyptonix-green text-ink-950 shadow-[0_0_32px_rgba(63,185,80,0.24)] hover:-translate-y-0.5 hover:bg-[#56d364] focus-visible:ring-kyptonix-green",
+    "bg-kryptonix-green text-ink-950 shadow-[0_12px_28px_rgb(var(--color-bright-gold)/0.28)] hover:-translate-y-0.5 hover:bg-kryptonix-green/90 focus-visible:ring-kryptonix-green",
   secondary:
-    "border border-white/18 bg-white/[0.07] text-white backdrop-blur hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.11] focus-visible:ring-kyptonix-blue",
+    "border border-ink-950/15 bg-white text-ink-950 shadow-sm backdrop-blur hover:-translate-y-0.5 hover:border-kryptonix-gold/40 hover:bg-kryptonix-gold/10 focus-visible:ring-kryptonix-blue",
   ghost:
-    "text-slate-300 hover:bg-white/[0.06] hover:text-white focus-visible:ring-kyptonix-violet",
+    "text-ink-950 hover:bg-kryptonix-gold/10 hover:text-ink-950 focus-visible:ring-kryptonix-violet",
 };
 
 export function Button({

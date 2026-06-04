@@ -5,9 +5,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Terms of Service",
   description:
-    "Read the Kyptonix Technologies terms of service for website use, service inquiries, quote requests, acceptable use, intellectual property, and legal notices.",
+    "Read the Kryptonix Technologies terms of service for website use, service inquiries, quote requests, acceptable use, intellectual property, and legal notices.",
   path: "/terms",
-  keywords: ["Kyptonix terms", "terms of service"],
+  keywords: ["Kryptonix terms", "terms of service"],
 });
 
 export default function TermsPage() {

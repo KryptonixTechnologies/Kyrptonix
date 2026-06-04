@@ -11,9 +11,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Careers",
   description:
-    "Explore Kyptonix Technologies careers, internships, future roles, culture, and opportunities to build software, cloud, cybersecurity, and IT solutions for real organisations.",
+    "Explore Kryptonix Technologies careers, internships, future roles, culture, and opportunities to build software, cloud, cybersecurity, and IT solutions for real organisations.",
   path: "/careers",
-  keywords: ["Kyptonix careers", "technology internships Kenya", "IT jobs Kenya"],
+  keywords: ["Kryptonix careers", "technology internships Kenya", "IT jobs Kenya"],
 });
 
 export default function CareersPage() {
@@ -21,15 +21,15 @@ export default function CareersPage() {
     <main>
       <PageHero
         eyebrow="Careers"
-        title="Build meaningful technology with Kyptonix."
-        description="Explore future roles, internships, benefits, and the kind of technology work Kyptonix is building around."
+        title="Build meaningful technology with Kryptonix."
+        description="Explore future roles, internships, benefits, and the kind of technology work Kryptonix is building around."
       />
 
       <Section>
         <Container>
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <GlassCard className="sticky top-24 p-6">
-              <BriefcaseBusiness className="h-6 w-6 text-kyptonix-cyan" aria-hidden="true" />
+              <BriefcaseBusiness className="h-6 w-6 text-kryptonix-cyan" aria-hidden="true" />
               <SectionHeading
                 className="mt-6"
                 eyebrow="Open Roles"
@@ -53,7 +53,7 @@ export default function CareersPage() {
                 <GlassCard key={job.title} className="group p-5">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
                         {job.department}
                       </p>
                       <h2 className="mt-4 text-xl font-semibold text-white">{job.title}</h2>
@@ -70,7 +70,7 @@ export default function CareersPage() {
                   <p className="mt-4 text-sm leading-6 text-slate-400">{job.summary}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {job.skills.map((skill) => (
-                      <span key={skill} className="rounded-full border border-kyptonix-cyan/20 bg-kyptonix-cyan/10 px-3 py-1 text-xs text-kyptonix-cyan">
+                      <span key={skill} className="rounded-full border border-kryptonix-cyan/20 bg-kryptonix-cyan/10 px-3 py-1 text-xs text-kryptonix-cyan">
                         {skill}
                       </span>
                     ))}
@@ -82,10 +82,10 @@ export default function CareersPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10 bg-ink-950/55">
+      <Section className="border-t border-ink-950/10 bg-[var(--off-white)]">
         <Container>
           <SectionHeading
-            eyebrow="Life at Kyptonix"
+            eyebrow="Life at Kryptonix"
             title="Built for people who like useful technology."
             description="This section frames the working environment, with culture photography and employee stories ready to follow as the team grows."
             align="center"
@@ -97,7 +97,7 @@ export default function CareersPage() {
 
               return (
                 <GlassCard key={item.title} className="p-5">
-                  <Icon className="h-6 w-6 text-kyptonix-cyan" aria-hidden="true" />
+                  <Icon className="h-6 w-6 text-kryptonix-cyan" aria-hidden="true" />
                   <h3 className="mt-5 text-base font-semibold text-white">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-400">{item.description}</p>
                 </GlassCard>
@@ -107,7 +107,7 @@ export default function CareersPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10">
+      <Section className="border-t border-ink-950/10">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
@@ -122,7 +122,7 @@ export default function CareersPage() {
 
                   return (
                     <GlassCard key={benefit.title} className="p-5">
-                      <Icon className="h-5 w-5 text-kyptonix-cyan" aria-hidden="true" />
+                      <Icon className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
                       <h3 className="mt-4 text-base font-semibold text-white">{benefit.title}</h3>
                       <p className="mt-2 text-sm leading-6 text-slate-400">{benefit.description}</p>
                     </GlassCard>
@@ -132,8 +132,8 @@ export default function CareersPage() {
             </div>
 
             <GlassCard className="p-6">
-              <GraduationCap className="h-7 w-7 text-kyptonix-cyan" aria-hidden="true" />
-              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+              <GraduationCap className="h-7 w-7 text-kryptonix-cyan" aria-hidden="true" />
+              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
                 Internship Programme
               </p>
               <h2 className="mt-4 text-2xl font-semibold text-white">A pathway for early talent.</h2>
@@ -144,7 +144,7 @@ export default function CareersPage() {
               <div className="mt-6 grid gap-3">
                 {["Software and web development", "IT support and infrastructure", "Cloud and cybersecurity basics", "Digital marketing and content"].map((track) => (
                   <div key={track} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-kyptonix-green" aria-hidden="true" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-kryptonix-green" aria-hidden="true" />
                     <span className="text-sm leading-6 text-slate-300">{track}</span>
                   </div>
                 ))}
@@ -154,10 +154,10 @@ export default function CareersPage() {
         </Container>
       </Section>
 
-      <Section id="general-application" className="border-t border-white/10 bg-ink-950/55">
+      <Section id="general-application" className="border-t border-ink-950/10 bg-[var(--off-white)]">
         <Container>
           <GlassCard className="p-8 text-center sm:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">General Application</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">General Application</p>
             <h2 className="mx-auto mt-4 max-w-3xl font-display text-3xl font-semibold text-white">
               Do not see the right role yet?
             </h2>

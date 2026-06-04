@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
-  --background: #010409;
-  --foreground: #f0f6fc;
-  --muted: #8b949e;
-  --border: rgba(240, 246, 252, 0.16);
-  --mouse-x: 0;
-  --mouse-y: 0;
-  --font-inter: Inter, ui-sans-serif, system-ui, sans-serif;
-  --font-display: Poppins, Inter, ui-sans-serif, system-ui, sans-serif;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -27,11 +15,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 50% 6rem, rgba(137, 87, 229, 0.34), transparent 25rem),
-    radial-gradient(circle at 22% 19rem, rgba(47, 129, 247, 0.28), transparent 28rem),
-    linear-gradient(180deg, rgba(18, 32, 74, 0.96) 0%, rgba(13, 17, 23, 0.98) 26rem, rgba(1, 4, 9, 0.98) 62rem),
-    linear-gradient(120deg, rgba(137, 87, 229, 0.2), transparent 34%),
-    linear-gradient(245deg, rgba(57, 197, 207, 0.16), transparent 38%),
+    radial-gradient(circle at 72% 8rem, rgb(var(--color-light-gold) / 0.38), transparent 24rem),
+    radial-gradient(circle at 8% 24rem, rgb(var(--color-secondary-navy) / 0.08), transparent 24rem),
+    linear-gradient(180deg, var(--white) 0%, var(--off-white) 32rem, var(--white) 100%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
@@ -56,13 +42,13 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
 a:focus-visible {
-  outline: 2px solid rgba(57, 197, 207, 0.9);
+  outline: 2px solid rgb(var(--color-bright-gold) / 0.95);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: rgba(47, 129, 247, 0.45);
-  color: #ffffff;
+  background: rgb(var(--color-gold-accent) / 0.5);
+  color: var(--white);
 }
 
 @layer utilities {
@@ -91,8 +77,8 @@ a:focus-visible {
 
   .ambient-grid {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.075) 1px, transparent 1px);
+      linear-gradient(rgb(var(--color-primary-navy) / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--color-primary-navy) / 0.045) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: linear-gradient(to bottom, black, transparent 78%);
   }
@@ -101,18 +87,37 @@ a:focus-visible {
     position: relative;
     border: 1px solid var(--border);
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 34%),
-      linear-gradient(135deg, rgba(33, 38, 45, 0.86), rgba(13, 17, 23, 0.68));
+      linear-gradient(180deg, rgb(var(--color-white) / 0.96), rgb(var(--color-off-white) / 0.88));
+    color: var(--text-dark);
     box-shadow:
-      0 24px 80px rgba(1, 4, 9, 0.36),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06),
-      0 0 38px rgba(47, 129, 247, 0.07),
-      0 0 46px rgba(137, 87, 229, 0.07);
+      0 18px 50px rgb(var(--color-primary-navy) / 0.09),
+      inset 0 1px 0 rgb(var(--color-white) / 0.9),
+      0 0 34px rgb(var(--color-gold-accent) / 0.07);
     backdrop-filter: blur(22px);
   }
 
+  .glass-panel .text-white {
+    color: var(--text-dark);
+  }
+
+  .glass-panel .text-slate-300,
+  .glass-panel .text-slate-400,
+  .glass-panel .text-slate-500 {
+    color: var(--text-medium);
+  }
+
+  .glass-panel .bg-ink-950\/80,
+  .glass-panel .bg-ink-950\/70 {
+    background-color: rgb(var(--color-primary-navy) / 0.96);
+  }
+
+  .glass-panel .bg-ink-950\/80 .text-white,
+  .glass-panel .bg-ink-950\/70 .text-white {
+    color: var(--white);
+  }
+
   .soft-divider {
-    background: linear-gradient(90deg, transparent, rgba(57, 197, 207, 0.32), transparent);
+    background: linear-gradient(90deg, transparent, rgb(var(--color-gold-accent) / 0.36), transparent);
   }
 
   .glow-edge::before {
@@ -124,10 +129,10 @@ a:focus-visible {
     padding: 1px;
     background: linear-gradient(
       135deg,
-      rgba(47, 129, 247, 0.42),
-      rgba(137, 87, 229, 0.32) 34%,
-      rgba(191, 122, 240, 0.24) 58%,
-      rgba(57, 197, 207, 0.26)
+      rgb(var(--color-gold-accent) / 0.46),
+      rgb(var(--color-bright-gold) / 0.34) 34%,
+      rgb(var(--color-light-gold) / 0.26) 58%,
+      rgb(var(--color-secondary-navy) / 0.34)
     );
     opacity: 0.68;
     pointer-events: none;
@@ -144,9 +149,9 @@ a:focus-visible {
     inset: -1px;
     z-index: -1;
     border-radius: inherit;
-    background: radial-gradient(circle at 20% 0%, rgba(47, 129, 247, 0.12), transparent 38%),
-      radial-gradient(circle at 85% 100%, rgba(137, 87, 229, 0.16), transparent 40%);
-    opacity: 0.62;
+    background: radial-gradient(circle at 20% 0%, rgb(var(--color-gold-accent) / 0.16), transparent 38%),
+      radial-gradient(circle at 85% 100%, rgb(var(--color-secondary-navy) / 0.18), transparent 40%);
+    opacity: 0.28;
     filter: blur(20px);
     pointer-events: none;
   }
@@ -157,7 +162,7 @@ a:focus-visible {
   }
 
   .gradient-text {
-    background: linear-gradient(90deg, #ffffff 0%, #c9d7ff 42%, #bf7af0 74%, #39c5cf 100%);
+    background: linear-gradient(90deg, var(--primary-navy) 0%, var(--secondary-navy) 34%, var(--gold-accent) 72%, var(--bright-gold) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

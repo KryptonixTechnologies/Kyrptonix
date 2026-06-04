@@ -1,0 +1,38 @@
+:root {
+  color-scheme: light;
+
+  /* Kryptonix brand palette. Change these values to update the site theme globally. */
+  --primary-navy: #081F5C;
+  --secondary-navy: #102B72;
+  --gold-accent: #D4A12E;
+  --bright-gold: #E0B347;
+  --light-gold: #F3D58A;
+  --white: #FFFFFF;
+  --off-white: #F8F9FB;
+  --light-gray: #E8ECF3;
+  --text-dark: #172033;
+  --text-medium: #5c667a;
+
+  /* RGB channels for Tailwind opacity modifiers, e.g. bg-kryptonix-cyan/10. */
+  --color-primary-navy: 8 31 92;
+  --color-secondary-navy: 16 43 114;
+  --color-gold-accent: 212 161 46;
+  --color-bright-gold: 224 179 71;
+  --color-light-gold: 243 213 138;
+  --color-white: 255 255 255;
+  --color-off-white: 248 249 251;
+  --color-light-gray: 232 236 243;
+  --color-text-dark: 23 32 51;
+  --color-text-medium: 92 102 122;
+  --color-navy-surface: 13 38 104;
+  --color-navy-border: 26 58 132;
+
+  --background: var(--off-white);
+  --foreground: var(--text-dark);
+  --muted: var(--text-medium);
+  --border: rgb(var(--color-light-gray) / 0.92);
+  --mouse-x: 0;
+  --mouse-y: 0;
+  --font-inter: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Poppins, Inter, ui-sans-serif, system-ui, sans-serif;
+}

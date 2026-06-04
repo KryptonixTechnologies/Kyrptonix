@@ -1,6 +1,6 @@
-# Kyptonix Technologies
+# Kryptonix Technologies
 
-Frontend-first corporate website for Kyptonix Technologies.
+Frontend-first corporate website for Kryptonix Technologies.
 
 ## Stack
 

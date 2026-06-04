@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Resources",
   description:
-    "Read Kyptonix Technologies insights, guides, articles, whitepapers, and webinars about software, cloud, cybersecurity, automation, data, and practical IT strategy.",
+    "Read Kryptonix Technologies insights, guides, articles, whitepapers, and webinars about software, cloud, cybersecurity, automation, data, and practical IT strategy.",
   path: "/resources",
   keywords: ["technology guides", "cloud insights", "cybersecurity resources"],
 });
@@ -28,9 +28,9 @@ export default function ResourcesPage() {
         <Container>
           <GlassCard className="overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="min-h-64 bg-[radial-gradient(circle_at_35%_30%,rgba(57,197,207,0.25),transparent_36%),radial-gradient(circle_at_70%_75%,rgba(137,87,229,0.3),transparent_40%),linear-gradient(135deg,rgba(13,17,23,0.92),rgba(1,4,9,0.98))]" />
+              <div className="min-h-64 bg-[radial-gradient(circle_at_35%_30%,rgb(var(--color-gold-accent)/0.25),transparent_36%),radial-gradient(circle_at_70%_75%,rgb(var(--color-gold-accent)/0.3),transparent_40%),linear-gradient(135deg,rgb(var(--color-primary-navy)/0.92),rgb(3 13 42/0.98))]" />
               <div className="p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kyptonix-cyan">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
                   Featured resource
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold text-white">{featuredResource.title}</h2>
@@ -51,7 +51,7 @@ export default function ResourcesPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10 bg-ink-950/55">
+      <Section className="border-t border-ink-950/10 bg-[var(--off-white)]">
         <Container>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
@@ -80,7 +80,7 @@ export default function ResourcesPage() {
             {resources.map((post) => (
               <GlassCard key={post.title} className="p-5">
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full border border-kyptonix-cyan/20 bg-kyptonix-cyan/10 px-3 py-1 text-xs font-semibold text-kyptonix-cyan">
+                  <span className="rounded-full border border-kryptonix-cyan/20 bg-kryptonix-cyan/10 px-3 py-1 text-xs font-semibold text-kryptonix-cyan">
                     {post.category}
                   </span>
                   <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-slate-400">
@@ -99,7 +99,7 @@ export default function ResourcesPage() {
           <GlassCard className="mt-10 p-6">
             <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
               <div>
-                <Mail className="h-6 w-6 text-kyptonix-cyan" aria-hidden="true" />
+                <Mail className="h-6 w-6 text-kryptonix-cyan" aria-hidden="true" />
                 <h2 className="mt-4 text-2xl font-semibold text-white">Newsletter updates</h2>
                 <p className="mt-2 text-sm leading-6 text-slate-400">
                   Frontend-only email capture area. Later this can connect to Mailchimp, Brevo, or a CRM.
@@ -108,7 +108,7 @@ export default function ResourcesPage() {
               <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
                 <input
                   aria-label="Newsletter email address"
-                  className="h-11 rounded-md border border-white/10 bg-white/[0.04] px-3 text-sm text-white outline-none placeholder:text-slate-600 focus:border-kyptonix-cyan"
+                  className="h-11 rounded-md border border-white/10 bg-white/[0.04] px-3 text-sm text-white outline-none placeholder:text-slate-600 focus:border-kryptonix-cyan"
                   placeholder="Email address"
                 />
                 <Button href="/contact" showArrow>

@@ -17,7 +17,7 @@ export function pageMetadata({ title, description, path, keywords = [] }: PageMe
     title,
     description,
     keywords: [
-      "Kyptonix Technologies",
+      "Kryptonix Technologies",
       "IT solutions Kenya",
       "software development Kenya",
       "cloud services",

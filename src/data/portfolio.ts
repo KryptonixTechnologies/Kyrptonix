@@ -20,7 +20,7 @@ export const portfolioProjects = [
     region: "East Africa",
     status: "Case study planned",
     outcome: "A responsive business platform prepared for CRM and payment integrations.",
-    testimonial: "Kyptonix helped us turn a business idea into a clear product structure.",
+    testimonial: "Kryptonix helped us turn a business idea into a clear product structure.",
   },
   {
     name: "Cloud Migration Program",

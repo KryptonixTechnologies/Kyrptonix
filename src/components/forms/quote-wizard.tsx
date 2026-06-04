@@ -29,7 +29,7 @@ const initialValues: QuoteValues = {
 const steps = ["Select services", "Project brief", "Budget & timeline", "Contact details"];
 
 const inputClass =
-  "h-11 rounded-md border border-white/10 bg-white/[0.04] px-3 text-sm text-white outline-none placeholder:text-slate-600 focus:border-kyptonix-cyan";
+  "h-11 rounded-md border border-ink-950/10 bg-white px-3 text-sm text-ink-950 outline-none placeholder:text-slate-500 focus:border-kryptonix-cyan";
 
 export function QuoteWizard() {
   const [step, setStep] = useState(0);
@@ -74,8 +74,8 @@ export function QuoteWizard() {
   if (submitted) {
     return (
       <GlassCard className="p-6">
-        <div className="rounded-md border border-kyptonix-green/30 bg-kyptonix-green/10 p-5">
-          <CheckCircle2 className="h-7 w-7 text-kyptonix-green" aria-hidden="true" />
+        <div className="rounded-md border border-kryptonix-green/30 bg-kryptonix-green/10 p-5">
+          <CheckCircle2 className="h-7 w-7 text-kryptonix-green" aria-hidden="true" />
           <h2 className="mt-4 text-xl font-semibold text-white">Quote request prepared.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
             Your request summary is ready. The live delivery version can send it directly to the sales team through email or CRM.
@@ -107,12 +107,12 @@ export function QuoteWizard() {
             className={cn(
               "rounded-md border p-4 text-left transition",
               index === step
-                ? "border-kyptonix-cyan/60 bg-kyptonix-cyan/10"
+                ? "border-kryptonix-cyan/60 bg-kryptonix-cyan/10"
                 : "border-white/10 bg-white/[0.035] hover:bg-white/[0.06]",
             )}
             onClick={() => setStep(index)}
           >
-            <p className="text-sm text-kyptonix-cyan">Step {index + 1}</p>
+            <p className="text-sm text-kryptonix-cyan">Step {index + 1}</p>
             <h2 className="mt-2 text-base font-semibold text-white">{label}</h2>
           </button>
         ))}
@@ -129,14 +129,14 @@ export function QuoteWizard() {
                   className={cn(
                     "flex items-center gap-3 rounded-md border p-3 text-sm text-slate-300 transition",
                     values.services.includes(service.slug)
-                      ? "border-kyptonix-cyan/60 bg-kyptonix-cyan/10"
+                      ? "border-kryptonix-cyan/60 bg-kryptonix-cyan/10"
                       : "border-white/10 bg-white/[0.035]",
                   )}
                 >
                   <input
                     aria-label={`Select ${service.title}`}
                     type="checkbox"
-                    className="h-4 w-4 accent-kyptonix-cyan"
+                    className="h-4 w-4 accent-kryptonix-cyan"
                     checked={values.services.includes(service.slug)}
                     onChange={() => toggleService(service.slug)}
                   />
@@ -152,7 +152,7 @@ export function QuoteWizard() {
             <h2 className="text-xl font-semibold text-white">Project brief</h2>
             <textarea
               aria-label="Project brief"
-              className="mt-4 min-h-52 w-full rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-white outline-none placeholder:text-slate-600 focus:border-kyptonix-cyan"
+              className="mt-4 min-h-52 w-full rounded-md border border-white/10 bg-white/[0.04] p-4 text-sm text-white outline-none placeholder:text-slate-600 focus:border-kryptonix-cyan"
               placeholder="Describe your project, current challenge, audience, goals, and any known requirements."
               value={values.brief}
               onChange={(event) => setValues((current) => ({ ...current, brief: event.target.value }))}
@@ -245,7 +245,7 @@ export function QuoteWizard() {
           {step < steps.length - 1 ? (
             <button
               type="button"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-white px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-slate-200"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-kryptonix-green/90"
               onClick={goNext}
             >
               Continue
@@ -254,7 +254,7 @@ export function QuoteWizard() {
           ) : (
             <button
               type="submit"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-white px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-slate-200"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-kryptonix-green/90"
             >
               Submit Quote Request
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />

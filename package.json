@@ -1,14 +1,14 @@
 {
-  "name": "kyptonix-technologies",
+  "name": "kryptonix-technologies",
   "version": "0.1.0",
   "private": true,
- "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "eslint .",
-  "typecheck": "tsc --noEmit --project tsconfig.typecheck.json"
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "NEXT_DIST_DIR=.next-build next build",
+    "start": "NEXT_DIST_DIR=.next-build next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit --project tsconfig.typecheck.json"
+  },
   "dependencies": {
     "clsx": "2.1.1",
     "framer-motion": "12.38.0",
