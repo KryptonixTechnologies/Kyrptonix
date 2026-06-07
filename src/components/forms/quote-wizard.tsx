@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { serviceCategories } from "@/data/services";
 import { cn } from "@/lib/utils";
+import { submitToWeb3Forms } from "@/lib/web3forms";
 
 type QuoteValues = {
   services: string[];
@@ -36,6 +37,8 @@ export function QuoteWizard() {
   const [values, setValues] = useState<QuoteValues>(initialValues);
   const [submitted, setSubmitted] = useState(false);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const stepError = useMemo(() => {
     if (step === 0 && values.services.length === 0) return "Select at least one service.";
@@ -64,11 +67,46 @@ export function QuoteWizard() {
     setStep((current) => Math.min(current + 1, steps.length - 1));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAttemptedSubmit(true);
+    setSubmitError("");
     if (stepError) return;
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+
+    try {
+      const selectedServices = serviceCategories
+        .filter((service) => values.services.includes(service.slug))
+        .map((service) => service.title);
+
+      await submitToWeb3Forms({
+        subject: `Quote request from ${values.name}`,
+        from_name: values.name,
+        name: values.name,
+        email: values.email,
+        preferred_contact_method: values.contactMethod,
+        services: selectedServices,
+        project_brief: values.brief,
+        budget: values.budget,
+        timeline: values.timeline,
+        message: [
+          `Services: ${selectedServices.join(", ")}`,
+          `Budget: ${values.budget}`,
+          `Timeline: ${values.timeline}`,
+          `Preferred contact method: ${values.contactMethod}`,
+          "",
+          values.brief,
+        ].join("\n"),
+        form_name: "Kryptonix quote request form",
+      });
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Your quote request could not be sent right now.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -76,9 +114,9 @@ export function QuoteWizard() {
       <GlassCard className="p-6">
         <div className="rounded-md border border-kryptonix-green/30 bg-kryptonix-green/10 p-5">
           <CheckCircle2 className="h-7 w-7 text-kryptonix-green" aria-hidden="true" />
-          <h2 className="mt-4 text-xl font-semibold text-white">Quote request prepared.</h2>
+          <h2 className="mt-4 text-xl font-semibold text-white">Quote request sent successfully.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Your request summary is ready. The live delivery version can send it directly to the sales team through email or CRM.
+            Thanks. Your project details have been sent to Kryptonix Technologies, and we will follow up with the next steps.
           </p>
           <button
             type="button"
@@ -227,6 +265,11 @@ export function QuoteWizard() {
         ) : null}
 
         {attemptedSubmit && stepError ? <p className="mt-4 text-sm text-red-300">{stepError}</p> : null}
+        {submitError ? (
+          <div className="mt-4 rounded-md border border-red-300/40 bg-red-500/10 p-3 text-sm leading-6 text-red-200" role="alert">
+            We could not send your quote request. Please try again, or contact us directly on WhatsApp.
+          </div>
+        ) : null}
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <button
@@ -254,9 +297,10 @@ export function QuoteWizard() {
           ) : (
             <button
               type="submit"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-kryptonix-green/90"
+              disabled={isSubmitting}
+              className="inline-flex h-11 items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-kryptonix-green/90 disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Submit Quote Request
+              {isSubmitting ? "Sending..." : "Submit Quote Request"}
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
             </button>
           )}

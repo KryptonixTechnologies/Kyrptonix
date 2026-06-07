@@ -402,7 +402,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="relative isolate overflow-hidden bg-white">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <Reveal>
@@ -410,13 +410,13 @@ export default function Home() {
               <h2 className="mt-3 font-display text-3xl font-semibold text-ink-950 sm:text-4xl">
                 Solutions for Every Industry
               </h2>
-              <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div className="mt-8 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:grid-cols-4">
                 {industries.map((industry) => {
                   const Icon = industry.icon;
 
                   return (
                     <div key={industry.title} className="rounded-md border border-ink-950/10 bg-white p-4 text-center shadow-sm">
-                      <Icon className="mx-auto h-7 w-7 text-kryptonix-cyan" aria-hidden="true" />
+                      <Icon className="mx-auto h-8 w-8 text-kryptonix-cyan" aria-hidden="true" />
                       <p className="mt-3 text-sm font-semibold leading-5 text-ink-950">{industry.title}</p>
                     </div>
                   );

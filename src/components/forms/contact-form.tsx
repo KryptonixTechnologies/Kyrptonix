@@ -4,6 +4,7 @@ import { FormEvent, useMemo, useState } from "react";
 import { CheckCircle2, Send } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { cn } from "@/lib/utils";
+import { submitToWeb3Forms } from "@/lib/web3forms";
 
 type ContactValues = {
   name: string;
@@ -33,6 +34,8 @@ export function ContactForm() {
   const [values, setValues] = useState<ContactValues>(initialValues);
   const [submitted, setSubmitted] = useState(false);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const errors = useMemo(() => {
     const nextErrors: Partial<Record<keyof ContactValues, string>> = {};
@@ -53,13 +56,34 @@ export function ContactForm() {
     setValues((current) => ({ ...current, [field]: value }));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAttemptedSubmit(true);
+    setSubmitError("");
 
     if (Object.keys(errors).length > 0) return;
 
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      await submitToWeb3Forms({
+        subject: `Website contact: ${values.subject}`,
+        from_name: values.name,
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        company: values.company,
+        inquiry_subject: values.subject,
+        message: values.message,
+        form_name: "Kryptonix contact form",
+      });
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Your message could not be sent right now.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -67,10 +91,9 @@ export function ContactForm() {
       <GlassCard className="p-6">
         <div className="rounded-md border border-kryptonix-green/30 bg-kryptonix-green/10 p-5">
           <CheckCircle2 className="h-7 w-7 text-kryptonix-green" aria-hidden="true" />
-          <h2 className="mt-4 text-xl font-semibold text-white">Message received.</h2>
+          <h2 className="mt-4 text-xl font-semibold text-white">Message sent successfully.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Thanks for reaching out. The live delivery version can route this request to email, CRM,
-            CAPTCHA, and analytics events.
+            Thanks for reaching out. Your message has been sent to Kryptonix Technologies, and we will respond as soon as possible.
           </p>
           <button
             type="button"
@@ -152,11 +175,18 @@ export function ContactForm() {
           />
         </FieldError>
 
+        {submitError ? (
+          <div className="rounded-md border border-red-300/40 bg-red-500/10 p-3 text-sm leading-6 text-red-200" role="alert">
+            We could not send your message. Please try again, or contact us directly on WhatsApp.
+          </div>
+        ) : null}
+
         <button
           type="submit"
-          className="mt-2 inline-flex h-11 w-fit items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-kryptonix-green/90"
+          disabled={isSubmitting}
+          className="mt-2 inline-flex h-11 w-fit items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 shadow-glow-blue transition hover:bg-kryptonix-green/90 disabled:cursor-not-allowed disabled:opacity-70"
         >
-          Submit Request
+          {isSubmitting ? "Sending..." : "Submit Request"}
           <Send className="ml-2 h-4 w-4" aria-hidden="true" />
         </button>
       </form>
