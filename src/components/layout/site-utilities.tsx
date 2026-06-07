@@ -62,9 +62,9 @@ export function SiteUtilities() {
           target="_blank"
           rel="noreferrer"
           aria-label="Chat with Kryptonix Technologies on WhatsApp"
-          className="grid h-12 w-12 place-items-center rounded-full border border-kryptonix-green/35 bg-kryptonix-green/[0.22] text-white shadow-[0_0_44px_rgb(var(--color-bright-gold)/0.22)] backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-kryptonix-green/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kryptonix-green"
+          className="grid h-14 w-14 place-items-center rounded-full border border-[#1ebe5d] bg-[#25D366] text-white shadow-[0_12px_30px_rgba(37,211,102,0.38)] transition duration-200 hover:-translate-y-1 hover:bg-[#20bd5a] hover:shadow-[0_16px_34px_rgba(37,211,102,0.48)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
         >
-          <WhatsAppIcon className="h-6 w-6" aria-hidden="true" />
+          <WhatsAppIcon className="h-7 w-7" aria-hidden="true" />
         </a>
       </div>
 

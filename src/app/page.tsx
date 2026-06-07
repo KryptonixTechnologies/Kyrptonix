@@ -24,12 +24,13 @@ import {
   Truck,
   Waves,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
-import { HeroBackgroundVideo } from "@/components/visuals/hero-background-video";
+import { HeroImageCarousel } from "@/components/visuals/hero-image-carousel";
 
 const trustItems = ["50+ Projects Delivered", "Fast Turnaround", "Responsive Design", "Ongoing Support", "Built in Kenya"];
 
@@ -41,30 +42,67 @@ const heroStats = [
   { value: "24/7", label: "Support Available" },
 ];
 
+const heroSlides = [
+  {
+    src: "/landing section/Website Development Oklahoma for Better Online Presence home page landing section.jpeg",
+    alt: "Website development workspace showing a modern business website",
+    label: "Websites built for a stronger online presence",
+  },
+  {
+    src: "/landing section/system design homepage.jpeg",
+    alt: "Network equipment representing reliable system design",
+    label: "Reliable systems and infrastructure",
+  },
+  {
+    src: "/landing section/Website Customization.jpeg",
+    alt: "Website customization and design workspace",
+    label: "Custom digital experiences for every business",
+  },
+  {
+    src: "/landing section/digital presence.jpeg",
+    alt: "Digital marketing tools displayed across connected devices",
+    label: "A digital presence designed for growth",
+  },
+  {
+    src: "/landing section/Managed IT Support.jpeg",
+    alt: "Technology professional providing managed IT support",
+    label: "Managed IT support that keeps teams moving",
+  },
+  {
+    src: "/landing section/Five Things That Everyone Should Know About Cybersecurityhomepage landing section.jpeg",
+    alt: "Cybersecurity concept protecting business technology",
+    label: "Security built into every solution",
+  },
+];
+
 const solutions = [
   {
     title: "Websites & Digital Presence",
     icon: Store,
     points: ["Corporate Websites", "E-commerce Solutions", "Landing Pages", "SEO & Performance"],
-    art: "web",
+    image: "/websites and digital presence",
+    imageAlt: "SEO and digital presence technology",
   },
   {
     title: "Business Systems",
     icon: BriefcaseBusiness,
     points: ["ERP & Business Management", "POS & Inventory Systems", "HR & Payroll Systems", "Custom Web Applications"],
-    art: "systems",
+    image: "/business systems.jpeg",
+    imageAlt: "Point of sale business system in a retail environment",
   },
   {
     title: "Cloud & Infrastructure",
     icon: CloudCog,
     points: ["Cloud Hosting & Deployment", "Server Management", "Backup & Disaster Recovery", "DevOps & Monitoring"],
-    art: "cloud",
+    image: "/Cloud and infrastructure.jpeg",
+    imageAlt: "Cloud computing and infrastructure technology",
   },
   {
     title: "Automation & AI Solutions",
     icon: Bot,
     points: ["Workflow Automation", "Real-time Dashboards", "Reporting & Analytics", "AI & API Integrations"],
-    art: "ai",
+    image: "/automation and AI solutions.jpeg",
+    imageAlt: "Automation and artificial intelligence solutions",
   },
 ];
 
@@ -73,25 +111,29 @@ const projects = [
     title: "E-Commerce Platform",
     problem: "Full-featured online store with payments and inventory.",
     solution: "React - Node.js - MongoDB",
-    variant: "shop",
+    image: "/E-Commerce Platform.jpeg",
+    imageAlt: "E-commerce platform displayed on a laptop",
   },
   {
     title: "Water Industry ERP",
     problem: "Complete ERP for water treatment business operations.",
     solution: "Next.js - PostgreSQL - Tailwind",
-    variant: "erp",
+    image: "/Water Industry.png",
+    imageAlt: "Water engineering company website and project showcase",
   },
   {
     title: "Corporate Website",
     problem: "Modern corporate website for a lead generation firm.",
     solution: "WordPress - PHP - Elementor",
-    variant: "site",
+    image: "/Corporate Website.png",
+    imageAlt: "Corporate website shown across desktop and mobile screens",
   },
   {
     title: "Service Booking Platform",
     problem: "Appointment and booking system with payment integration.",
     solution: "Vue.js - Laravel - MySQL",
-    variant: "booking",
+    image: "/Service Booking Platform.jpeg",
+    imageAlt: "Online service booking platform",
   },
 ];
 
@@ -147,69 +189,20 @@ function SectionIntro({
   );
 }
 
-function SolutionIllustration({ variant }: { variant: string }) {
-  return (
-    <div className="relative h-44 overflow-hidden rounded-md bg-[linear-gradient(135deg,#eef4ff,#ffffff_48%,#fff4d8)]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgb(var(--color-light-gold)/0.7),transparent_8rem),radial-gradient(circle_at_20%_70%,rgb(var(--color-secondary-navy)/0.12),transparent_7rem)]" />
-      <div className="absolute left-7 top-9 h-24 w-32 rounded-md border border-ink-950/10 bg-white shadow-xl">
-        <div className="h-6 rounded-t-md bg-ink-950" />
-        <div className="space-y-2 p-3">
-          <span className="block h-2 w-16 rounded bg-kryptonix-gold/70" />
-          <span className="block h-2 w-24 rounded bg-ink-950/12" />
-          <span className="block h-2 w-20 rounded bg-ink-950/12" />
-        </div>
-      </div>
-      <div className="absolute right-8 top-12 grid h-24 w-24 place-items-center rounded-full bg-kryptonix-gold/20">
-        <div className="grid h-16 w-16 place-items-center rounded-full bg-ink-950 text-sm font-bold text-white">
-          {variant === "ai" ? "AI" : variant === "cloud" ? "CL" : variant === "systems" ? "ERP" : "WEB"}
-        </div>
-      </div>
-      <div className="absolute bottom-6 left-24 h-16 w-28 rounded-md border border-kryptonix-gold/30 bg-white/80 shadow-lg" />
-    </div>
-  );
-}
-
-function ProjectMockup({ variant }: { variant: string }) {
-  return (
-    <div className="relative h-48 overflow-hidden rounded-md bg-[linear-gradient(135deg,#f6f7fb,#d7e0ef)]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgb(var(--color-gold-accent)/0.35),transparent_8rem)]" />
-      <div className="absolute left-8 top-8 h-28 w-40 rounded-md border border-white/70 bg-ink-950 shadow-2xl">
-        <div className="h-5 rounded-t-md bg-white/12" />
-        <div className="grid grid-cols-3 gap-2 p-3">
-          {Array.from({ length: 9 }).map((_, index) => (
-            <span key={index} className={`h-4 rounded ${index % 3 === 0 ? "bg-kryptonix-gold/80" : "bg-white/18"}`} />
-          ))}
-        </div>
-      </div>
-      <div className="absolute bottom-7 right-8 h-28 w-20 rounded-xl border-[5px] border-ink-950 bg-white shadow-xl">
-        <div className="mx-auto mt-2 h-1.5 w-7 rounded-full bg-ink-950/20" />
-        <div className="mt-4 space-y-2 px-3">
-          <span className="block h-2 rounded bg-kryptonix-gold/80" />
-          <span className="block h-2 rounded bg-ink-950/15" />
-          <span className="block h-2 rounded bg-ink-950/15" />
-        </div>
-      </div>
-      <div className="absolute bottom-5 left-8 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-ink-950 shadow">
-        {variant.toUpperCase()}
-      </div>
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-white">
-      <Section className="relative overflow-hidden bg-white pb-0 pt-10 sm:pt-14">
+      <Section className="relative overflow-visible bg-white !pb-0 !pt-0">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_47%,rgba(255,255,255,0.12)_74%)]" />
         <div className="ambient-grid pointer-events-none absolute inset-0 opacity-45" />
 
         <Container className="relative z-10">
-          <div className="grid min-h-[560px] gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-            <Reveal className="max-w-2xl">
+          <div className="grid min-h-[560px] gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <Reveal className="max-w-2xl pt-6 sm:pt-8 lg:pt-10">
               <span className="inline-flex rounded-full border border-kryptonix-gold/25 bg-white px-4 py-2 text-xs font-semibold text-ink-950 shadow-sm">
                 Your Trusted Technology Partner
               </span>
-              <h1 className="mt-6 font-display text-4xl font-bold leading-[0.98] text-ink-950 sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="mt-6 font-display text-4xl font-bold leading-[1.02] text-ink-950 sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
                 Building Software That Moves Businesses <span className="text-kryptonix-cyan">Forward</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
@@ -225,22 +218,8 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal className="relative min-h-[420px] overflow-hidden rounded-l-[2rem] border border-ink-950/10 shadow-2xl lg:-mr-12">
-              <HeroBackgroundVideo className="opacity-95" />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,31,92,0.12),rgba(8,31,92,0.52))]" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-                <button
-                  type="button"
-                  className="grid h-20 w-20 place-items-center rounded-full bg-white text-kryptonix-cyan shadow-2xl transition hover:scale-105"
-                  aria-label="Play Kryptonix story video"
-                >
-                  <CirclePlay className="h-10 w-10" aria-hidden="true" />
-                </button>
-                <p className="mt-5 text-base font-bold">Watch Our Story</p>
-                <p className="mt-2 max-w-xs text-sm leading-6 text-white/80">
-                  See how we help businesses grow through technology.
-                </p>
-              </div>
+            <Reveal className="relative min-h-[470px] overflow-hidden lg:-mr-12 lg:min-h-[500px]">
+              <HeroImageCarousel slides={heroSlides} />
             </Reveal>
           </div>
 
@@ -293,7 +272,16 @@ export default function Home() {
                     href="/services"
                     className="group block h-full rounded-md border border-ink-950/10 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl"
                   >
-                    <SolutionIllustration variant={solution.art} />
+                    <div className="relative h-44 overflow-hidden rounded-md bg-slate-100">
+                      <Image
+                        src={solution.image}
+                        alt={solution.imageAlt}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/25 to-transparent" />
+                    </div>
                     <Icon className="mt-6 h-7 w-7 text-kryptonix-cyan" aria-hidden="true" />
                     <h3 className="mt-4 text-xl font-bold text-ink-950">{solution.title}</h3>
                     <ul className="mt-4 space-y-2">
@@ -334,7 +322,16 @@ export default function Home() {
             {projects.map((project, index) => (
               <Reveal key={project.title} transition={{ delay: index * 0.06 }}>
                 <article className="h-full overflow-hidden rounded-md border border-white/15 bg-white/[0.04] shadow-xl">
-                  <ProjectMockup variant={project.variant} />
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition duration-500 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink-950/35 to-transparent" />
+                  </div>
                   <div className="p-5">
                     <h3 className="text-lg font-bold text-white">{project.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-300">{project.problem}</p>
@@ -448,17 +445,27 @@ export default function Home() {
                     </Button>
                   </div>
                 </div>
-                <div className="relative min-h-[330px] overflow-hidden rounded-md bg-[linear-gradient(160deg,#f4f6fb,#ffffff)]">
+                <div className="relative min-h-[390px] overflow-hidden rounded-md bg-[linear-gradient(160deg,#f4f6fb,#ffffff)]">
                   <div className="absolute right-4 top-4 grid grid-cols-4 gap-2 opacity-35">
                     {Array.from({ length: 20 }).map((_, index) => (
                       <span key={index} className="h-1.5 w-1.5 rounded-full bg-kryptonix-cyan" />
                     ))}
                   </div>
-                  <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-t-full bg-[linear-gradient(180deg,rgb(var(--color-light-gold)/0.35),rgb(var(--color-primary-navy)/0.12))]" />
-                  <div className="absolute bottom-0 left-1/2 h-56 w-44 -translate-x-1/2 rounded-t-[5rem] bg-ink-950 shadow-2xl" />
-                  <div className="absolute bottom-44 left-1/2 h-24 w-24 -translate-x-1/2 rounded-full bg-[linear-gradient(135deg,#8b5e3c,#d6a879)] shadow-xl" />
-                  <div className="absolute bottom-36 left-1/2 h-14 w-28 -translate-x-1/2 rounded-t-full bg-white" />
-                  <p className="absolute bottom-6 left-0 right-0 text-center text-sm font-bold text-white">Newton Manyisa</p>
+                  <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-t-full bg-[linear-gradient(180deg,rgb(var(--color-light-gold)/0.38),rgb(var(--color-primary-navy)/0.12))]" />
+                  <div className="absolute inset-x-8 bottom-0 h-28 rounded-t-full bg-ink-950/95 shadow-2xl" />
+                  <Image
+                    src="/Founder.png"
+                    alt="Newton Manyisa, founder of Kryptonix Technologies"
+                    fill
+                    sizes="(min-width: 1024px) 28vw, 100vw"
+                    className="object-contain object-bottom drop-shadow-2xl"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 via-ink-950/20 to-transparent p-5 pt-20">
+                    <p className="text-center text-sm font-bold text-white">Newton Manyisa</p>
+                    <p className="mt-1 text-center text-xs font-semibold uppercase tracking-[0.16em] text-kryptonix-green">
+                      Founder
+                    </p>
+                  </div>
                 </div>
               </div>
             </Reveal>
