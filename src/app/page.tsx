@@ -146,8 +146,6 @@ const process = [
   { step: "06", title: "Support", text: "We provide ongoing support and improvements.", icon: Headphones },
 ];
 
-const technologies = ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQL", "AWS", "Docker", "Tailwind CSS", "GitHub"];
-
 const benefits = [
   { title: "Fast Delivery", icon: Rocket },
   { title: "Business-Focused Solutions", icon: PackageCheck },
@@ -376,29 +374,6 @@ export default function Home() {
               );
             })}
           </div>
-        </Container>
-      </Section>
-
-      <Section className="px-3 py-0">
-        <Container className="rounded-md bg-[linear-gradient(135deg,rgb(var(--color-primary-navy)),rgb(var(--color-secondary-navy)))] py-10 shadow-xl">
-          <Reveal>
-            <SectionIntro
-              eyebrow="Technologies We Work With"
-              title="Modern Technologies. Powerful Solutions."
-              description="We choose practical tools that make products faster, safer, and easier to maintain."
-              light
-            />
-          </Reveal>
-          <Reveal className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5 lg:grid-cols-10">
-            {technologies.map((tech) => (
-              <div key={tech} className="rounded-md border border-white/10 bg-white/[0.04] p-3 text-center">
-                <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-white text-xs font-black text-ink-950">
-                  {tech.slice(0, 2)}
-                </div>
-                <p className="mt-3 text-sm font-semibold text-white">{tech}</p>
-              </div>
-            ))}
-          </Reveal>
         </Container>
       </Section>
 
