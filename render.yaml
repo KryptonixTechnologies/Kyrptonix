@@ -1,11 +1,9 @@
 services:
-  - type: web
+  - type: static_site
     name: kryptonix-technologies
-    runtime: node
-    plan: free
     autoDeploy: true
     buildCommand: npm ci && npm run build
-    startCommand: npm run start
+    staticPublishPath: out
     envVars:
       - key: NODE_VERSION
         value: 22
