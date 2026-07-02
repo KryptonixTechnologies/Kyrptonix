@@ -11,9 +11,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Portfolio",
   description:
-    "Explore Kryptonix Technologies portfolio structure for software, cloud, cybersecurity, IT infrastructure, public sector, and digital transformation project case studies.",
+    "View Kryptonix Technologies project work across e-commerce platforms, business systems, corporate websites, booking platforms, cloud solutions, and digital transformation projects.",
   path: "/portfolio",
-  keywords: ["Kryptonix portfolio", "technology case studies", "software project gallery"],
+  keywords: ["Kryptonix portfolio", "technology case studies Kenya", "software project gallery", "website portfolio Kenya"],
 });
 
 export default function PortfolioPage() {
@@ -21,8 +21,8 @@ export default function PortfolioPage() {
     <main>
       <PageHero
         eyebrow="Portfolio"
-        title="Project gallery structure is ready."
-        description="Explore the project gallery framework for software, cloud, cybersecurity, public sector, and digital work."
+        title="Recent technology work and delivery focus."
+        description="Explore examples of the digital products, business systems, websites, and operational platforms Kryptonix builds for growing organisations."
       />
       <Section>
         <Container>
@@ -60,8 +60,8 @@ export default function PortfolioPage() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               eyebrow="Gallery"
-              title="Project cards ready for approved work."
-              description="Filter categories and project cards are prepared for approved case studies, measurable outcomes, and detailed pages."
+              title="Project examples across business needs."
+              description="Use the project library to understand the kinds of solutions Kryptonix can plan, design, build, launch, and support."
             />
             <div className="flex flex-wrap gap-2">
               {projectFilters.map((filter) => (

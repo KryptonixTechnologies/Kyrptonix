@@ -10,9 +10,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact Us",
   description:
-    "Contact Kryptonix Technologies for software development, cloud services, cybersecurity, IT support, infrastructure, partnerships, sales, quote requests, and general inquiries.",
+    "Contact Kryptonix Technologies to discuss a website, business system, cloud project, cybersecurity need, automation idea, IT support request, partnership, or software development quote.",
   path: "/contact",
-  keywords: ["contact Kryptonix", "Kryptonix support", "IT consultation Kenya"],
+  keywords: ["contact Kryptonix", "Kryptonix support", "IT consultation Kenya", "software consultation Kenya"],
 });
 
 export default function ContactPage() {

@@ -7,9 +7,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Get a Quote",
   description:
-    "Request a quote from Kryptonix Technologies for software development, cloud migration, cybersecurity, IT support, infrastructure, automation, data, and digital transformation projects.",
+    "Request a free quote or consultation from Kryptonix Technologies for website development, custom software, ERP systems, cloud migration, cybersecurity, automation, AI integration, or IT support.",
   path: "/quote",
-  keywords: ["Kryptonix quote", "request IT quote", "software development quote Kenya"],
+  keywords: ["Kryptonix quote", "request IT quote", "software development quote Kenya", "website development quote Kenya"],
 });
 
 export default function QuotePage() {

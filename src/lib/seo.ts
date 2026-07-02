@@ -13,6 +13,14 @@ export function absoluteUrl(path = "/") {
 }
 
 export function pageMetadata({ title, description, path, keywords = [] }: PageMetadataOptions): Metadata {
+  const url = absoluteUrl(path);
+  const socialImage = {
+    url: "/Kryptonix logo.png",
+    width: 1001,
+    height: 249,
+    alt: "Kryptonix Technologies",
+  };
+
   return {
     title,
     description,
@@ -31,15 +39,28 @@ export function pageMetadata({ title, description, path, keywords = [] }: PageMe
     openGraph: {
       type: "website",
       locale: "en_KE",
-      url: path,
+      url,
       siteName: siteConfig.name,
       title: `${title} | ${siteConfig.name}`,
       description,
+      images: [socialImage],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${siteConfig.name}`,
       description,
+      images: [socialImage.url],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
   };
 }
@@ -51,19 +72,42 @@ export function jsonLd(data: unknown) {
 }
 
 export function organizationJsonLd() {
+  const sameAs = siteConfig.socialLinks
+    .map((link) => link.href)
+    .filter((href) => !["https://www.linkedin.com", "https://x.com", "https://www.facebook.com", "https://www.instagram.com", "https://www.youtube.com"].includes(href));
+
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     name: siteConfig.name,
     alternateName: siteConfig.shortName,
     url: siteConfig.url,
+    logo: absoluteUrl("/Kryptonix logo.png"),
+    image: absoluteUrl("/Kryptonix logo.png"),
     email: siteConfig.email,
     telephone: siteConfig.phone,
     description: siteConfig.description,
+    priceRange: "$$",
     areaServed: ["Kenya", "East Africa", "Africa", "Global"],
-    sameAs: siteConfig.socialLinks.map((link) => link.href),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        areaServed: ["KE", "EA", "Africa"],
+        availableLanguage: ["English", "Swahili"],
+      },
+    ],
+    ...(sameAs.length ? { sameAs } : {}),
     knowsAbout: [
       "Software development",
+      "Website development",
       "Cloud services",
       "Cybersecurity",
       "IT infrastructure",
@@ -71,6 +115,27 @@ export function organizationJsonLd() {
       "Digital transformation",
       "Data analytics",
       "Business automation",
+      "AI integration",
+      "ERP systems",
+      "E-commerce platforms",
     ],
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    alternateName: siteConfig.shortName,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: absoluteUrl("/Kryptonix logo.png"),
+    },
+    inLanguage: "en-KE",
   };
 }

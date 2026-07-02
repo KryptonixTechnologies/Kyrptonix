@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return pageMetadata({
     title: `${service.title} Services`,
-    description: `${service.summary} Kryptonix supports ${service.audiences.join(", ").toLowerCase()} with ${service.offerings
+    description: `Get ${service.title.toLowerCase()} services from Kryptonix Technologies in Kenya and East Africa, including ${service.offerings
       .slice(0, 3)
       .join(", ")
-      .toLowerCase()}, and practical implementation support.`,
+      .toLowerCase()}, planning, implementation, and support.`,
     path: service.href,
     keywords: [
       service.title,

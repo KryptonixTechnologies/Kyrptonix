@@ -11,9 +11,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Explore Kryptonix Technologies services across software development, cloud, cybersecurity, IT infrastructure, managed support, digital transformation, data, and SME technology packages.",
+    "Explore Kryptonix Technologies services for website development, custom software, ERP systems, cloud hosting, cybersecurity, IT support, automation, AI integration, and digital transformation.",
   path: "/services",
-  keywords: ["Kryptonix services", "IT service catalogue", "SME technology packages"],
+  keywords: ["Kryptonix services", "website development Kenya", "custom software Kenya", "IT support Kenya", "SME technology packages"],
 });
 
 export default function ServicesPage() {
@@ -22,7 +22,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="A complete technology catalogue for modern organisations."
-        description="Browse the Kryptonix service categories. Each category has its own frontend detail page ready for deeper content, FAQs, case studies, and quote CTAs."
+        description="Browse practical technology services designed to help businesses launch, operate, secure, automate, and scale with confidence."
       />
 
       <Section>
@@ -34,7 +34,7 @@ export default function ServicesPage() {
                 className="mt-6"
                 eyebrow="Find your fit"
                 title="Start broad, then drill down."
-                description="This catalogue is intentionally wide so a visitor can recognise their need quickly and move toward a relevant service page or quote request."
+                description="Choose the service category that matches your business goal, then move into a focused consultation or quote request."
               />
               <div className="mt-6 grid gap-3">
                 {["Build", "Operate", "Protect", "Transform", "Grow", "Launch"].map((item) => (

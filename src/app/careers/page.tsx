@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Careers",
   description:
-    "Explore Kryptonix Technologies careers, internships, future roles, culture, and opportunities to build software, cloud, cybersecurity, and IT solutions for real organisations.",
+    "Explore future careers, internships, and technology opportunities at Kryptonix Technologies for software developers, designers, cloud engineers, cybersecurity talent, and IT support professionals.",
   path: "/careers",
   keywords: ["Kryptonix careers", "technology internships Kenya", "IT jobs Kenya"],
 });
@@ -33,8 +33,8 @@ export default function CareersPage() {
               <SectionHeading
                 className="mt-6"
                 eyebrow="Open Roles"
-                title="A hiring structure ready for real vacancies."
-                description="Current openings are presented as upcoming roles. Detailed job pages and application flows can be added as hiring begins."
+                title="Opportunities for practical builders."
+                description="Explore the kinds of roles Kryptonix is developing across software, cloud, cybersecurity, support, design, and digital delivery."
               />
               <div className="mt-6 flex flex-wrap gap-2">
                 {careerFilters.map((filter) => (
@@ -87,7 +87,7 @@ export default function CareersPage() {
           <SectionHeading
             eyebrow="Life at Kryptonix"
             title="Built for people who like useful technology."
-            description="This section frames the working environment, with culture photography and employee stories ready to follow as the team grows."
+            description="The working culture values curiosity, ownership, clear communication, practical problem-solving, and technology that creates measurable value."
             align="center"
           />
 
@@ -114,7 +114,7 @@ export default function CareersPage() {
               <SectionHeading
                 eyebrow="Benefits"
                 title="Reasons to build here."
-                description="A benefits structure is in place for compensation, perks, policies, and role-specific details as they are approved."
+                description="Kryptonix aims to support focused work, continuous learning, meaningful projects, and a healthy path for professional growth."
               />
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {careerBenefits.map((benefit) => {

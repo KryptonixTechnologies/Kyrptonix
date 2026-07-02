@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteUtilities } from "@/components/layout/site-utilities";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { siteConfig } from "@/config/site";
-import { jsonLd, organizationJsonLd } from "@/lib/seo";
+import { jsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./theme.css";
 import "./globals.css";
 
@@ -13,11 +13,11 @@ const googleAnalyticsId = "G-KHP0N6DBY1";
 
 export const metadata: Metadata = {
   title: {
-    default: "Kryptonix Technologies",
+    default: "Kryptonix Technologies | Software, Websites, Cloud & Automation in Kenya",
     template: "%s | Kryptonix Technologies",
   },
   description:
-    "Kryptonix Technologies provides software development, cloud services, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for organisations in Kenya, East Africa, and beyond.",
+    "Kryptonix Technologies builds custom websites, business systems, automation tools, cloud infrastructure, cybersecurity solutions, and digital products for startups, SMEs, enterprises, NGOs, and public sector teams in Kenya and East Africa.",
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   manifest: "/site.webmanifest",
@@ -45,22 +45,38 @@ export const metadata: Metadata = {
     locale: "en_KE",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: "Kryptonix Technologies | Software, Websites, Cloud & Automation in Kenya",
     description:
-      "Software development, cloud, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for growing organisations.",
+      "Custom websites, business systems, automation tools, cloud infrastructure, cybersecurity, and digital products engineered for business growth.",
+    images: [
+      {
+        url: "/Kryptonix logo.png",
+        width: 1001,
+        height: 249,
+        alt: "Kryptonix Technologies",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: "Kryptonix Technologies | Software, Websites, Cloud & Automation in Kenya",
     description:
-      "Software development, cloud, cybersecurity, IT infrastructure, managed support, and digital transformation solutions for growing organisations.",
+      "Custom websites, business systems, automation tools, cloud infrastructure, cybersecurity, and digital products engineered for business growth.",
+    images: ["/Kryptonix logo.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   verification: {
-    google: "j7AB3AXs71xxkhdiGeJ3azOw9u1VouHmN9b4_nrAv2I",
+    google: ["j7AB3AXs71xxkhdiGeJ3azOw9u1VouHmN9b4_nrAv2I", "nhtIGL18QUzXE-RTvyjUsNv5U_iWLmILEMxzn7ikkcE"],
   },
 };
 
@@ -103,6 +119,11 @@ export default function RootLayout({
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={jsonLd(organizationJsonLd())}
+        />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={jsonLd(websiteJsonLd())}
         />
       </body>
     </html>

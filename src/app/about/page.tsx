@@ -11,9 +11,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About Us",
   description:
-    "Learn about Kryptonix Technologies, an East Africa-focused technology partner building practical software, cloud, cybersecurity, infrastructure, and digital transformation solutions.",
+    "Meet Kryptonix Technologies, a Kenya-based technology partner helping organisations build reliable software, modern websites, secure cloud infrastructure, automation, and practical digital systems.",
   path: "/about",
-  keywords: ["Kryptonix mission", "Kryptonix values", "technology partner East Africa"],
+  keywords: ["Kryptonix mission", "Kryptonix values", "technology partner Kenya", "software company Kenya"],
 });
 
 export default function AboutPage() {
@@ -32,17 +32,16 @@ export default function AboutPage() {
               <SectionHeading
                 eyebrow="Company Story"
                 title="From technology needs to dependable digital systems."
-                description="Kryptonix Technologies is being shaped as a practical technology partner for organisations that need more than a single tool. The company brings software development, IT infrastructure, cloud, cybersecurity, support, and digital transformation into one clear service ecosystem."
+                description="Kryptonix Technologies brings software development, IT infrastructure, cloud, cybersecurity, support, and digital transformation into one practical service ecosystem for organisations that need dependable technology delivery."
               />
               <div className="mt-6 grid gap-4 text-sm leading-7 text-slate-400">
                 <p>
-                  The website reflects that ambition: every visitor should quickly understand what Kryptonix does,
+                  Kryptonix helps visitors, founders, operators, and procurement teams quickly understand what the company does,
                   why the team can be trusted, and how to begin a conversation about the right solution.
                 </p>
                 <p>
-                  As real case studies, leadership bios, certifications, and client proof become available,
-                  this page will evolve into the main credibility hub for procurement officers, partners,
-                  investors, clients, and future employees.
+                  The company focuses on clear communication, practical execution, reliable systems, and technology choices that
+                  support real business goals rather than unnecessary complexity.
                 </p>
               </div>
             </GlassCard>
@@ -52,7 +51,7 @@ export default function AboutPage() {
               <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">Profile</p>
               <h2 className="mt-4 text-2xl font-semibold text-white">Company profile download</h2>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                The official Kryptonix company profile will be available here once the approved PDF is ready.
+                Request the latest Kryptonix company profile for procurement, partnership, vendor review, or project planning.
               </p>
               <Button href="/contact" className="mt-6" variant="secondary">
                 Request Profile
@@ -109,8 +108,8 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <SectionHeading
               eyebrow="Milestones"
-              title="A roadmap for credibility."
-              description="The page is structured to present company story, milestones, awards, and leadership proof clearly as those details are approved."
+              title="Building credibility through delivery."
+              description="Kryptonix is focused on growing a track record through useful projects, responsive support, practical documentation, and long-term client relationships."
             />
 
             <div className="grid gap-4">
@@ -141,8 +140,8 @@ export default function AboutPage() {
             <div>
               <SectionHeading
                 eyebrow="Leadership"
-                title="Leadership structure."
-                description="Names, photos, titles, LinkedIn links, and bios can be published here after approval."
+                title="Leadership and delivery focus."
+                description="Kryptonix is led with a practical delivery mindset: understand the business problem, choose reliable technology, communicate clearly, and support the solution after launch."
               />
               <div className="mt-8 grid gap-4">
                 {leadershipPlaceholders.map((person) => (
@@ -168,7 +167,7 @@ export default function AboutPage() {
               </p>
               <h2 className="mt-4 text-2xl font-semibold text-white">Awards, certifications, and trust signals.</h2>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                This section is prepared for approved recognitions, partner certifications, compliance proof, and media mentions.
+                Trust is built through reliable delivery, clear documentation, secure implementation, responsive support, and transparent project communication.
               </p>
               <div className="mt-6 grid gap-3">
                 {recognitionItems.map((item) => (
@@ -191,7 +190,7 @@ export default function AboutPage() {
               Ready to see how Kryptonix can support your organisation?
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-400">
-              Start with a conversation, request a quote, or ask for the company profile once the official document is ready.
+              Start with a conversation, request a quote, or ask for the latest company profile for your project review.
             </p>
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
               <Button href="/quote" showArrow>

@@ -11,9 +11,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Resources",
   description:
-    "Read Kryptonix Technologies insights, guides, articles, whitepapers, and webinars about software, cloud, cybersecurity, automation, data, and practical IT strategy.",
+    "Read Kryptonix Technologies guides and insights on website development, business software, cloud infrastructure, cybersecurity, automation, AI, data, and practical IT strategy.",
   path: "/resources",
-  keywords: ["technology guides", "cloud insights", "cybersecurity resources"],
+  keywords: ["technology guides Kenya", "cloud insights", "cybersecurity resources", "software development articles"],
 });
 
 export default function ResourcesPage() {
@@ -56,8 +56,8 @@ export default function ResourcesPage() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               eyebrow="Library"
-              title="Content structure for launch and beyond."
-              description="Search, categories, articles, guides, webinars, and downloadable resources are organised for future publishing."
+              title="Practical technology guidance for business decisions."
+              description="Search, categories, articles, guides, webinars, and downloadable resources help business leaders understand software, cloud, security, automation, and digital growth."
             />
             <div className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-500">
               <Search className="h-4 w-4" aria-hidden="true" />
