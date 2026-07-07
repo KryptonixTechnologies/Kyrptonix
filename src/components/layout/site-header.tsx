@@ -16,11 +16,14 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   function isActive(href: string) {
-    if (href === "/") {
-      return pathname === "/";
+    const currentPath = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
+    const targetPath = href === "/" ? href : href.replace(/\/$/, "");
+
+    if (targetPath === "/") {
+      return currentPath === "/";
     }
 
-    return pathname === href || pathname.startsWith(`${href}/`);
+    return currentPath === targetPath || currentPath.startsWith(`${targetPath}/`);
   }
 
   return (

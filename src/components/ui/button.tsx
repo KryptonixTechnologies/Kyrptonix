@@ -15,6 +15,21 @@ const variants = {
     "text-ink-950 hover:bg-kryptonix-gold/10 hover:text-ink-950 focus-visible:ring-kryptonix-violet",
 };
 
+function withTrailingSlash(href?: string) {
+  if (!href || href === "/" || href.startsWith("#") || !href.startsWith("/")) {
+    return href;
+  }
+
+  const [path, suffix = ""] = href.split(/(?=[?#])/);
+  const looksLikeFile = /\.[a-z0-9]+$/i.test(path);
+
+  if (looksLikeFile || path.endsWith("/")) {
+    return href;
+  }
+
+  return `${path}/${suffix}`;
+}
+
 export function Button({
   className,
   children,
@@ -22,6 +37,8 @@ export function Button({
   showArrow = false,
   ...props
 }: ButtonProps) {
+  const href = withTrailingSlash(props.href);
+
   return (
     <a
       className={cn(
@@ -30,6 +47,7 @@ export function Button({
         className,
       )}
       {...props}
+      href={href}
     >
       {children}
       {showArrow ? <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" /> : null}

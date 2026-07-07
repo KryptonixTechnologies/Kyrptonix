@@ -12,8 +12,17 @@ export function absoluteUrl(path = "/") {
   return new URL(path, siteConfig.url).toString();
 }
 
+function normalizePagePath(path: string) {
+  if (path === "/" || path.endsWith("/") || /\.[a-z0-9]+$/i.test(path)) {
+    return path;
+  }
+
+  return `${path}/`;
+}
+
 export function pageMetadata({ title, description, path, keywords = [] }: PageMetadataOptions): Metadata {
-  const url = absoluteUrl(path);
+  const canonicalPath = normalizePagePath(path);
+  const url = absoluteUrl(canonicalPath);
   const socialImage = {
     url: "/Kryptonix logo.png",
     width: 1001,
@@ -34,7 +43,7 @@ export function pageMetadata({ title, description, path, keywords = [] }: PageMe
       ...keywords,
     ],
     alternates: {
-      canonical: path,
+      canonical: canonicalPath,
     },
     openGraph: {
       type: "website",

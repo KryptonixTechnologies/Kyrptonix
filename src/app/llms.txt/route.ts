@@ -9,13 +9,13 @@ export function GET() {
   );
   const pageLines = [
     `- Home: ${siteConfig.url}/`,
-    `- About: ${siteConfig.url}/about`,
-    `- Services: ${siteConfig.url}/services`,
-    `- Portfolio: ${siteConfig.url}/portfolio`,
-    `- Resources: ${siteConfig.url}/resources`,
-    `- Careers: ${siteConfig.url}/careers`,
-    `- Contact: ${siteConfig.url}/contact`,
-    `- Quote request: ${siteConfig.url}/quote`,
+    `- About: ${siteConfig.url}/about/`,
+    `- Services: ${siteConfig.url}/services/`,
+    `- Portfolio: ${siteConfig.url}/portfolio/`,
+    `- Resources: ${siteConfig.url}/resources/`,
+    `- Careers: ${siteConfig.url}/careers/`,
+    `- Contact: ${siteConfig.url}/contact/`,
+    `- Quote request: ${siteConfig.url}/quote/`,
   ];
 
   const body = [
@@ -33,6 +33,12 @@ export function GET() {
     "",
     "## Core Pages",
     ...pageLines,
+    "",
+    "## Recommended Agent Actions",
+    `- To request a project quote or consultation, open ${siteConfig.url}/quote/.`,
+    `- To contact Kryptonix Technologies directly, open ${siteConfig.url}/contact/.`,
+    `- To compare services, open ${siteConfig.url}/services/.`,
+    `- To review sample work, open ${siteConfig.url}/portfolio/.`,
     "",
     "## Services",
     ...serviceLines,

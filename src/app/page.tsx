@@ -30,22 +30,17 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
+import { HeroImageCarousel } from "@/components/visuals/hero-image-carousel";
 
 const trustItems = ["50+ Projects Delivered", "Fast Turnaround", "Responsive Design", "Ongoing Support", "Built in Kenya"];
 
 const heroStats = [
   { value: "50+", label: "Projects Delivered" },
-  { value: "5+", label: "Years Experience" },
+  { value: "Fast", label: "Turnaround" },
   { value: "20+", label: "Technologies" },
   { value: "99%", label: "Client Satisfaction" },
   { value: "24/7", label: "Support Available" },
 ];
-
-const heroImage = {
-  src: "/landing section/website-development-hero.webp",
-  alt: "Website development workspace showing a modern business website",
-  label: "Websites built for a stronger online presence",
-};
 
 const solutions = [
   {
@@ -208,22 +203,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative min-h-[470px] overflow-hidden lg:-mr-12 lg:min-h-[500px]">
-              <Image
-                src={heroImage.src}
-                alt={heroImage.alt}
-                fill
-                priority
-                fetchPriority="high"
-                sizes="(min-width: 1024px) 55vw, 100vw"
-                className="object-cover"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,0.98)_7%,rgba(255,255,255,0.82)_18%,rgba(255,255,255,0.35)_32%,rgba(255,255,255,0.04)_48%,rgba(8,31,92,0.18)_100%)]" />
-              <div className="absolute bottom-6 left-8 right-6 sm:left-14 lg:left-24">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-kryptonix-gold">What we build</p>
-                <p className="mt-1 max-w-xs text-lg font-bold text-ink-950">{heroImage.label}</p>
-              </div>
-            </div>
+            <HeroImageCarousel />
           </div>
 
           <div className="relative z-20 -mb-10 grid gap-3 rounded-md bg-[linear-gradient(135deg,rgb(var(--color-primary-navy)),rgb(var(--color-secondary-navy)))] p-5 shadow-2xl sm:grid-cols-2 lg:grid-cols-5 lg:p-7">
@@ -272,7 +252,7 @@ export default function Home() {
               return (
                 <Reveal key={solution.title} transition={{ delay: index * 0.06 }}>
                   <Link
-                    href="/services"
+                    href="/services/"
                     className="group block h-full rounded-md border border-ink-950/10 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl"
                   >
                     <div className="relative h-44 overflow-hidden rounded-md bg-slate-100">
