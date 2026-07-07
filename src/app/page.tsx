@@ -24,13 +24,12 @@ import {
   Truck,
   Waves,
 } from "lucide-react";
+import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
-import { HeroImageCarousel } from "@/components/visuals/hero-image-carousel";
 
 const trustItems = ["50+ Projects Delivered", "Fast Turnaround", "Responsive Design", "Ongoing Support", "Built in Kenya"];
 
@@ -42,66 +41,39 @@ const heroStats = [
   { value: "24/7", label: "Support Available" },
 ];
 
-const heroSlides = [
-  {
-    src: "/landing section/Website Development Oklahoma for Better Online Presence home page landing section.jpeg",
-    alt: "Website development workspace showing a modern business website",
-    label: "Websites built for a stronger online presence",
-  },
-  {
-    src: "/landing section/system design homepage.jpeg",
-    alt: "Network equipment representing reliable system design",
-    label: "Reliable systems and infrastructure",
-  },
-  {
-    src: "/landing section/Website Customization.jpeg",
-    alt: "Website customization and design workspace",
-    label: "Custom digital experiences for every business",
-  },
-  {
-    src: "/landing section/digital presence.jpeg",
-    alt: "Digital marketing tools displayed across connected devices",
-    label: "A digital presence designed for growth",
-  },
-  {
-    src: "/landing section/Managed IT Support.jpeg",
-    alt: "Technology professional providing managed IT support",
-    label: "Managed IT support that keeps teams moving",
-  },
-  {
-    src: "/landing section/Five Things That Everyone Should Know About Cybersecurityhomepage landing section.jpeg",
-    alt: "Cybersecurity concept protecting business technology",
-    label: "Security built into every solution",
-  },
-];
+const heroImage = {
+  src: "/landing section/website-development-hero.webp",
+  alt: "Website development workspace showing a modern business website",
+  label: "Websites built for a stronger online presence",
+};
 
 const solutions = [
   {
     title: "Websites & Digital Presence",
     icon: Store,
     points: ["Corporate Websites", "E-commerce Solutions", "Landing Pages", "SEO & Performance"],
-    image: "/websites and digital presence",
+    image: "/websites-digital-presence.webp",
     imageAlt: "SEO and digital presence technology",
   },
   {
     title: "Business Systems",
     icon: BriefcaseBusiness,
     points: ["ERP & Business Management", "POS & Inventory Systems", "HR & Payroll Systems", "Custom Web Applications"],
-    image: "/business systems.jpeg",
+    image: "/business-systems.webp",
     imageAlt: "Point of sale business system in a retail environment",
   },
   {
     title: "Cloud & Infrastructure",
     icon: CloudCog,
     points: ["Cloud Hosting & Deployment", "Server Management", "Backup & Disaster Recovery", "DevOps & Monitoring"],
-    image: "/Cloud and infrastructure.jpeg",
+    image: "/cloud-infrastructure.webp",
     imageAlt: "Cloud computing and infrastructure technology",
   },
   {
     title: "Automation & AI Solutions",
     icon: Bot,
     points: ["Workflow Automation", "Real-time Dashboards", "Reporting & Analytics", "AI & API Integrations"],
-    image: "/automation and AI solutions.jpeg",
+    image: "/automation-ai-solutions.webp",
     imageAlt: "Automation and artificial intelligence solutions",
   },
 ];
@@ -111,28 +83,28 @@ const projects = [
     title: "E-Commerce Platform",
     problem: "Full-featured online store with payments and inventory.",
     solution: "React - Node.js - MongoDB",
-    image: "/E-Commerce Platform.jpeg",
+    image: "/e-commerce-platform.webp",
     imageAlt: "E-commerce platform displayed on a laptop",
   },
   {
     title: "Water Industry ERP",
     problem: "Complete ERP for water treatment business operations.",
     solution: "Next.js - PostgreSQL - Tailwind",
-    image: "/Water Industry.png",
+    image: "/water-industry.webp",
     imageAlt: "Water engineering company website and project showcase",
   },
   {
     title: "Corporate Website",
     problem: "Modern corporate website for a lead generation firm.",
     solution: "WordPress - PHP - Elementor",
-    image: "/Corporate Website.png",
+    image: "/corporate-website.webp",
     imageAlt: "Corporate website shown across desktop and mobile screens",
   },
   {
     title: "Service Booking Platform",
     problem: "Appointment and booking system with payment integration.",
     solution: "Vue.js - Laravel - MySQL",
-    image: "/Service Booking Platform.jpeg",
+    image: "/service-booking-platform.webp",
     imageAlt: "Online service booking platform",
   },
 ];
@@ -187,6 +159,26 @@ function SectionIntro({
   );
 }
 
+function Reveal({
+  children,
+  className,
+  transition,
+}: {
+  children: ReactNode;
+  className?: string;
+  transition?: { delay?: number };
+}) {
+  const style = transition?.delay
+    ? ({ "--reveal-delay": `${transition.delay * 1000}ms` } as CSSProperties)
+    : undefined;
+
+  return (
+    <div data-reveal className={className} style={style}>
+      {children}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-white">
@@ -196,7 +188,7 @@ export default function Home() {
 
         <Container className="relative z-10">
           <div className="grid min-h-[560px] gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-            <Reveal className="max-w-2xl pt-6 sm:pt-8 lg:pt-10">
+            <div className="max-w-2xl pt-6 sm:pt-8 lg:pt-10">
               <span className="inline-flex rounded-full border border-kryptonix-gold/25 bg-white px-4 py-2 text-xs font-semibold text-ink-950 shadow-sm">
                 Your Trusted Technology Partner
               </span>
@@ -214,14 +206,27 @@ export default function Home() {
                   View Our Work <CirclePlay className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
-            </Reveal>
+            </div>
 
-            <Reveal className="relative min-h-[470px] overflow-hidden lg:-mr-12 lg:min-h-[500px]">
-              <HeroImageCarousel slides={heroSlides} />
-            </Reveal>
+            <div className="relative min-h-[470px] overflow-hidden lg:-mr-12 lg:min-h-[500px]">
+              <Image
+                src={heroImage.src}
+                alt={heroImage.alt}
+                fill
+                priority
+                fetchPriority="high"
+                sizes="(min-width: 1024px) 55vw, 100vw"
+                className="object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,0.98)_7%,rgba(255,255,255,0.82)_18%,rgba(255,255,255,0.35)_32%,rgba(255,255,255,0.04)_48%,rgba(8,31,92,0.18)_100%)]" />
+              <div className="absolute bottom-6 left-8 right-6 sm:left-14 lg:left-24">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-kryptonix-gold">What we build</p>
+                <p className="mt-1 max-w-xs text-lg font-bold text-ink-950">{heroImage.label}</p>
+              </div>
+            </div>
           </div>
 
-          <Reveal className="relative z-20 -mb-10 grid gap-3 rounded-md bg-[linear-gradient(135deg,rgb(var(--color-primary-navy)),rgb(var(--color-secondary-navy)))] p-5 shadow-2xl sm:grid-cols-2 lg:grid-cols-5 lg:p-7">
+          <div className="relative z-20 -mb-10 grid gap-3 rounded-md bg-[linear-gradient(135deg,rgb(var(--color-primary-navy)),rgb(var(--color-secondary-navy)))] p-5 shadow-2xl sm:grid-cols-2 lg:grid-cols-5 lg:p-7">
             {heroStats.map((stat) => (
               <div key={stat.label} className="flex items-center gap-4 border-white/10 lg:border-r last:lg:border-r-0">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-kryptonix-cyan/50 text-kryptonix-cyan">
@@ -233,7 +238,7 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </Reveal>
+          </div>
         </Container>
       </Section>
 
@@ -429,7 +434,7 @@ export default function Home() {
                   <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-t-full bg-[linear-gradient(180deg,rgb(var(--color-light-gold)/0.38),rgb(var(--color-primary-navy)/0.12))]" />
                   <div className="absolute inset-x-8 bottom-0 h-28 rounded-t-full bg-ink-950/95 shadow-2xl" />
                   <Image
-                    src="/Founder.png"
+                    src="/founder.webp"
                     alt="Newton Manyisa, founder of Kryptonix Technologies"
                     fill
                     sizes="(min-width: 1024px) 28vw, 100vw"
