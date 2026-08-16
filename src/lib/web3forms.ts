@@ -1,4 +1,4 @@
-export const web3FormsAccessKey = "d595484a-e896-4b88-aad8-229cb63dd873";
+export const web3FormsAccessKey = "e7754e07-a925-48d6-9603-a38096d99c5b";
 
 type Web3FormsPayload = Record<string, string | string[]>;
 
