@@ -1,121 +1,143 @@
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
 import { Container } from "@/components/layout/container";
-import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { featuredCaseStudy, portfolioProjects, projectFilters } from "@/data/portfolio";
-import { pageMetadata } from "@/lib/seo";
-
-export const metadata = pageMetadata({
-  title: "Portfolio",
-  description:
-    "View Kryptonix Technologies project work across e-commerce platforms, business systems, corporate websites, booking platforms, cloud solutions, and digital transformation projects.",
-  path: "/portfolio",
-  keywords: ["Kryptonix portfolio", "technology case studies Kenya", "software project gallery", "website portfolio Kenya"],
-});
+import { portfolioProjects } from "@/data/portfolio";
 
 export default function PortfolioPage() {
+  const publicProjects = portfolioProjects.filter(
+    (project) => project.approvedForPublicUse,
+  );
+
   return (
     <main>
-      <PageHero
-        eyebrow="Portfolio"
-        title="Recent technology work and delivery focus."
-        description="Explore examples of the digital products, business systems, websites, and operational platforms Kryptonix builds for growing organisations."
-      />
-      <Section>
+      <Section className="pt-24 pb-12">
         <Container>
-          <GlassCard className="overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="min-h-72 bg-[radial-gradient(circle_at_30%_20%,rgb(var(--color-secondary-navy)/0.35),transparent_36%),radial-gradient(circle_at_75%_70%,rgb(var(--color-gold-accent)/0.34),transparent_42%),linear-gradient(135deg,rgb(var(--color-primary-navy)/0.92),rgb(3 13 42/0.98))]" />
-              <div className="p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                  Featured case study
-                </p>
-                <h2 className="mt-4 font-display text-3xl font-semibold text-white">{featuredCaseStudy.name}</h2>
-                <p className="mt-2 text-sm text-slate-500">
-                  {featuredCaseStudy.client} · {featuredCaseStudy.region}
-                </p>
-                <div className="mt-6 grid gap-4">
-                  {[
-                    ["Problem", featuredCaseStudy.problem],
-                    ["Solution", featuredCaseStudy.solution],
-                    ["Result", featuredCaseStudy.result],
-                  ].map(([label, text]) => (
-                    <div key={label} className="rounded-md border border-white/10 bg-white/[0.035] p-4">
-                      <p className="text-sm font-semibold text-white">{label}</p>
-                      <p className="mt-2 text-sm leading-6 text-slate-400">{text}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </GlassCard>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+              Our Portfolio
+            </p>
+
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              Selected projects and digital solutions
+            </h1>
+
+            <p className="mt-5 text-lg text-muted-foreground">
+              Explore selected digital solutions delivered for businesses
+              across different industries. Each project page presents the
+              available project information, technology used, and supporting
+              evidence where available.
+            </p>
+          </div>
         </Container>
       </Section>
 
-      <Section className="border-t border-ink-950/10 bg-[var(--off-white)]">
+      <Section className="py-12">
         <Container>
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              eyebrow="Gallery"
-              title="Project examples across business needs."
-              description="Use the project library to understand the kinds of solutions Kryptonix can plan, design, build, launch, and support."
-            />
-            <div className="flex flex-wrap gap-2">
-              {projectFilters.map((filter) => (
-                <span
-                  key={filter}
-                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-semibold text-slate-300"
+          {publicProjects.length === 0 ? (
+            <GlassCard className="mx-auto max-w-2xl p-8 text-center">
+              <h2 className="text-2xl font-semibold">
+                Portfolio projects coming soon
+              </h2>
+
+              <p className="mt-3 text-muted-foreground">
+                We are preparing approved project case studies with verified
+                project information and supporting evidence.
+              </p>
+
+              <div className="mt-6">
+                <Button href="/contact">
+                  Discuss a Project
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                </Button>
+              </div>
+            </GlassCard>
+          ) : (
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {publicProjects.map((project) => (
+                <GlassCard
+                  key={project.slug}
+                  className="flex h-full flex-col overflow-hidden"
                 >
-                  {filter}
-                </span>
+                  {project.image ? (
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} project`}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  ) : null}
+
+                  <div className="flex flex-1 flex-col p-6">
+                    {project.category ? (
+                      <p className="text-sm font-medium text-primary">
+                        {project.category}
+                      </p>
+                    ) : null}
+
+                    <h2 className="mt-2 text-xl font-semibold">
+                      {project.title}
+                    </h2>
+
+                    {project.client ? (
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        Client: {project.client}
+                      </p>
+                    ) : null}
+
+                    {project.description ? (
+                      <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+                        {project.description}
+                      </p>
+                    ) : null}
+
+                    <div className="mt-5 flex items-center gap-2 text-xs text-muted-foreground">
+                      <span
+                        className="h-2 w-2 rounded-full bg-primary"
+                        aria-hidden="true"
+                      />
+                      <span>Approved for public portfolio</span>
+                    </div>
+
+                    <div className="mt-6">
+                      <Button href={`/portfolio/${project.slug}/`}>
+                        View Case Study
+                        <ArrowRight
+                          className="ml-2 h-4 w-4"
+                          aria-hidden="true"
+                        />
+                      </Button>
+                    </div>
+                  </div>
+                </GlassCard>
               ))}
             </div>
-          </div>
+          )}
+        </Container>
+      </Section>
 
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
-            {portfolioProjects.map((project) => (
-              <GlassCard key={project.name} className="group overflow-hidden">
-                <div className="h-32 border-b border-ink-950/10 bg-[linear-gradient(135deg,rgb(var(--color-secondary-navy)/0.22),rgb(var(--color-gold-accent)/0.18)_48%,rgb(var(--color-gold-accent)/0.12))]" />
-                <div className="p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">{project.service}</p>
-                      <h2 className="mt-4 text-lg font-semibold text-white">{project.name}</h2>
-                    </div>
-                    <ArrowUpRight className="h-4 w-4 text-slate-600 transition group-hover:text-white" aria-hidden="true" />
-                  </div>
-                  <p className="mt-1 text-sm text-slate-500">{project.client}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {[project.industry, project.region].map((tag) => (
-                      <span key={tag} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-slate-400">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="mt-4 text-sm leading-6 text-slate-400">{project.outcome}</p>
-                  <div className="mt-5 rounded-md border border-white/10 bg-white/[0.035] p-3">
-                    <p className="text-xs leading-5 text-slate-400">&ldquo;{project.testimonial}&rdquo;</p>
-                  </div>
-                  <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-kryptonix-cyan">
-                    <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
-                    {project.status}
-                  </p>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
+      <Section className="py-16">
+        <Container>
+          <GlassCard className="p-8 text-center sm:p-12">
+            <h2 className="text-3xl font-bold">
+              Have a project in mind?
+            </h2>
 
-          <GlassCard className="mt-10 p-6 text-center">
-            <h2 className="font-display text-2xl font-semibold text-white">Have a project we should feature?</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-400">
-              Once client approval is available, this section can become a real case study library with measurable outcomes.
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Tell us what your business needs and we can discuss the right
+              website, software, e-commerce, or digital solution for your
+              goals.
             </p>
-            <Button href="/contact" className="mt-6" variant="secondary">
-              Discuss a Case Study
-            </Button>
+
+            <div className="mt-7">
+              <Button href="/contact">
+                Get in Touch
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+              </Button>
+            </div>
           </GlassCard>
         </Container>
       </Section>

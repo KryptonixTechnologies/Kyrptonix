@@ -13,41 +13,55 @@ const googleAnalyticsId = "G-KHP0N6DBY1";
 
 export const metadata: Metadata = {
   title: {
-    default: "Kryptonix Technologies | Software, Websites, Cloud & Automation in Kenya",
+    default: "Website Development in Kenya | Kryptonix Technologies",
     template: "%s | Kryptonix Technologies",
   },
+
   description:
-    "Kryptonix Technologies builds custom websites, business systems, automation tools, cloud infrastructure, cybersecurity solutions, and digital products for startups, SMEs, enterprises, NGOs, and public sector teams in Kenya and East Africa.",
+    "Kryptonix Technologies provides website development, e-commerce, custom software, business systems, automation, cloud and IT solutions for businesses in Kenya.",
+
   metadataBase: new URL(siteConfig.url),
+
   applicationName: siteConfig.name,
+
   manifest: "/site.webmanifest",
+
   icons: {
-    icon: [{ url: "/favicon.png", sizes: "295x317", type: "image/png" }],
-    apple: [{ url: "/favicon.png", sizes: "295x317", type: "image/png" }],
+    icon: [
+      {
+        url: "/favicon.png",
+        sizes: "295x317",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/favicon.png",
+        sizes: "295x317",
+        type: "image/png",
+      },
+    ],
   },
-  keywords: [
-    "Kryptonix Technologies",
-    "IT solutions Kenya",
-    "software development Kenya",
-    "cloud services",
-    "cybersecurity",
-    "managed IT support",
-    "digital transformation",
-  ],
+
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
+
   alternates: {
     canonical: "/",
   },
+
   openGraph: {
     type: "website",
     locale: "en_KE",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Kryptonix Technologies | Software, Websites, Cloud & Automation in Kenya",
+
+    title: "Website Development in Kenya | Kryptonix Technologies",
+
     description:
-      "Custom websites, business systems, automation tools, cloud infrastructure, cybersecurity, and digital products engineered for business growth.",
+      "Kryptonix Technologies builds responsive websites, e-commerce platforms, custom software and business systems for organisations in Kenya.",
+
     images: [
       {
         url: "/Kryptonix logo.png",
@@ -57,16 +71,22 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Kryptonix Technologies | Software, Websites, Cloud & Automation in Kenya",
+
+    title: "Website Development in Kenya | Kryptonix Technologies",
+
     description:
-      "Custom websites, business systems, automation tools, cloud infrastructure, cybersecurity, and digital products engineered for business growth.",
+      "Responsive websites, e-commerce platforms, custom software and business systems for organisations in Kenya.",
+
     images: ["/Kryptonix logo.png"],
   },
+
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -75,8 +95,12 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   verification: {
-    google: ["j7AB3AXs71xxkhdiGeJ3azOw9u1VouHmN9b4_nrAv2I", "nhtIGL18QUzXE-RTvyjUsNv5U_iWLmILEMxzn7ikkcE"],
+    google: [
+      "j7AB3AXs71xxkhdiGeJ3azOw9u1VouHmN9b4_nrAv2I",
+      "nhtIGL18QUzXE-RTvyjUsNv5U_iWLmILEMxzn7ikkcE",
+    ],
   },
 };
 
@@ -96,6 +120,7 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
           strategy="afterInteractive"
         />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -104,22 +129,32 @@ export default function RootLayout({
             gtag('config', '${googleAnalyticsId}');
           `}
         </Script>
+
         <a
           href="#site-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-ink-950"
         >
           Skip to content
         </a>
+
         <SiteHeader />
-        <div id="site-content">{children}</div>
+
+        <div id="site-content">
+          {children}
+        </div>
+
         <SiteFooter />
+
         <SiteUtilities />
+
         <ScrollReveal />
+
         <script
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={jsonLd(organizationJsonLd())}
         />
+
         <script
           type="application/ld+json"
           suppressHydrationWarning

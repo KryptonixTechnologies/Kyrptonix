@@ -6,6 +6,7 @@ type PageMetadataOptions = {
   description: string;
   path: string;
   keywords?: string[];
+  image?: string;
 };
 
 export function absoluteUrl(path = "/") {
@@ -20,46 +21,50 @@ function normalizePagePath(path: string) {
   return `${path}/`;
 }
 
-export function pageMetadata({ title, description, path, keywords = [] }: PageMetadataOptions): Metadata {
+export function pageMetadata({
+  title,
+  description,
+  path,
+  keywords = [],
+  image = "/Kryptonix logo.png",
+}: PageMetadataOptions): Metadata {
   const canonicalPath = normalizePagePath(path);
   const url = absoluteUrl(canonicalPath);
+
   const socialImage = {
-    url: "/Kryptonix logo.png",
+    url: image,
     width: 1001,
     height: 249,
-    alt: "Kryptonix Technologies",
+    alt: `${title} - ${siteConfig.name}`,
   };
 
   return {
     title,
     description,
-    keywords: [
-      "Kryptonix Technologies",
-      "IT solutions Kenya",
-      "software development Kenya",
-      "cloud services",
-      "cybersecurity",
-      "managed IT support",
-      ...keywords,
-    ],
+
+    keywords: keywords.length ? keywords : undefined,
+
     alternates: {
       canonical: canonicalPath,
     },
+
     openGraph: {
       type: "website",
       locale: "en_KE",
       url,
       siteName: siteConfig.name,
-      title: `${title} | ${siteConfig.name}`,
+      title,
       description,
       images: [socialImage],
     },
+
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${siteConfig.name}`,
+      title,
       description,
-      images: [socialImage.url],
+      images: [image],
     },
+
     robots: {
       index: true,
       follow: true,
@@ -81,52 +86,57 @@ export function jsonLd(data: unknown) {
 }
 
 export function organizationJsonLd() {
+  const genericSocialLinks = [
+    "https://www.linkedin.com",
+    "https://x.com",
+    "https://www.facebook.com",
+    "https://www.instagram.com",
+    "https://www.youtube.com",
+  ];
+
   const sameAs = siteConfig.socialLinks
     .map((link) => link.href)
-    .filter((href) => !["https://www.linkedin.com", "https://x.com", "https://www.facebook.com", "https://www.instagram.com", "https://www.youtube.com"].includes(href));
+    .filter((href) => !genericSocialLinks.includes(href));
 
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+
     name: siteConfig.name,
     alternateName: siteConfig.shortName,
+
     url: siteConfig.url,
+
     logo: absoluteUrl("/Kryptonix logo.png"),
     image: absoluteUrl("/Kryptonix logo.png"),
+
     email: siteConfig.email,
     telephone: siteConfig.phone,
+
     description: siteConfig.description,
-    priceRange: "$$",
-    areaServed: ["Kenya", "East Africa", "Africa", "Global"],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Nairobi",
-      addressCountry: "KE",
+
+    areaServed: {
+      "@type": "Country",
+      name: "Kenya",
     },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        telephone: siteConfig.phone,
-        email: siteConfig.email,
-        areaServed: ["KE", "EA", "Africa"],
-        availableLanguage: ["English", "Swahili"],
-      },
-    ],
+
     ...(sameAs.length ? { sameAs } : {}),
+
     knowsAbout: [
       "Software development",
       "Website development",
+      "E-commerce platforms",
+      "Business systems",
       "Cloud services",
       "Cybersecurity",
       "IT infrastructure",
       "Managed IT support",
       "Digital transformation",
-      "Data analytics",
       "Business automation",
       "AI integration",
       "ERP systems",
-      "E-commerce platforms",
+      "POS systems",
+      "Inventory management systems",
     ],
   };
 }
@@ -135,16 +145,21 @@ export function websiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+
     name: siteConfig.name,
     alternateName: siteConfig.shortName,
+
     url: siteConfig.url,
+
     description: siteConfig.description,
+
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
       logo: absoluteUrl("/Kryptonix logo.png"),
     },
+
     inLanguage: "en-KE",
   };
 }

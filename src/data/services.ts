@@ -1,3 +1,4 @@
+
 import {
   BriefcaseBusiness,
   Building2,
@@ -6,170 +7,432 @@ import {
   GraduationCap,
   Headphones,
   Network,
-  Rocket,
   ShieldCheck,
-  ShoppingBag,
+  ShoppingCart,
   Sparkles,
   Workflow,
 } from "lucide-react";
 
-export const serviceCategories = [
+export const primaryServices = [
   {
-    title: "Software Development",
-    slug: "software-development",
-    category: "Build",
-    href: "/services/software-development/",
-    description: "Custom software, mobile apps, web platforms, APIs, SaaS, QA, and modernisation.",
-    summary: "Plan, design, build, test, and evolve software that fits your workflows instead of forcing your team around generic tools.",
-    offerings: ["Custom software", "Mobile apps", "Web apps", "API integrations", "SaaS products", "Testing and QA"],
-    tools: ["React", "Next.js", "Node.js", "Django", "Flutter", "PostgreSQL"],
-    audiences: ["Startups building MVPs", "SMEs digitising operations", "Enterprises modernising systems"],
-    benefits: ["Own your workflow", "Reduce manual work", "Launch faster with scalable architecture"],
+    title: "Business Website Development",
+    slug: "business-website-development",
+    category: "Primary",
+    href: "/services/business-website-development/",
+    description:
+      "Professional websites designed to help businesses establish credibility, explain their services clearly, and generate enquiries.",
+    summary:
+      "We design and develop responsive business websites around your organisation, customers, goals, and growth plans.",
+    offerings: [
+      "Corporate websites",
+      "Organisation websites",
+      "Landing pages",
+      "Website redesign",
+      "UI/UX design",
+      "SEO-ready website structures",
+    ],
+    tools: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Figma",
+      "Web3Forms",
+      "Google Analytics",
+    ],
+    audiences: [
+      "Startups establishing their online presence",
+      "SMEs improving their digital visibility",
+      "Organisations that need a professional website",
+    ],
+    benefits: [
+      "Improve online credibility",
+      "Make services easier to understand",
+      "Generate more qualified enquiries",
+    ],
     icon: Code2,
   },
+
   {
-    title: "IT Infrastructure",
-    slug: "it-infrastructure",
-    category: "Operate",
-    href: "/services/it-infrastructure/",
-    description: "Networks, servers, hardware, data centres, audits, and unified communications.",
-    summary: "Design and maintain the physical and virtual IT foundation your organisation depends on every day.",
-    offerings: ["Network design", "Server setup", "Hardware supply", "Data centre solutions", "IT audits", "VoIP systems"],
-    tools: ["Cisco", "MikroTik", "Fortinet", "VMware", "Hyper-V", "Linux"],
-    audiences: ["Growing offices", "Distributed teams", "Institutions with critical infrastructure"],
-    benefits: ["Improve reliability", "Reduce downtime", "Make infrastructure easier to support"],
-    icon: Network,
+    title: "E-commerce Website Development",
+    slug: "e-commerce-website-development",
+    category: "Primary",
+    href: "/services/e-commerce-website-development/",
+    description:
+      "E-commerce websites and online stores that help businesses showcase products, manage orders, and support digital payments.",
+    summary:
+      "We build practical online shopping experiences with product management, customer journeys, payments, and business workflows in mind.",
+    offerings: [
+      "Online stores",
+      "Product catalogues",
+      "Shopping carts",
+      "Order management",
+      "Payment integrations",
+      "Supplier and marketplace workflows",
+    ],
+    tools: [
+      "React",
+      "Next.js",
+      "Django",
+      "Python",
+      "M-Pesa",
+      "PayPal",
+    ],
+    audiences: [
+      "Retail businesses moving online",
+      "Product-based SMEs",
+      "Businesses building supplier marketplaces",
+    ],
+    benefits: [
+      "Sell products online",
+      "Simplify order management",
+      "Make purchasing easier for customers",
+    ],
+    icon: ShoppingCart,
   },
+
   {
-    title: "Cloud Services",
-    slug: "cloud-services",
-    category: "Scale",
-    href: "/services/cloud-services/",
-    description: "Migration, hosting, managed cloud, backup, disaster recovery, and optimisation.",
-    summary: "Move, host, secure, and optimise workloads across cloud platforms with cost and continuity in mind.",
-    offerings: ["Cloud migration", "Managed hosting", "Backup and DR", "Multi-cloud planning", "Cloud security", "Cost optimisation"],
-    tools: ["AWS", "Azure", "Google Cloud", "Cloudflare", "Docker", "Kubernetes"],
-    audiences: ["Teams outgrowing shared hosting", "Businesses modernising infrastructure", "Organisations needing resilience"],
-    benefits: ["Scale on demand", "Improve recovery", "Control cloud spend"],
+    title: "Custom Business Systems",
+    slug: "custom-business-systems",
+    category: "Primary",
+    href: "/services/custom-business-systems/",
+    description:
+      "Custom applications and business systems that organise operations, information, workflows, and reporting.",
+    summary:
+      "We build systems around the way your organisation actually works instead of forcing your team to adapt to unsuitable generic software.",
+    offerings: [
+      "Custom business applications",
+      "Customer management systems",
+      "Inventory systems",
+      "Dashboards and reporting",
+      "Booking and service systems",
+      "Workflow platforms",
+    ],
+    tools: [
+      "React",
+      "Next.js",
+      "Django",
+      "Python",
+      "PostgreSQL",
+      "APIs",
+    ],
+    audiences: [
+      "SMEs digitising operations",
+      "Growing organisations with manual processes",
+      "Businesses requiring tailored software",
+    ],
+    benefits: [
+      "Reduce manual processes",
+      "Organise business information",
+      "Improve operational visibility",
+    ],
+    icon: BriefcaseBusiness,
+  },
+
+  {
+    title: "Business Automation & AI Integrations",
+    slug: "business-automation-ai",
+    category: "Primary",
+    href: "/services/business-automation-ai/",
+    description:
+      "Business automation and practical AI integrations that reduce repetitive work and connect everyday workflows.",
+    summary:
+      "We identify repetitive processes and introduce appropriate automation, integrations, dashboards, and AI-assisted workflows.",
+    offerings: [
+      "Workflow automation",
+      "API integrations",
+      "AI-assisted workflows",
+      "Chatbots",
+      "Document workflows",
+      "Automated notifications",
+    ],
+    tools: [
+      "Python",
+      "OpenAI integrations",
+      "APIs",
+      "Webhooks",
+      "Automation platforms",
+      "Chatbots",
+    ],
+    audiences: [
+      "Operations-heavy businesses",
+      "Teams handling repetitive processes",
+      "Organisations exploring practical AI adoption",
+    ],
+    benefits: [
+      "Reduce repetitive work",
+      "Improve process consistency",
+      "Give teams more time for higher-value work",
+    ],
+    icon: Workflow,
+  },
+
+  {
+    title: "Cloud Hosting & Managed IT Support",
+    slug: "cloud-managed-it-support",
+    category: "Primary",
+    href: "/services/cloud-managed-it-support/",
+    description:
+      "Cloud hosting, infrastructure support, monitoring, maintenance, backup, and managed IT services for growing organisations.",
+    summary:
+      "We help organisations maintain dependable technology environments through hosting, cloud services, technical support, monitoring, and maintenance.",
+    offerings: [
+      "Cloud hosting",
+      "Cloud migration",
+      "Website and application hosting",
+      "Backup and recovery planning",
+      "Remote technical support",
+      "IT monitoring and maintenance",
+    ],
+    tools: [
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "Cloudflare",
+      "Docker",
+      "Linux",
+    ],
+    audiences: [
+      "SMEs without large internal IT teams",
+      "Businesses modernising infrastructure",
+      "Organisations needing dependable technical support",
+    ],
+    benefits: [
+      "Improve technology reliability",
+      "Reduce avoidable downtime",
+      "Get dependable technical support",
+    ],
     icon: Cloud,
   },
+];
+
+export const additionalCapabilities = [
   {
     title: "Cybersecurity",
     slug: "cybersecurity",
-    category: "Protect",
+    category: "Additional Capability",
     href: "/services/cybersecurity/",
-    description: "Security audits, penetration testing, endpoint protection, SOC, and compliance.",
-    summary: "Understand risk, close vulnerabilities, and build a security posture your clients and stakeholders can trust.",
-    offerings: ["Security audits", "Penetration testing", "Endpoint security", "SOC monitoring", "Compliance support", "Incident response"],
-    tools: ["EDR", "SIEM", "Firewalls", "VPN", "ISO 27001", "KDPA"],
-    audiences: ["Regulated organisations", "Teams handling sensitive data", "Businesses preparing for compliance"],
-    benefits: ["Reduce exposure", "Improve readiness", "Strengthen client trust"],
+    description:
+      "Security reviews, protection, awareness, and risk-management support for organisations handling important digital information.",
+    summary:
+      "Strengthen your organisation's security posture and improve preparedness for common digital risks.",
+    offerings: [
+      "Security reviews",
+      "Risk assessments",
+      "Endpoint protection",
+      "Security awareness",
+      "Backup readiness",
+      "Compliance guidance",
+    ],
+    tools: [
+      "EDR",
+      "SIEM",
+      "Firewalls",
+      "VPN",
+      "ISO 27001",
+      "Kenya Data Protection Act guidance",
+    ],
+    audiences: [
+      "Businesses handling sensitive information",
+      "Organisations improving security readiness",
+      "Teams preparing for compliance requirements",
+    ],
+    benefits: [
+      "Reduce exposure to common risks",
+      "Improve security awareness",
+      "Strengthen organisational preparedness",
+    ],
     icon: ShieldCheck,
   },
+
   {
-    title: "Managed IT Support",
-    slug: "managed-it-support",
-    category: "Support",
-    href: "/services/managed-it-support/",
-    description: "Helpdesk, remote support, on-site support, outsourcing, SLAs, and monitoring.",
-    summary: "Give your team dependable support, proactive monitoring, and predictable IT operations without building a full internal department.",
-    offerings: ["Helpdesk", "Remote support", "On-site support", "IT outsourcing", "SLA contracts", "Asset management"],
-    tools: ["Remote desktop", "Ticketing", "Monitoring", "Microsoft 365", "Google Workspace", "Endpoint tools"],
-    audiences: ["SMEs without in-house IT", "Teams needing SLA cover", "Organisations with hybrid offices"],
-    benefits: ["Resolve issues faster", "Control support costs", "Improve staff productivity"],
-    icon: Headphones,
+    title: "IT Infrastructure",
+    slug: "it-infrastructure",
+    category: "Additional Capability",
+    href: "/services/it-infrastructure/",
+    description:
+      "Networks, servers, workplace technology, infrastructure planning, and IT environment support.",
+    summary:
+      "Build and maintain the technology foundation your organisation relies on for everyday operations.",
+    offerings: [
+      "Network design",
+      "Server setup",
+      "Hardware support",
+      "IT audits",
+      "Office connectivity",
+      "Infrastructure planning",
+    ],
+    tools: [
+      "Cisco",
+      "MikroTik",
+      "Fortinet",
+      "VMware",
+      "Hyper-V",
+      "Linux",
+    ],
+    audiences: [
+      "Growing offices",
+      "Distributed teams",
+      "Organisations improving their IT environment",
+    ],
+    benefits: [
+      "Improve reliability",
+      "Reduce infrastructure issues",
+      "Make IT environments easier to manage",
+    ],
+    icon: Network,
   },
+
   {
-    title: "Digital Transformation",
+    title: "Digital Transformation & Advisory",
     slug: "digital-transformation",
-    category: "Transform",
+    category: "Additional Capability",
     href: "/services/digital-transformation/",
-    description: "Automation, ERP, CRM, AI, analytics, advisory, and document workflows.",
-    summary: "Replace slow manual processes with connected systems, automation, dashboards, and practical digital operating models.",
-    offerings: ["Process automation", "ERP implementation", "CRM rollout", "AI solutions", "Dashboards", "Digital advisory"],
-    tools: ["Power BI", "Tableau", "Odoo", "HubSpot", "Zoho", "Power Automate"],
-    audiences: ["Operations-heavy businesses", "Leadership teams needing visibility", "Organisations changing how work gets done"],
-    benefits: ["Increase visibility", "Automate repetitive work", "Improve decision-making"],
-    icon: Workflow,
-  },
-  {
-    title: "Web & Digital",
-    slug: "web-digital-solutions",
-    category: "Grow",
-    href: "/services/web-digital-solutions/",
-    description: "Websites, e-commerce, UI/UX, SEO, digital marketing, social media, and brand assets.",
-    summary: "Create digital experiences that help customers understand, trust, and contact your business.",
-    offerings: ["Website design", "E-commerce", "UI/UX design", "SEO", "Digital marketing", "Brand identity"],
-    tools: ["Next.js", "Tailwind CSS", "Figma", "Shopify", "WooCommerce", "GA4"],
-    audiences: ["Businesses needing modern websites", "E-commerce teams", "Brands improving acquisition"],
-    benefits: ["Improve credibility", "Generate more leads", "Make services easier to understand"],
+    description:
+      "Digital transformation planning, process improvement, systems integration, analytics, and technology advisory.",
+    summary:
+      "Connect business goals with practical technology improvements and a clear digital roadmap.",
+    offerings: [
+      "Digital transformation planning",
+      "Process improvement",
+      "Systems integration",
+      "Business dashboards",
+      "Technology advisory",
+      "Digital operating models",
+    ],
+    tools: [
+      "Power BI",
+      "APIs",
+      "Dashboards",
+      "Cloud platforms",
+      "Automation tools",
+      "Analytics",
+    ],
+    audiences: [
+      "Growing organisations",
+      "Leadership teams",
+      "Businesses modernising operations",
+    ],
+    benefits: [
+      "Improve visibility",
+      "Connect disconnected systems",
+      "Make better technology decisions",
+    ],
     icon: Sparkles,
   },
+
   {
-    title: "Enterprise Solutions",
-    slug: "enterprise-solutions",
-    category: "Systemise",
-    href: "/services/enterprise-solutions/",
-    description: "ERP, HRMS, POS, inventory, fleet, school, health, and property systems.",
-    summary: "Implement or customise operational platforms that bring finance, HR, inventory, sales, and sector workflows together.",
-    offerings: ["ERP systems", "HRMS", "POS systems", "Inventory platforms", "Fleet systems", "Sector-specific systems"],
-    tools: ["Odoo", "SAP", "Dynamics", "PostgreSQL", "APIs", "Dashboards"],
-    audiences: ["Enterprises", "Retail and service businesses", "Sector-specific institutions"],
-    benefits: ["Unify operations", "Reduce duplicate data", "Improve reporting"],
-    icon: BriefcaseBusiness,
-  },
-  {
-    title: "IoT & Emerging Tech",
+    title: "IoT & Emerging Technology",
     slug: "iot-emerging-tech",
-    category: "Innovate",
+    category: "Additional Capability",
     href: "/services/iot-emerging-tech/",
-    description: "IoT systems, smart buildings, blockchain, AR/VR, and drone technology.",
-    summary: "Explore connected devices and emerging technologies with practical prototypes, integrations, and deployment plans.",
-    offerings: ["IoT development", "Smart systems", "Blockchain", "AR/VR", "Drone integrations", "Device dashboards"],
-    tools: ["MQTT", "Arduino", "Raspberry Pi", "Sensors", "WebGL", "Blockchain APIs"],
-    audiences: ["Innovation teams", "Smart building projects", "Industrial and field operations"],
-    benefits: ["Prototype new ideas", "Connect physical operations", "Unlock new data sources"],
+    description:
+      "Exploration, prototyping, and integration of connected devices and emerging technologies.",
+    summary:
+      "Explore practical applications of connected devices and emerging technologies for specific operational needs.",
+    offerings: [
+      "IoT development",
+      "Smart systems",
+      "Device dashboards",
+      "Sensor integrations",
+      "Emerging technology prototypes",
+    ],
+    tools: [
+      "MQTT",
+      "Arduino",
+      "Raspberry Pi",
+      "Sensors",
+      "Web APIs",
+    ],
+    audiences: [
+      "Innovation teams",
+      "Industrial projects",
+      "Organisations exploring connected technology",
+    ],
+    benefits: [
+      "Explore new technology opportunities",
+      "Connect physical operations",
+      "Create new sources of operational data",
+    ],
     icon: Building2,
   },
+
   {
-    title: "Training",
+    title: "Training & Capacity Building",
     slug: "training-capacity-building",
-    category: "Enable",
+    category: "Additional Capability",
     href: "/services/training-capacity-building/",
-    description: "Corporate ICT training, certifications, user training, workshops, and STEM programs.",
-    summary: "Equip teams, students, and professionals with practical technology skills that improve adoption and capability.",
-    offerings: ["Corporate ICT training", "Certification prep", "Software user training", "Workshops", "Bootcamps", "STEM programs"],
-    tools: ["CompTIA", "Cisco", "Microsoft", "AWS", "Google Cloud", "Learning labs"],
-    audiences: ["Corporate teams", "Students and graduates", "Users adopting new systems"],
-    benefits: ["Increase adoption", "Build internal capacity", "Reduce support friction"],
+    description:
+      "Technology training, user enablement, workshops, and capacity-building programmes.",
+    summary:
+      "Help teams and learners develop the practical skills required to adopt and use technology effectively.",
+    offerings: [
+      "Corporate ICT training",
+      "Software user training",
+      "Technology workshops",
+      "Bootcamps",
+      "STEM programmes",
+      "Digital skills training",
+    ],
+    tools: [
+      "Microsoft",
+      "AWS",
+      "Google Cloud",
+      "Learning platforms",
+      "Practical labs",
+    ],
+    audiences: [
+      "Corporate teams",
+      "Students and graduates",
+      "Organisations adopting new systems",
+    ],
+    benefits: [
+      "Increase technology adoption",
+      "Build internal capability",
+      "Reduce user-support friction",
+    ],
     icon: GraduationCap,
   },
+
   {
-    title: "Public Sector",
+    title: "Public Sector Solutions",
     slug: "government-public-sector",
-    category: "Serve",
+    category: "Additional Capability",
     href: "/services/government-public-sector/",
-    description: "E-government, civic tech, public infrastructure, integrations, and GIS solutions.",
-    summary: "Support public institutions with citizen-facing platforms, infrastructure, integrations, and transparent digital services.",
-    offerings: ["E-government", "Civic tech", "Public infrastructure IT", "Government integrations", "GIS", "Open data"],
-    tools: ["eCitizen", "IFMIS", "GHRIS", "GIS tools", "APIs", "Secure hosting"],
-    audiences: ["Government agencies", "County institutions", "Public service programmes"],
-    benefits: ["Improve service delivery", "Increase transparency", "Support compliant integrations"],
-    icon: ShoppingBag,
+    description:
+      "Digital platforms, integrations, information systems, and technology support for public-sector environments.",
+    summary:
+      "Support public institutions with practical digital services and information-management solutions.",
+    offerings: [
+      "Digital service platforms",
+      "Information systems",
+      "Systems integrations",
+      "GIS solutions",
+      "Public-sector technology advisory",
+    ],
+    tools: [
+      "APIs",
+      "GIS tools",
+      "Secure hosting",
+      "Dashboards",
+      "Information systems",
+    ],
+    audiences: [
+      "Government agencies",
+      "County institutions",
+      "Public-service programmes",
+    ],
+    benefits: [
+      "Improve service delivery",
+      "Organise information",
+      "Support digital service initiatives",
+    ],
+    icon: Building2,
   },
-  {
-    title: "Startup & SME Packages",
-    slug: "startup-sme-packages",
-    category: "Launch",
-    href: "/services/startup-sme-packages/",
-    description: "Starter bundles, MVP development, tech advisory, automation, and growth marketing.",
-    summary: "Affordable technology bundles for teams that need to move quickly without overbuilding too early.",
-    offerings: ["Starter tech bundles", "MVP development", "Tech advisory", "Automation starters", "Growth marketing", "Support retainers"],
-    tools: ["Next.js", "Cloud hosting", "Email hosting", "M-Pesa", "SEO", "Analytics"],
-    audiences: ["New businesses", "Startup founders", "SMEs preparing to grow"],
-    benefits: ["Launch affordably", "Validate faster", "Get senior tech guidance"],
-    icon: Rocket,
-  },
+];
+
+export const serviceCategories = [
+  ...primaryServices,
+  ...additionalCapabilities,
 ];
 
 export const serviceProcess = [
@@ -182,15 +445,24 @@ export const serviceProcess = [
 
 export const serviceFaqs = [
   {
-    question: "Can Kryptonix help if we are not sure what service we need?",
-    answer: "Yes. The first step is a discovery conversation where we clarify the business problem, urgency, budget, and best-fit solution path.",
+    question: "What does Kryptonix Technologies specialise in?",
+    answer:
+      "Kryptonix Technologies primarily focuses on business website development, e-commerce website development, custom business systems, business automation and AI integrations, and cloud hosting and managed IT support.",
   },
   {
-    question: "Do these services support both small businesses and enterprises?",
-    answer: "Yes. The site is structured for startups, SMEs, enterprises, NGOs, and public sector organisations, with scope adjusted to need and budget.",
+    question: "Does Kryptonix offer services beyond its primary focus?",
+    answer:
+      "Yes. Cybersecurity, IT infrastructure, digital transformation advisory, IoT and emerging technology, training, and public-sector solutions are available as additional capabilities depending on the organisation's needs and project requirements.",
   },
   {
-    question: "Is implementation available without a backend on this website yet?",
-    answer: "Yes. The public website is built for a fast first release, and the platform is ready for CRM, email, analytics, live chat, and other integrations as needed.",
+    question: "Can Kryptonix help if we are not sure which service we need?",
+    answer:
+      "Yes. The first step is a discovery conversation where we clarify the business problem, priorities, users, budget, and desired outcome before recommending a suitable solution.",
+  },
+  {
+    question: "Do you support both small businesses and larger organisations?",
+    answer:
+      "Yes. Project scope can be adapted to the organisation's needs, resources, complexity, and growth plans.",
   },
 ];
+

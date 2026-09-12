@@ -1,3 +1,4 @@
+
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Container } from "@/components/layout/container";
@@ -12,7 +13,12 @@ export const metadata = pageMetadata({
   description:
     "Contact Kryptonix Technologies to discuss a website, business system, cloud project, cybersecurity need, automation idea, IT support request, partnership, or software development quote.",
   path: "/contact",
-  keywords: ["contact Kryptonix", "Kryptonix support", "IT consultation Kenya", "software consultation Kenya"],
+  keywords: [
+    "contact Kryptonix",
+    "Kryptonix support",
+    "IT consultation Kenya",
+    "software consultation Kenya",
+  ],
 });
 
 export default function ContactPage() {
@@ -23,6 +29,7 @@ export default function ContactPage() {
         title="Let's talk about what you need to build, secure, or improve."
         description="Send a message, request direction, or start a conversation about the right technology path for your organisation."
       />
+
       <Section>
         <Container>
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -30,19 +37,55 @@ export default function ContactPage() {
 
             <div className="grid gap-4">
               <GlassCard className="p-5">
-                <Mail className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
-                <p className="mt-4 text-sm font-semibold text-white">Email</p>
-                <a className="mt-1 block text-sm text-slate-400 hover:text-white" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+                <Mail
+                  className="h-5 w-5 text-kryptonix-cyan"
+                  aria-hidden="true"
+                />
+
+                <p className="mt-4 text-sm font-semibold text-white">
+                  Email
+                </p>
+
+                <a
+                  className="mt-1 block text-sm text-slate-400 hover:text-white"
+                  href={`mailto:${siteConfig.email}`}
+                >
+                  {siteConfig.email}
+                </a>
               </GlassCard>
+
               <GlassCard className="p-5">
-                <Phone className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
-                <p className="mt-4 text-sm font-semibold text-white">Phone</p>
-                <a className="mt-1 block text-sm text-slate-400 hover:text-white" href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a>
+                <Phone
+                  className="h-5 w-5 text-kryptonix-cyan"
+                  aria-hidden="true"
+                />
+
+                <p className="mt-4 text-sm font-semibold text-white">
+                  Phone
+                </p>
+
+                <a
+                  className="mt-1 block text-sm text-slate-400 hover:text-white"
+                  href={`tel:${siteConfig.phone}`}
+                >
+                  {siteConfig.phone}
+                </a>
               </GlassCard>
+
               <GlassCard className="p-5">
-                <MapPin className="h-5 w-5 text-kryptonix-cyan" aria-hidden="true" />
-                <p className="mt-4 text-sm font-semibold text-white">Office</p>
-                <p className="mt-1 text-sm text-slate-400">Kenya office details and map location will be published after confirmation.</p>
+                <MapPin
+                  className="h-5 w-5 text-kryptonix-cyan"
+                  aria-hidden="true"
+                />
+
+                <p className="mt-4 text-sm font-semibold text-white">
+                  Service Area
+                </p>
+
+                <p className="mt-1 text-sm leading-6 text-slate-400">
+                  Kenya-based technology services with support available for
+                  organisations working locally and across Africa.
+                </p>
               </GlassCard>
             </div>
           </div>
@@ -51,3 +94,4 @@ export default function ContactPage() {
     </main>
   );
 }
+
