@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import {
   ArrowLeft,
-  ArrowUpRight,
+  ArrowRight,
   CheckCircle2,
-  Clock3,
-  MapPin,
-  Quote,
+  ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 import { Container } from "@/components/layout/container";
-import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { portfolioProjects } from "@/data/portfolio";
 
-type PortfolioCaseStudyPageProps = {
+type PortfolioPageProps = {
   params: Promise<{
     slug: string;
   }>;
@@ -31,355 +28,464 @@ export function generateStaticParams() {
     }));
 }
 
-function getProject(slug: string) {
-  const project = portfolioProjects.find(
-    (item) => item.slug === slug
-  );
-
-  if (!project || !project.approvedForPublicUse) {
-    return null;
-  }
-
-  return project;
-}
-
 export async function generateMetadata({
   params,
-}: PortfolioCaseStudyPageProps): Promise<Metadata> {
+}: PortfolioPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProject(slug);
+
+  const project = portfolioProjects.find(
+    (item) =>
+      item.slug === slug && item.approvedForPublicUse,
+  );
 
   if (!project) {
     return {
-      title: "Case Study Not Found",
+      title: "Case Study | Kryptonix Technologies",
+      description:
+        "Selected project case study from Kryptonix Technologies.",
     };
   }
 
   return {
     title: `${project.title} | Kryptonix Technologies`,
     description: project.description,
-    keywords: [
-      project.title,
-      project.category,
-      project.industry,
-      project.location,
-      ...project.technologies,
-    ],
+    alternates: {
+      canonical: `/portfolio/${project.slug}/`,
+    },
+    openGraph: {
+      title: `${project.title} | Kryptonix Technologies`,
+      description: project.description,
+      type: "website",
+    },
   };
 }
 
 export default async function PortfolioCaseStudyPage({
   params,
-}: PortfolioCaseStudyPageProps) {
+}: PortfolioPageProps) {
   const { slug } = await params;
-  const project = getProject(slug);
+
+  const project = portfolioProjects.find(
+    (item) =>
+      item.slug === slug && item.approvedForPublicUse,
+  );
 
   if (!project) {
     notFound();
   }
 
+  const hasResults =
+    project.measurableResults.results.length > 0;
+
+  const hasTestimonial =
+    Boolean(project.testimonial.quote) &&
+    Boolean(project.testimonial.author);
+
+  const hasEvidence =
+    project.evidence.screenshots.length > 0;
+
   return (
     <main>
-      <PageHero
-        eyebrow={project.category}
-        title={project.title}
-        description={project.description}
-      />
-
-      <Section>
+      {/* Hero */}
+      <Section className="pt-24 pb-12">
         <Container>
-          <div className="mb-8">
+          <div className="mx-auto max-w-4xl">
             <Link
               href="/portfolio/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-white"
+              className="inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              <ArrowLeft
+                className="mr-2 h-4 w-4"
+                aria-hidden="true"
+              />
               Back to Portfolio
             </Link>
-          </div>
 
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.6fr]">
-            <GlassCard className="overflow-hidden">
-              {project.image ? (
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={`${project.title} project`}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ) : null}
-
-              <div className="p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                  Case Study
-                </p>
-
-                <h2 className="mt-3 font-display text-2xl font-semibold text-white sm:text-3xl">
-                  {project.title}
-                </h2>
-
-                <p className="mt-4 text-sm leading-7 text-slate-400">
-                  {project.description}
-                </p>
-              </div>
-            </GlassCard>
-
-            <GlassCard className="p-6 sm:p-8">
-              <h2 className="font-display text-xl font-semibold text-white">
-                Project Overview
-              </h2>
-
-              <div className="mt-6 space-y-5">
-                {project.client ? (
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      Client
-                    </p>
-                    <p className="mt-1 text-sm text-slate-200">
-                      {project.client}
-                    </p>
-                  </div>
-                ) : null}
-
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Industry
-                  </p>
-                  <p className="mt-1 text-sm text-slate-200">
-                    {project.industry}
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <MapPin
-                    className="mt-0.5 h-4 w-4 shrink-0 text-kryptonix-cyan"
-                    aria-hidden="true"
-                  />
-
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      Location
-                    </p>
-                    <p className="mt-1 text-sm text-slate-200">
-                      {project.location}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Clock3
-                    className="mt-0.5 h-4 w-4 shrink-0 text-kryptonix-cyan"
-                    aria-hidden="true"
-                  />
-
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      Project Duration
-                    </p>
-                    <p className="mt-1 text-sm text-slate-200">
-                      {project.duration}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </GlassCard>
-          </div>
-        </Container>
-      </Section>
-
-      <Section className="border-t border-white/10">
-        <Container>
-          <div className="grid gap-6 md:grid-cols-2">
-            <GlassCard className="p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                01
+            <div className="mt-8">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                {project.category}
               </p>
 
-              <h2 className="mt-3 font-display text-2xl font-semibold text-white">
-                Business Problem
-              </h2>
+              <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                {project.title}
+              </h1>
 
-              <p className="mt-4 text-sm leading-7 text-slate-400">
-                The specific business problem and requirements for this
-                project have not yet been formally documented for public
-                publication.
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">
+                {project.description}
               </p>
 
-              <p className="mt-4 text-xs leading-6 text-slate-500">
-                Kryptonix does not publish assumptions about a client&apos;s
-                internal business challenges without verified project
-                documentation or client approval.
-              </p>
-            </GlassCard>
-
-            <GlassCard className="p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                02
-              </p>
-
-              <h2 className="mt-3 font-display text-2xl font-semibold text-white">
-                Approach
-              </h2>
-
-              <p className="mt-4 text-sm leading-7 text-slate-400">
-                The project was delivered using the technologies and services
-                documented below. A detailed public implementation narrative
-                will be added when the relevant project documentation has been
-                verified.
-              </p>
-            </GlassCard>
-
-            <GlassCard className="p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                03
-              </p>
-
-              <h2 className="mt-3 font-display text-2xl font-semibold text-white">
-                Solution Delivered
-              </h2>
-
-              <p className="mt-4 text-sm leading-7 text-slate-400">
-                Kryptonix delivered the digital solution represented by this
-                project. The available project record identifies the
-                technologies, services, duration, and public project details
-                shown on this page.
-              </p>
-
-              <div className="mt-5 space-y-3">
-                {project.services.map((service) => (
-                  <div
-                    key={service}
-                    className="flex items-start gap-3 text-sm text-slate-300"
+              {/* Live Website Button */}
+              {project.liveUrl ? (
+                <div className="mt-7">
+                  <Button
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <CheckCircle2
-                      className="mt-0.5 h-4 w-4 shrink-0 text-kryptonix-green"
+                    View Live Website
+                    <ExternalLink
+                      className="ml-2 h-4 w-4"
                       aria-hidden="true"
                     />
-                    <span>{service}</span>
-                  </div>
-                ))}
-              </div>
-            </GlassCard>
+                  </Button>
+                </div>
+              ) : null}
+            </div>
 
-            <GlassCard className="p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                04
+            {project.image ? (
+              <div className="mt-10 overflow-hidden rounded-2xl border">
+                <img
+                  src={project.image}
+                  alt={`${project.title} project`}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            ) : null}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Project Information */}
+      <Section className="py-12">
+        <Container>
+          <div className="grid gap-6 md:grid-cols-3">
+            <GlassCard className="p-6">
+              <p className="text-sm text-muted-foreground">
+                Client
               </p>
 
-              <h2 className="mt-3 font-display text-2xl font-semibold text-white">
-                Evidence & Results
-              </h2>
+              <p className="mt-2 font-semibold">
+                {project.client}
+              </p>
+            </GlassCard>
 
-              <div className="mt-4">
-                <p className="text-sm leading-7 text-slate-400">
-                  {project.evidence.details}
-                </p>
+            <GlassCard className="p-6">
+              <p className="text-sm text-muted-foreground">
+                Industry
+              </p>
 
-                <p className="mt-5 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-6 text-slate-300">
-                  <strong className="text-white">
-                    Measurable website results:
-                  </strong>{" "}
-                  Verified website performance metrics are not yet available
-                  for public publication.
-                </p>
-              </div>
+              <p className="mt-2 font-semibold">
+                {project.industry}
+              </p>
+            </GlassCard>
+
+            <GlassCard className="p-6">
+              <p className="text-sm text-muted-foreground">
+                Location
+              </p>
+
+              <p className="mt-2 font-semibold">
+                {project.location}
+              </p>
             </GlassCard>
           </div>
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10">
+      {/* Problem */}
+      <Section className="py-12">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <GlassCard className="p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                Technology
+          <div className="mx-auto max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              01
+            </p>
+
+            <h2 className="mt-2 text-3xl font-bold">
+              The Problem
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              {project.problem}
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Approach */}
+      <Section className="py-12">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              02
+            </p>
+
+            <h2 className="mt-2 text-3xl font-bold">
+              Our Approach
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              {project.approach}
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Solution */}
+      <Section className="py-12">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              03
+            </p>
+
+            <h2 className="mt-2 text-3xl font-bold">
+              The Solution
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              {project.solution}
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {project.services.map((service) => (
+                <GlassCard
+                  key={service}
+                  className="flex items-start gap-3 p-5"
+                >
+                  <CheckCircle2
+                    className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                    aria-hidden="true"
+                  />
+
+                  <span className="font-medium">
+                    {service}
+                  </span>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Project Details */}
+      <Section className="py-12">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-3xl font-bold">
+              Project Details
+            </h2>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <GlassCard className="p-6">
+                <p className="text-sm text-muted-foreground">
+                  Project duration
+                </p>
+
+                <p className="mt-2 text-lg font-semibold">
+                  {project.duration}
+                </p>
+              </GlassCard>
+
+              <GlassCard className="p-6">
+                <p className="text-sm text-muted-foreground">
+                  Technologies
+                </p>
+
+                {project.technologies.length > 0 ? (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.technologies.map(
+                      (technology) => (
+                        <span
+                          key={technology}
+                          className="rounded-full border px-3 py-1 text-sm"
+                        >
+                          {technology}
+                        </span>
+                      ),
+                    )}
+                  </div>
+                ) : (
+                  <p className="mt-2 text-muted-foreground">
+                    Technology details to be confirmed.
+                  </p>
+                )}
+              </GlassCard>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Evidence */}
+      <Section className="py-12">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              04
+            </p>
+
+            <h2 className="mt-2 text-3xl font-bold">
+              Evidence
+            </h2>
+
+            <GlassCard className="mt-6 p-6">
+              <p className="font-semibold">
+                {project.evidence.status}
               </p>
 
-              <h2 className="mt-3 font-display text-2xl font-semibold text-white">
-                Technologies Used
-              </h2>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.technologies.map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-300"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
+              <p className="mt-3 leading-7 text-muted-foreground">
+                {project.evidence.details}
+              </p>
             </GlassCard>
 
-            <GlassCard className="p-6 sm:p-8">
-              <div className="flex items-center gap-3">
-                <Quote
-                  className="h-5 w-5 text-kryptonix-cyan"
-                  aria-hidden="true"
-                />
-
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                  Client Feedback
-                </p>
+            {hasEvidence ? (
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                {project.evidence.screenshots.map(
+                  (screenshot: string) => (
+                    <img
+                      key={screenshot}
+                      src={screenshot}
+                      alt={`${project.title} project evidence`}
+                      className="rounded-xl border"
+                    />
+                  ),
+                )}
               </div>
+            ) : (
+              <p className="mt-4 text-sm text-muted-foreground">
+                Additional screenshots or project photographs
+                will be added when approved for publication.
+              </p>
+            )}
+          </div>
+        </Container>
+      </Section>
 
-              <h2 className="mt-3 font-display text-2xl font-semibold text-white">
-                Client Testimonial
-              </h2>
+      {/* Measurable Results */}
+      <Section className="py-12">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              05
+            </p>
 
-              {project.testimonial.quote ? (
-                <blockquote className="mt-5 text-sm leading-7 text-slate-300">
-                  &quot;{project.testimonial.quote}&quot;
-                </blockquote>
-              ) : (
-                <p className="mt-5 text-sm leading-7 text-slate-400">
-                  Client testimonial pending approval and publication.
+            <h2 className="mt-2 text-3xl font-bold">
+              Measurable Results
+            </h2>
+
+            {hasResults ? (
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {project.measurableResults.results.map(
+                  (
+                    result: {
+                      metric?: string;
+                      value?: string;
+                      description?: string;
+                    },
+                    index: number,
+                  ) => (
+                    <GlassCard
+                      key={`${result.metric}-${index}`}
+                      className="p-6"
+                    >
+                      {result.value ? (
+                        <p className="text-3xl font-bold">
+                          {result.value}
+                        </p>
+                      ) : null}
+
+                      {result.metric ? (
+                        <p className="mt-2 font-semibold">
+                          {result.metric}
+                        </p>
+                      ) : null}
+
+                      {result.description ? (
+                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                          {result.description}
+                        </p>
+                      ) : null}
+                    </GlassCard>
+                  ),
+                )}
+              </div>
+            ) : (
+              <GlassCard className="mt-6 p-6">
+                <p className="font-semibold">
+                  {project.measurableResults.status}
                 </p>
-              )}
 
-              {project.testimonial.author ? (
-                <div className="mt-5">
-                  <p className="text-sm font-semibold text-white">
+                <p className="mt-3 text-muted-foreground">
+                  No verified Kryptonix project performance
+                  results are currently available for publication.
+                </p>
+              </GlassCard>
+            )}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Client Quote */}
+      <Section className="py-12">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              06
+            </p>
+
+            <h2 className="mt-2 text-3xl font-bold">
+              Client Feedback
+            </h2>
+
+            {hasTestimonial ? (
+              <GlassCard className="mt-6 p-8">
+                <blockquote className="text-lg leading-8">
+                  “{project.testimonial.quote}”
+                </blockquote>
+
+                <div className="mt-6">
+                  <p className="font-semibold">
                     {project.testimonial.author}
                   </p>
 
                   {project.testimonial.jobTitle ? (
-                    <p className="mt-1 text-xs text-slate-500">
+                    <p className="text-sm text-muted-foreground">
                       {project.testimonial.jobTitle}
                     </p>
                   ) : null}
                 </div>
-              ) : null}
-            </GlassCard>
+              </GlassCard>
+            ) : (
+              <GlassCard className="mt-6 p-6">
+                <p className="font-semibold">
+                  Client testimonial pending approval
+                </p>
+
+                <p className="mt-3 text-muted-foreground">
+                  An approved client testimonial will be added
+                  when permission is received.
+                </p>
+              </GlassCard>
+            )}
           </div>
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10 bg-[var(--off-white)]">
+      {/* CTA */}
+      <Section className="py-16">
         <Container>
-          <GlassCard className="p-8 text-center sm:p-10">
-            <h2 className="font-display text-2xl font-semibold text-white sm:text-3xl">
-              Need a similar digital solution?
+          <GlassCard className="p-8 text-center sm:p-12">
+            <h2 className="text-3xl font-bold">
+              Have a similar project in mind?
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-400">
-              Talk to Kryptonix Technologies about your website, e-commerce
-              platform, business system, automation, cloud, or digital
-              transformation requirements.
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Tell us what your business needs and we can discuss
+              the right digital solution for your goals.
             </p>
 
-            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button href="/contact/" showArrow>
+            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button href="/contact/">
                 Discuss Your Project
-                <ArrowUpRight
+                <ArrowRight
                   className="ml-2 h-4 w-4"
                   aria-hidden="true"
                 />
               </Button>
 
-              <Button href="/portfolio/" variant="secondary">
+              <Button
+                href="/portfolio/"
+                variant="secondary"
+              >
                 View More Projects
               </Button>
             </div>

@@ -13,17 +13,32 @@ export const portfolioProjects = [
     slug: "vortexus-industrial-excellence",
     title: "Vortexus Industrial Excellence",
     category: "Web Development",
+
     description:
-      "A professional website for a Nairobi-based supplier of water treatment, swimming pool, and solar equipment, with product presentation and quote-request functionality.",
+      "A professional website for a Nairobi-based supplier of water treatment, swimming pool, and solar equipment, with product presentation and enquiry functionality.",
+
     client: "Vortexus Industrial Excellence",
     industry:
       "Water Treatment, Swimming Pool & Solar Equipment Supply",
     location: "Nairobi, Kenya",
+
+    liveUrl: "https://vortexusindustrial.com/",
+
     services: [
       "Business Website Development",
       "Web Development",
       "Lead Generation",
     ],
+
+    problem:
+      "The business needed a professional digital presence that could clearly present its products and give potential customers a structured way to make enquiries.",
+
+    approach:
+      "Kryptonix structured the website around the company's products, services, brand presentation, and customer enquiry journey.",
+
+    solution:
+      "A responsive business website was delivered with product presentation, enquiry functionality, responsive layouts, and supporting digital integrations.",
+
     technologies: [
       "React.js",
       "Email SMTP",
@@ -33,23 +48,33 @@ export const portfolioProjects = [
       "cPanel",
       "TensorFlow",
     ],
+
     duration: "1 month",
+
     image: "/corporate-website.webp",
 
     evidence: {
-      status: "Awaiting verified website performance metrics",
+      status: "Project delivered; performance evidence pending",
+
       details:
-        "The project was delivered as a responsive business website aligned with the client's brand, product range, and enquiry workflow. Website performance metrics such as traffic, page-load performance, and lead volume have not yet been provided.",
+        "The available project information confirms delivery of a responsive business website aligned with the client's products, services, brand, and enquiry workflow. Verified website traffic, page-performance, conversion, and lead-volume data have not been provided.",
+
+      screenshots: [],
+    },
+
+    measurableResults: {
+      status: "Not yet verified",
+      results: [],
     },
 
     testimonial: {
-      status: "Draft — pending client approval",
-      quote:
-        "Kryptonix Technologies helped us establish a professional online presence that clearly showcases our water treatment, swimming pool, solar, and industrial equipment solutions. The website provides customers with a clearer way to explore our products and get in touch with our team. We appreciate the effort put into understanding our business and delivering a responsive website aligned with our needs.",
-      author: "Vortexus Industrial Excellence",
-      jobTitle: "Client testimonial pending approval",
+      status: "Not yet approved for publication",
+      quote: null,
+      author: null,
+      jobTitle: null,
     },
 
+    permissionToPublish: true,
     approvedForPublicUse: true,
   },
 
@@ -57,17 +82,32 @@ export const portfolioProjects = [
     slug: "norwa-waters",
     title: "Norwa Waters",
     category: "Web Development",
+
     description:
-      "A professional website presenting water treatment, borehole, pumping, and solar solutions, with project information and a structured quote-request journey.",
+      "A professional website presenting water treatment, borehole, pumping, and solar solutions, with project information and a structured enquiry journey.",
+
     client: "Norwa Waters",
     industry:
       "Water Treatment, Borehole, Pumping & Solar Solutions",
     location: "Kenya / Africa",
+
+    liveUrl: "https://norwawater.com/",
+
     services: [
       "Business Website Development",
       "Web Development",
       "Lead Generation",
     ],
+
+    problem:
+      "The business needed a structured online platform for presenting its water treatment, borehole, pumping, solar solutions, and project information to potential customers.",
+
+    approach:
+      "Kryptonix organised the company's services and project information into a clearer digital experience designed to support customer discovery and enquiries.",
+
+    solution:
+      "A responsive business website was delivered with service presentation, project information, enquiry functionality, and supporting digital integrations.",
+
     technologies: [
       "Python",
       "React",
@@ -76,24 +116,36 @@ export const portfolioProjects = [
       "SMTP",
       "Chatbot",
     ],
+
     duration: "3 weeks",
+
     image: "/corporate-website.webp",
 
     evidence: {
       status:
-        "Client-reported business impact; website performance metrics pending",
+        "Client-reported business figures available; Kryptonix performance metrics pending",
+
       details:
-        "The website presents company-reported figures including 120+ completed projects, 45+ project partners, 25,000+ households served, 22M+ litres treated daily, and operations across 12 counties. These figures describe Norwa Waters' business impact and are not attributed to Kryptonix website performance.",
+        "The available project information includes company-reported figures of 120+ completed projects, 45+ project partners, 25,000+ households served, 22M+ litres treated daily, and operations across 12 counties. These figures describe Norwa Waters' reported business activity and are not presented as results generated by the Kryptonix website.",
+
+      screenshots: [],
+    },
+
+    measurableResults: {
+      status:
+        "No verified Kryptonix website performance results available",
+
+      results: [],
     },
 
     testimonial: {
-      status: "Draft — pending client approval",
-      quote:
-        "Kryptonix Technologies developed a professional digital platform that helps us present our water treatment, borehole, pumping, and solar solutions to customers across Africa. The website brings our services and project information together in a clear and accessible way, giving visitors a better understanding of what we do and how they can engage with us.",
-      author: "Norwa Waters",
-      jobTitle: "Client testimonial pending approval",
+      status: "Not yet approved for publication",
+      quote: null,
+      author: null,
+      jobTitle: null,
     },
 
+    permissionToPublish: true,
     approvedForPublicUse: true,
   },
 
@@ -101,17 +153,32 @@ export const portfolioProjects = [
     slug: "volem-water",
     title: "Volem Water Ltd",
     category: "Web Development",
+
     description:
       "A professional website for an engineering-led water and wastewater treatment company serving industrial, commercial, institutional, and municipal clients.",
+
     client: "Volem Water Ltd",
     industry:
       "Industrial & Municipal Water/Wastewater Treatment",
     location: "Kenya",
+
+    liveUrl: "https://www.volemwater.com/",
+
     services: [
       "Business Website Development",
       "Web Development",
       "Digital Solutions",
     ],
+
+    problem:
+      "The business needed a professional digital platform for communicating its engineering, water treatment, maintenance, monitoring, and consultancy services to different customer groups.",
+
+    approach:
+      "Kryptonix organised the company's services and technical offering into a structured, responsive digital experience.",
+
+    solution:
+      "A responsive business website was delivered to present the company's engineering and water-treatment services in a clearer and more accessible format.",
+
     technologies: [
       "Vue.js",
       "Iconify",
@@ -122,23 +189,33 @@ export const portfolioProjects = [
       "OpenRouter",
       "AI Integrations",
     ],
+
     duration: "1.5 months",
+
     image: "/corporate-website.webp",
 
     evidence: {
-      status: "Awaiting verified website performance metrics",
+      status: "Project delivered; performance evidence pending",
+
       details:
-        "The project was delivered as a responsive website presenting the client's engineering, treatment, maintenance, monitoring, and consultancy services. Verified traffic, performance, and lead-generation metrics have not yet been provided.",
+        "The available project information confirms delivery of a responsive website presenting engineering, treatment, maintenance, monitoring, and consultancy services. Verified traffic, performance, conversion, and lead-generation metrics have not yet been provided.",
+
+      screenshots: [],
+    },
+
+    measurableResults: {
+      status: "Not yet verified",
+      results: [],
     },
 
     testimonial: {
-      status: "Draft — pending client approval",
-      quote:
-        "Kryptonix Technologies delivered a professional website that gives Volem Water a clear platform to communicate our engineering and water treatment solutions. The website helps us present our services to industrial, commercial, institutional, and municipal clients in a more structured and accessible way. We appreciate the work done to translate our business offering into a modern digital experience.",
-      author: "Volem Water Ltd",
-      jobTitle: "Client testimonial pending approval",
+      status: "Not yet approved for publication",
+      quote: null,
+      author: null,
+      jobTitle: null,
     },
 
+    permissionToPublish: true,
     approvedForPublicUse: true,
   },
 
@@ -146,25 +223,51 @@ export const portfolioProjects = [
     slug: "norwa-africa",
     title: "Norwa Africa",
     category: "Digital Transformation",
+
     description:
       "A website presenting water treatment, water pumping, and solar pumping solutions for customers across the African market.",
+
     client: "Norwa Africa",
     industry: "Water Treatment & Pumping Solutions",
     location: "Africa",
+
+    // Live website exists, but the project is not approved for public portfolio use yet.
+    liveUrl: null,
+
     services: [
       "Business Website Development",
       "Digital Transformation",
       "Web Development",
     ],
+
+    problem:
+      "The available information indicates a need for a digital platform to present water treatment, pumping, and solar pumping solutions to an African market.",
+
+    approach:
+      "The available project information supports a website-focused approach for presenting the company's solutions and market offering.",
+
+    solution:
+      "A website was developed to present the company's water treatment, water pumping, and solar pumping solutions.",
+
     technologies: [],
+
     duration: "To be confirmed",
+
     image: "/corporate-website.webp",
 
     evidence: {
       status:
-        "Client-reported impact; Kryptonix project metrics pending",
+        "Project information available; public-use approval pending",
+
       details:
-        "The website displays company-reported impact figures including more than a million lives empowered, a billion tons of saline water purified, and $4.6 billion in energy expenditure savings. These figures represent Norwa Africa's reported business impact and are not presented as Kryptonix website performance results.",
+        "The available information includes company-reported business impact figures. These figures have not been independently verified as Kryptonix project results.",
+
+      screenshots: [],
+    },
+
+    measurableResults: {
+      status: "Not verified",
+      results: [],
     },
 
     testimonial: {
@@ -174,6 +277,7 @@ export const portfolioProjects = [
       jobTitle: null,
     },
 
+    permissionToPublish: false,
     approvedForPublicUse: false,
   },
 
@@ -181,16 +285,31 @@ export const portfolioProjects = [
     slug: "reesolmart",
     title: "Reesolmart",
     category: "E-commerce",
+
     description:
       "An industrial e-commerce storefront serving the water treatment and borehole equipment sector, supporting product discovery and supplier marketplace workflows.",
+
     client: "Reesolmart",
     industry: "Industrial E-commerce / Supplier Marketplace",
     location: "Kenya",
+
+    liveUrl: "https://www.reesolmart.com/",
+
     services: [
       "E-commerce Development",
       "Business Systems",
       "Web Development",
     ],
+
+    problem:
+      "The business needed an online platform supporting product discovery, supplier workflows, administration, dashboards, and digital payments for an industrial marketplace.",
+
+    approach:
+      "Kryptonix combined e-commerce functionality with supplier, administration, dashboard, and payment capabilities to support the marketplace workflow.",
+
+    solution:
+      "An industrial e-commerce platform was delivered with product and supplier functionality, administrative systems, dashboards, and payment integrations.",
+
     technologies: [
       "Django",
       "Python",
@@ -201,22 +320,34 @@ export const portfolioProjects = [
       "M-Pesa API",
       "PayPal",
     ],
+
     duration: "3 months",
+
     image: "/e-commerce-platform.webp",
 
     evidence: {
-      status: "Awaiting verified e-commerce performance metrics",
+      status:
+        "Project functionality documented; performance metrics pending",
+
       details:
-        "The platform was delivered with e-commerce, supplier, dashboard, administration, and payment functionality. Verified metrics such as transaction volume, traffic growth, conversion rate, or lead volume have not yet been provided.",
+        "The available information confirms e-commerce, supplier, dashboard, administration, and payment functionality. Verified transaction volume, traffic, conversion rate, revenue, or lead-generation results have not been provided.",
+
+      screenshots: [],
+    },
+
+    measurableResults: {
+      status: "Not yet verified",
+      results: [],
     },
 
     testimonial: {
-      status: "Pending client approval",
+      status: "Not yet approved for publication",
       quote: null,
       author: null,
       jobTitle: null,
     },
 
+    permissionToPublish: true,
     approvedForPublicUse: true,
   },
 
@@ -224,16 +355,31 @@ export const portfolioProjects = [
     slug: "nelda-engineering-solutions",
     title: "Nelda Engineering Solutions Ltd",
     category: "Web Development",
+
     description:
       "A professional website for an engineering solutions company, presenting its services and digital contact channels.",
+
     client: "Nelda Engineering Solutions Ltd",
     industry: "Engineering Solutions",
     location: "Kenya",
+
+    liveUrl: null,
+
     services: [
       "Business Website Development",
       "Web Development",
       "Digital Solutions",
     ],
+
+    problem:
+      "The business needed a professional online presence for presenting its engineering services and providing customers with digital contact channels.",
+
+    approach:
+      "Kryptonix structured the company's service information and contact journey into a responsive business website.",
+
+    solution:
+      "A professional responsive website was delivered with service presentation and digital contact functionality.",
+
     technologies: [
       "Vue.js",
       "Iconify",
@@ -244,22 +390,33 @@ export const portfolioProjects = [
       "OpenRouter",
       "AI Integrations",
     ],
+
     duration: "1 month",
+
     image: "/corporate-website.webp",
 
     evidence: {
-      status: "Awaiting verified website performance metrics",
+      status: "Project delivered; performance evidence pending",
+
       details:
-        "The project was delivered as a professional business website. Current website performance, traffic, and lead-generation metrics have not yet been provided and should not be presented as measured results.",
+        "The available project information confirms delivery of a professional business website. Verified traffic, performance, conversion, and lead-generation metrics have not yet been provided.",
+
+      screenshots: [],
+    },
+
+    measurableResults: {
+      status: "Not yet verified",
+      results: [],
     },
 
     testimonial: {
-      status: "Pending client approval",
+      status: "Not yet approved for publication",
       quote: null,
       author: null,
       jobTitle: null,
     },
 
+    permissionToPublish: true,
     approvedForPublicUse: true,
   },
 ];

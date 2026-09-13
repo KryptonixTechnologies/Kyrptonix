@@ -4,9 +4,7 @@ import {
   Bot,
   BriefcaseBusiness,
   Check,
-  CirclePlay,
   ClipboardCheck,
-  CloudCog,
   Code2,
   Factory,
   GraduationCap,
@@ -34,73 +32,73 @@ import { Button } from "@/components/ui/button";
 import { HeroImageCarousel } from "@/components/visuals/hero-image-carousel";
 
 const trustItems = [
+  "Custom Project Delivery",
   "Consultation Available",
   "Responsive Design",
-  "Custom Project Delivery",
-  "Ongoing Support Options",
-  "Kenya-Based Team",
+  "Ongoing Support",
+  "Built in Kenya",
 ];
 
 const heroStats = [
-  { value: "Local", label: "Kenya-Based Team" },
   { value: "Custom", label: "Project Delivery" },
-  { value: "Flexible", label: "Digital Solutions" },
+  { value: "Available", label: "Consultation" },
+  { value: "Responsive", label: "Design" },
   { value: "Ongoing", label: "Support Options" },
-  { value: "Free", label: "Initial Consultation" },
+  { value: "Kenya", label: "Based Team" },
 ];
 
 const solutions = [
   {
-    title: "Websites & Digital Presence",
-    href: "/services/web-digital-solutions/",
+    title: "Business Website Development",
+    href: "/services/website-design-development-kenya/",
     icon: Store,
     points: [
       "Corporate Websites",
-      "E-commerce Solutions",
-      "Landing Pages",
-      "SEO & Performance",
+      "Mobile-Responsive Design",
+      "Lead Generation Systems",
+      "SEO & Performance Optimization",
     ],
     image: "/websites-digital-presence.webp",
-    imageAlt: "Website development and digital presence solutions",
+    imageAlt: "Business website development in Kenya",
   },
   {
-    title: "Business Systems",
+    title: "E-Commerce & M-Pesa Integration",
+    href: "/services/ecommerce-website-development-kenya/",
+    icon: ShoppingCart,
+    points: [
+      "Online Store Platforms",
+      "Daraja M-Pesa Integration",
+      "Product Catalog & Inventory",
+      "Automated Order Receipts",
+    ],
+    image: "/e-commerce-platform.webp",
+    imageAlt: "E-commerce website development with M-Pesa integration in Kenya",
+  },
+  {
+    title: "Custom Business Systems",
     href: "/services/enterprise-solutions/",
     icon: BriefcaseBusiness,
     points: [
-      "ERP & Business Management",
-      "POS & Inventory Systems",
-      "HR & Payroll Systems",
-      "Custom Web Applications",
+      "Custom ERP & CRM Software",
+      "POS & Stock Management",
+      "HR & Payroll Solutions",
+      "Water Company ERP Systems",
     ],
     image: "/business-systems.webp",
-    imageAlt: "Business management and point of sale system",
+    imageAlt: "Custom business management software in Kenya",
   },
   {
-    title: "Cloud & Infrastructure",
-    href: "/services/cloud-services/",
-    icon: CloudCog,
-    points: [
-      "Cloud Hosting & Deployment",
-      "Server Management",
-      "Backup & Disaster Recovery",
-      "DevOps & Monitoring",
-    ],
-    image: "/cloud-infrastructure.webp",
-    imageAlt: "Cloud computing and IT infrastructure solutions",
-  },
-  {
-    title: "Automation & AI Solutions",
+    title: "Business Automation & AI",
     href: "/services/digital-transformation/",
     icon: Bot,
     points: [
       "Workflow Automation",
       "Real-time Dashboards",
-      "Reporting & Analytics",
-      "AI & API Integrations",
+      "AI Chatbot Integration",
+      "WhatsApp Business APIs",
     ],
     image: "/automation-ai-solutions.webp",
-    imageAlt: "Business automation and artificial intelligence solutions",
+    imageAlt: "Business process automation and AI integration in Kenya",
   },
 ];
 
@@ -145,41 +143,41 @@ const process = [
   {
     step: "02",
     title: "Design",
-    text: "We create wireframes and UI/UX that align with your business needs.",
+    text: "We create wireframes and UI/UX that users will love.",
     icon: PenTool,
   },
   {
     step: "03",
     title: "Development",
-    text: "We build scalable, secure, and maintainable digital solutions.",
+    text: "We build scalable, secure, and fast solutions.",
     icon: Code2,
   },
   {
     step: "04",
     title: "Testing",
-    text: "We test the solution to identify and resolve issues before launch.",
+    text: "We test thoroughly to make sure everything works perfectly.",
     icon: ClipboardCheck,
   },
   {
     step: "05",
     title: "Launch",
-    text: "We deploy your solution and support the rollout process.",
+    text: "We deploy your solution and ensure smooth rollout.",
     icon: Rocket,
   },
   {
     step: "06",
     title: "Support",
-    text: "We offer ongoing support and improvement options after launch.",
+    text: "We provide ongoing support and improvements.",
     icon: Headphones,
   },
 ];
 
 const benefits = [
+  { title: "Fast Delivery", icon: Rocket },
   { title: "Business-Focused Solutions", icon: PackageCheck },
   { title: "Secure & Reliable Systems", icon: ShieldCheck },
   { title: "Growth-Oriented Design", icon: ShoppingCart },
-  { title: "Responsive User Experiences", icon: Check },
-  { title: "Ongoing Support Options", icon: Headphones },
+  { title: "Ongoing Support", icon: Headphones },
 ];
 
 const industries = [
@@ -264,7 +262,7 @@ export default function Home() {
           <div className="grid min-h-[560px] gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <div className="max-w-2xl pt-6 sm:pt-8 lg:pt-10">
               <span className="inline-flex rounded-full border border-kryptonix-gold/25 bg-white px-4 py-2 text-xs font-semibold text-ink-950 shadow-sm">
-                Your Technology Partner in Kenya
+                Technology Solutions for Growing Businesses
               </span>
 
               <h1 className="mt-6 font-display text-4xl font-bold leading-[1.02] text-ink-950 sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
@@ -281,17 +279,16 @@ export default function Home() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="/quote" showArrow>
-                  Get Free Consultation
+                <Button href="/quote/" showArrow>
+                  Get a Website Quote
                 </Button>
 
                 <Button
-                  href="/portfolio"
+                  href="/contact/"
                   variant="secondary"
                   className="gap-2"
                 >
-                  View Our Work
-                  <CirclePlay className="h-4 w-4" aria-hidden="true" />
+                  Book a Free 20-Minute Consultation
                 </Button>
               </div>
             </div>
@@ -497,7 +494,7 @@ export default function Home() {
           <Reveal>
             <SectionIntro
               eyebrow="Our Process"
-              title="A Clear Process for Website and Software Development"
+              title="A Simple, Proven Process for Website and Software Development"
               description="We follow a clear process from discovery and design through development, testing, launch, and ongoing support."
             />
           </Reveal>
@@ -590,7 +587,7 @@ export default function Home() {
                   <p className="mt-4 text-base leading-7 text-slate-600">
                     With experience building software for different
                     industries, I focus on quality, communication, and
-                    practical solutions.
+                    results.
                   </p>
 
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -656,8 +653,8 @@ export default function Home() {
           <Reveal>
             <SectionIntro
               eyebrow="Why Businesses Work With Kryptonix"
-              title="Built Around Business Needs and Practical Digital Solutions"
-              description="Every project is shaped around business objectives, reliability, usability, and a clean user experience."
+              title="Built For Trust, Capability, and Results"
+              description="Every project is shaped around business value, long-term reliability, and a clean user experience."
             />
           </Reveal>
 

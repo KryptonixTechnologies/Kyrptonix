@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes } from "react";
 
 import { cn } from "@/lib/utils";
 

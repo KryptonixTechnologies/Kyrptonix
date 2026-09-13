@@ -115,10 +115,38 @@ export function organizationJsonLd() {
 
     description: siteConfig.description,
 
-    areaServed: {
-      "@type": "Country",
-      name: "Kenya",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: siteConfig.address.city,
+      addressCountry: siteConfig.address.country,
+      streetAddress: siteConfig.address.full,
     },
+
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ],
+        opens: "08:00",
+        closes: "17:00",
+      },
+    ],
+
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Nairobi",
+      },
+      {
+        "@type": "Country",
+        name: "Kenya",
+      },
+    ],
 
     ...(sameAs.length ? { sameAs } : {}),
 

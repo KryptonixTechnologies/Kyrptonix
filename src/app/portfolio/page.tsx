@@ -1,3 +1,4 @@
+
 import { ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
@@ -144,3 +145,4 @@ export default function PortfolioPage() {
     </main>
   );
 }
+

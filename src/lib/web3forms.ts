@@ -1,4 +1,5 @@
-export const web3FormsAccessKey = "e7754e07-a925-48d6-9603-a38096d99c5b";
+export const web3FormsAccessKey =
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "e7754e07-a925-48d6-9603-a38096d99c5b";
 
 type Web3FormsPayload = Record<string, string | string[]>;
 

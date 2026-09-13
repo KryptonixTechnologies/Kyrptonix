@@ -32,6 +32,7 @@ const textareaClass =
 
 export function ContactForm() {
   const [values, setValues] = useState<ContactValues>(initialValues);
+  const [honeypot, setHoneypot] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,7 +62,13 @@ export function ContactForm() {
     setAttemptedSubmit(true);
     setSubmitError("");
 
-    if (Object.keys(errors).length > 0) return;
+    if (honeypot) {
+      // Silent rejection for bot submissions
+      setSubmitted(true);
+      return;
+    }
+
+    if (Object.keys(errors).length > 0 || isSubmitting) return;
 
     setIsSubmitting(true);
 
@@ -93,19 +100,27 @@ export function ContactForm() {
           <CheckCircle2 className="h-7 w-7 text-kryptonix-green" aria-hidden="true" />
           <h2 className="mt-4 text-xl font-semibold text-white">Message sent successfully.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Thanks for reaching out. Your message has been sent to Kryptonix Technologies, and we will respond as soon as possible.
+            Thanks for reaching out. Your message has been sent to Kryptonix Technologies. <strong>We respond within one business day.</strong>
           </p>
-          <button
-            type="button"
-            className="mt-5 inline-flex h-10 items-center justify-center rounded-md border border-ink-950/15 bg-white px-4 text-sm font-semibold text-ink-950 transition hover:bg-kryptonix-gold/10"
-            onClick={() => {
-              setValues(initialValues);
-              setSubmitted(false);
-              setAttemptedSubmit(false);
-            }}
-          >
-            Send another message
-          </button>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <button
+              type="button"
+              className="inline-flex h-10 items-center justify-center rounded-md border border-ink-950/15 bg-white px-4 text-sm font-semibold text-ink-950 transition hover:bg-kryptonix-gold/10"
+              onClick={() => {
+                setValues(initialValues);
+                setSubmitted(false);
+                setAttemptedSubmit(false);
+              }}
+            >
+              Send another message
+            </button>
+            <a
+              href="/thank-you/"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 transition hover:bg-kryptonix-green/90"
+            >
+              View Next Steps
+            </a>
+          </div>
         </div>
       </GlassCard>
     );
@@ -114,6 +129,17 @@ export function ContactForm() {
   return (
     <GlassCard className="p-6">
       <form className="grid gap-4" onSubmit={handleSubmit} noValidate>
+        {/* Anti-spam Honeypot Field */}
+        <input
+          type="text"
+          name="botcheck"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          className="hidden"
+          aria-hidden="true"
+        />
         <div className="grid gap-4 sm:grid-cols-2">
           <FieldError label="Name" error={attemptedSubmit ? errors.name : undefined}>
             <input

@@ -138,10 +138,12 @@ export default async function ServiceDetailPage({
     },
   };
 
+  const faqs = serviceFaqs[slug as keyof typeof serviceFaqs] || serviceFaqs.default;
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: serviceFaqs.map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -401,7 +403,7 @@ export default async function ServiceDetailPage({
               </div>
 
               <div className="mt-5 grid gap-4">
-                {serviceFaqs.map((faq) => (
+                {faqs.map((faq) => (
                   <div
                     key={faq.question}
                     className="rounded-md border border-white/10 bg-white/[0.035] p-4"

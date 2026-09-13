@@ -1,5 +1,5 @@
 
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
@@ -73,18 +73,15 @@ export default function ContactPage() {
               </GlassCard>
 
               <GlassCard className="p-5">
-                <MapPin
-                  className="h-5 w-5 text-kryptonix-cyan"
-                  aria-hidden="true"
-                />
-
-                <p className="mt-4 text-sm font-semibold text-white">
-                  Service Area
+                <p className="text-sm font-semibold text-white">
+                  Location & Hours
                 </p>
-
-                <p className="mt-1 text-sm leading-6 text-slate-400">
-                  Kenya-based technology services with support available for
-                  organisations working locally and across Africa.
+                <p className="mt-2 text-sm leading-6 text-slate-400">
+                  <strong>Location:</strong> {siteConfig.address.full}
+                  <br />
+                  <strong>Hours:</strong> {siteConfig.supportHours}
+                  <br />
+                  <strong>SLA:</strong> {siteConfig.responseSLA}
                 </p>
               </GlassCard>
             </div>

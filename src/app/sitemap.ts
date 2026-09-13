@@ -8,11 +8,15 @@ const staticPages = [
   { path: "/", priority: 1 },
   { path: "/about/", priority: 0.8 },
   { path: "/services/", priority: 0.9 },
+  { path: "/services/website-design-development-kenya/", priority: 1.0 },
+  { path: "/services/ecommerce-website-development-kenya/", priority: 1.0 },
+  { path: "/services/mpesa-integration-services/", priority: 0.9 },
   { path: "/portfolio/", priority: 0.8 },
   { path: "/resources/", priority: 0.7 },
   { path: "/careers/", priority: 0.6 },
   { path: "/contact/", priority: 0.9 },
   { path: "/quote/", priority: 0.9 },
+  { path: "/thank-you/", priority: 0.4 },
   { path: "/privacy/", priority: 0.3 },
   { path: "/terms/", priority: 0.3 },
   { path: "/cookies/", priority: 0.3 },
@@ -20,7 +24,7 @@ const staticPages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-07-07");
+  const lastModified = new Date();
 
   return [
     ...staticPages.map((page) => ({

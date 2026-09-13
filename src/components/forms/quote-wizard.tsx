@@ -35,6 +35,7 @@ const inputClass =
 export function QuoteWizard() {
   const [step, setStep] = useState(0);
   const [values, setValues] = useState<QuoteValues>(initialValues);
+  const [honeypot, setHoneypot] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,7 +72,12 @@ export function QuoteWizard() {
     event.preventDefault();
     setAttemptedSubmit(true);
     setSubmitError("");
-    if (stepError) return;
+    if (stepError || isSubmitting) return;
+
+    if (honeypot) {
+      setSubmitted(true);
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -116,20 +122,28 @@ export function QuoteWizard() {
           <CheckCircle2 className="h-7 w-7 text-kryptonix-green" aria-hidden="true" />
           <h2 className="mt-4 text-xl font-semibold text-white">Quote request sent successfully.</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Thanks. Your project details have been sent to Kryptonix Technologies, and we will follow up with the next steps.
+            Thanks. Your project details have been sent to Kryptonix Technologies. <strong>We respond within one business day.</strong>
           </p>
-          <button
-            type="button"
-            className="mt-5 inline-flex h-10 items-center rounded-md border border-white/15 bg-white/[0.05] px-4 text-sm font-semibold text-white transition hover:bg-white/[0.09]"
-            onClick={() => {
-              setValues(initialValues);
-              setStep(0);
-              setSubmitted(false);
-              setAttemptedSubmit(false);
-            }}
-          >
-            Start a new quote
-          </button>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <button
+              type="button"
+              className="inline-flex h-10 items-center rounded-md border border-white/15 bg-white/[0.05] px-4 text-sm font-semibold text-white transition hover:bg-white/[0.09]"
+              onClick={() => {
+                setValues(initialValues);
+                setStep(0);
+                setSubmitted(false);
+                setAttemptedSubmit(false);
+              }}
+            >
+              Start a new quote
+            </button>
+            <a
+              href="/thank-you/"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-kryptonix-green px-4 text-sm font-semibold text-ink-950 transition hover:bg-kryptonix-green/90"
+            >
+              View Next Steps
+            </a>
+          </div>
         </div>
       </GlassCard>
     );
@@ -260,6 +274,16 @@ export function QuoteWizard() {
                 <option>Phone</option>
                 <option>WhatsApp</option>
               </select>
+              <input
+                type="text"
+                name="botcheck"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                className="hidden"
+                aria-hidden="true"
+              />
             </div>
           </div>
         ) : null}
