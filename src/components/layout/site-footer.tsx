@@ -82,9 +82,10 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-ink-950/10 pt-6 text-sm text-[rgb(var(--color-text-medium))] sm:flex-row sm:items-center sm:justify-between">
+        {/* Updated Bottom Container: Aligned items to the left so social links clear floating WhatsApp icon */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-ink-950/10 pt-6 text-sm text-[rgb(var(--color-text-medium))] sm:flex-row sm:items-center sm:justify-start sm:gap-8">
           <p>© 2026 Kryptonix Technologies. All rights reserved.</p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             {siteConfig.socialLinks.map((link) => {
               const Icon = socialIcons[link.label as keyof typeof socialIcons];
 

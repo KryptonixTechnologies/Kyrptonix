@@ -91,10 +91,8 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button href="/contact" variant="ghost">
-            Talk to us
-          </Button>
+        {/* Desktop CTA: Removed 'Talk to us' */}
+        <div className="hidden items-center lg:flex">
           <Button href="/quote" showArrow>
             Get a Quote
           </Button>
@@ -145,11 +143,9 @@ export function SiteHeader() {
               ))}
             </div>
           </div>
-          <div className="mt-4 grid gap-3 border-t border-ink-950/10 pt-4 sm:grid-cols-2">
-            <Button href="/contact" variant="secondary">
-              Talk to us
-            </Button>
-            <Button href="/quote" showArrow>
+          {/* Mobile CTA: Single button */}
+          <div className="mt-4 border-t border-ink-950/10 pt-4">
+            <Button href="/quote" showArrow className="w-full">
               Get a Quote
             </Button>
           </div>

@@ -86,20 +86,31 @@ export default function WebsiteDesignKenyaPage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-kryptonix-cyan">
                 The Business Problem We Solve
               </p>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-black sm:text-4xl">
                 Turn Website Visitors Into Real Customers & Business Inquiries
               </h2>
-              <p className="mt-4 text-base leading-7 text-slate-300">
-                Many businesses in Kenya suffer from outdated, slow, or hard-to-navigate websites that fail to generate inquiries or rank on search engines. A weak digital presence costs you potential clients who research your business online before reaching out.
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                Many businesses in Kenya suffer from outdated, slow, or
+                hard-to-navigate websites that fail to generate inquiries or
+                rank on search engines. A weak digital presence costs you
+                potential clients who research your business online before
+                reaching out.
               </p>
-              <p className="mt-4 text-base leading-7 text-slate-300">
-                Kryptonix Technologies designs fast, modern corporate websites engineered specifically for the Kenyan market — equipped with mobile responsiveness, clear value messaging, WhatsApp integration, and local SEO structure.
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                Kryptonix Technologies designs fast, modern corporate websites
+                engineered specifically for the Kenyan market — equipped with
+                mobile responsiveness, clear value messaging, WhatsApp
+                integration, and local SEO structure.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-4">
                 <Button href="/quote/" showArrow>
                   Get a Website Quote
                 </Button>
+
                 <Button href="/contact/" variant="secondary">
                   Book Free Consultation
                 </Button>
@@ -107,27 +118,54 @@ export default function WebsiteDesignKenyaPage() {
             </div>
 
             <GlassCard className="p-8">
-              <h3 className="text-xl font-bold text-white">Why Work With Kryptonix in Nairobi?</h3>
+              <h3 className="text-xl font-bold text-white">
+                Why Work With Kryptonix in Nairobi?
+              </h3>
+
               <div className="mt-6 space-y-4">
                 <div className="flex gap-4">
                   <Smartphone className="h-6 w-6 shrink-0 text-kryptonix-cyan" />
+
                   <div>
-                    <h4 className="font-semibold text-white">Mobile-First Engineering</h4>
-                    <p className="text-sm text-slate-400">Over 80% of web traffic in Kenya comes from mobile phones. We optimize for speed and usability on mobile networks.</p>
+                    <h4 className="font-semibold text-white">
+                      Mobile-First Engineering
+                    </h4>
+
+                    <p className="text-sm text-slate-400">
+                      Over 80% of web traffic in Kenya comes from mobile
+                      phones. We optimize for speed and usability on mobile
+                      networks.
+                    </p>
                   </div>
                 </div>
+
                 <div className="flex gap-4">
                   <MessageSquare className="h-6 w-6 shrink-0 text-kryptonix-green" />
+
                   <div>
-                    <h4 className="font-semibold text-white">Instant Lead Conversion</h4>
-                    <p className="text-sm text-slate-400">Direct WhatsApp CTAs, click-to-call links, and quick contact forms mean potential clients reach you faster.</p>
+                    <h4 className="font-semibold text-white">
+                      Instant Lead Conversion
+                    </h4>
+
+                    <p className="text-sm text-slate-400">
+                      Direct WhatsApp CTAs, click-to-call links, and quick
+                      contact forms mean potential clients reach you faster.
+                    </p>
                   </div>
                 </div>
+
                 <div className="flex gap-4">
                   <ShieldCheck className="h-6 w-6 shrink-0 text-kryptonix-cyan" />
+
                   <div>
-                    <h4 className="font-semibold text-white">Truthful & Documented Work</h4>
-                    <p className="text-sm text-slate-400">No hidden fees, transparent project deliverables, and SLA-backed post-launch technical support.</p>
+                    <h4 className="font-semibold text-white">
+                      Truthful & Documented Work
+                    </h4>
+
+                    <p className="text-sm text-slate-400">
+                      No hidden fees, transparent project deliverables, and
+                      SLA-backed post-launch technical support.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -149,20 +187,27 @@ export default function WebsiteDesignKenyaPage() {
             {deliverables.map((item, idx) => (
               <GlassCard key={idx} className="p-6">
                 <CheckCircle2 className="h-6 w-6 text-kryptonix-green" />
-                <p className="mt-4 text-sm font-medium leading-6 text-slate-200">{item}</p>
+
+                <p className="mt-4 text-sm font-medium leading-6 text-slate-700">
+                  {item}
+                </p>
               </GlassCard>
             ))}
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-bold text-black">
                 <CheckCircle2 className="h-5 w-5 text-kryptonix-green" />
                 What is Included
               </h3>
+
               <ul className="mt-4 space-y-3">
                 {whatsIncluded.map((item, i) => (
-                  <li key={i} className="text-sm text-slate-300 flex items-center gap-2">
+                  <li
+                    key={i}
+                    className="flex items-center gap-2 text-sm text-slate-700"
+                  >
                     <span className="h-1.5 w-1.5 rounded-full bg-kryptonix-green" />
                     {item}
                   </li>
@@ -171,13 +216,17 @@ export default function WebsiteDesignKenyaPage() {
             </div>
 
             <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900">
                 <Clock className="h-5 w-5 text-amber-400" />
                 What is Not Included (Separate Options)
               </h3>
+
               <ul className="mt-4 space-y-3">
                 {whatsNotIncluded.map((item, i) => (
-                  <li key={i} className="text-sm text-slate-400 flex items-center gap-2">
+                  <li
+                    key={i}
+                    className="flex items-center gap-2 text-sm text-slate-600"
+                  >
                     <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
                     {item}
                   </li>
@@ -187,8 +236,6 @@ export default function WebsiteDesignKenyaPage() {
           </div>
         </Container>
       </Section>
-
-
 
       {/* FAQS SECTION */}
       <Section className="bg-white/[0.02]">
@@ -203,11 +250,14 @@ export default function WebsiteDesignKenyaPage() {
             <div className="mt-12 space-y-6">
               {faqs.map((faq, idx) => (
                 <GlassCard key={idx} className="p-6">
-                  <h3 className="text-lg font-semibold text-white flex items-center gap-3">
-                    <HelpCircle className="h-5 w-5 text-kryptonix-cyan shrink-0" />
+                  <h3 className="flex items-center gap-3 text-lg font-semibold text-white">
+                    <HelpCircle className="h-5 w-5 shrink-0 text-kryptonix-cyan" />
                     {faq.q}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-300 pl-8">{faq.a}</p>
+
+                  <p className="mt-3 pl-8 text-sm leading-6 text-slate-300">
+                    {faq.a}
+                  </p>
                 </GlassCard>
               ))}
             </div>
@@ -219,15 +269,27 @@ export default function WebsiteDesignKenyaPage() {
       <Section>
         <Container>
           <GlassCard className="p-10 text-center">
-            <h2 className="text-2xl font-bold text-white sm:text-3xl">Ready to Build Your Website in Kenya?</h2>
-            <p className="mt-4 max-w-xl mx-auto text-base text-slate-300">
-              Speak with our Nairobi web design team today. We respond to all project inquiries within one business day.
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+              Ready to Build Your Website in Kenya?
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-xl text-base text-slate-300">
+              Speak with our Nairobi web design team today. We respond to all
+              project inquiries within one business day.
             </p>
+
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button href="/quote/" showArrow>
                 Get a Website Quote
               </Button>
-              <Button href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hello Kryptonix, I am interested in a business website design project.")}`} target="_blank" variant="secondary">
+
+              <Button
+                href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+                  "Hello Kryptonix, I am interested in a business website design project."
+                )}`}
+                target="_blank"
+                variant="secondary"
+              >
                 Chat on WhatsApp
               </Button>
             </div>

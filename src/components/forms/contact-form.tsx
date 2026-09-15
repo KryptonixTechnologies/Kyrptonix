@@ -11,7 +11,7 @@ type ContactValues = {
   email: string;
   phone: string;
   company: string;
-  subject: string;
+  service: string;
   message: string;
 };
 
@@ -20,7 +20,7 @@ const initialValues: ContactValues = {
   email: "",
   phone: "",
   company: "",
-  subject: "",
+  service: "",
   message: "",
 };
 
@@ -47,8 +47,9 @@ export function ContactForm() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
       nextErrors.email = "Enter a valid email address.";
     }
-    if (!values.subject.trim()) nextErrors.subject = "Add a subject.";
-    if (values.message.trim().length < 20) nextErrors.message = "Message should be at least 20 characters.";
+    if (!values.service.trim()) nextErrors.service = "Select a service.";
+    if (values.message.trim().length < 20)
+      nextErrors.message = "Message should be at least 20 characters.";
 
     return nextErrors;
   }, [values]);
@@ -63,7 +64,6 @@ export function ContactForm() {
     setSubmitError("");
 
     if (honeypot) {
-      // Silent rejection for bot submissions
       setSubmitted(true);
       return;
     }
@@ -74,20 +74,24 @@ export function ContactForm() {
 
     try {
       await submitToWeb3Forms({
-        subject: `Website contact: ${values.subject}`,
+        subject: `Website contact: ${values.service}`,
         from_name: values.name,
         name: values.name,
         email: values.email,
         phone: values.phone,
         company: values.company,
-        inquiry_subject: values.subject,
+        inquiry_subject: values.service,
         message: values.message,
         form_name: "Kryptonix contact form",
       });
 
       setSubmitted(true);
     } catch (error) {
-      setSubmitError(error instanceof Error ? error.message : "Your message could not be sent right now.");
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Your message could not be sent right now."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -97,10 +101,16 @@ export function ContactForm() {
     return (
       <GlassCard className="p-6">
         <div className="rounded-md border border-kryptonix-green/30 bg-kryptonix-green/10 p-5">
-          <CheckCircle2 className="h-7 w-7 text-kryptonix-green" aria-hidden="true" />
-          <h2 className="mt-4 text-xl font-semibold text-white">Message sent successfully.</h2>
+          <CheckCircle2
+            className="h-7 w-7 text-kryptonix-green"
+            aria-hidden="true"
+          />
+          <h2 className="mt-4 text-xl font-semibold text-white">
+            Message sent successfully.
+          </h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Thanks for reaching out. Your message has been sent to Kryptonix Technologies. <strong>We respond within one business day.</strong>
+            Thanks for reaching out. Your message has been sent to Kryptonix
+            Technologies. <strong>We respond within one business day.</strong>
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <button
@@ -141,19 +151,31 @@ export function ContactForm() {
           aria-hidden="true"
         />
         <div className="grid gap-4 sm:grid-cols-2">
-          <FieldError label="Name" error={attemptedSubmit ? errors.name : undefined}>
+          <FieldError
+            label="Name"
+            error={attemptedSubmit ? errors.name : undefined}
+          >
             <input
               aria-invalid={Boolean(attemptedSubmit && errors.name)}
-              className={cn(inputClass, attemptedSubmit && errors.name && "border-red-400")}
+              className={cn(
+                inputClass,
+                attemptedSubmit && errors.name && "border-red-400"
+              )}
               placeholder="Your name"
               value={values.name}
               onChange={(event) => updateValue("name", event.target.value)}
             />
           </FieldError>
-          <FieldError label="Email" error={attemptedSubmit ? errors.email : undefined}>
+          <FieldError
+            label="Email"
+            error={attemptedSubmit ? errors.email : undefined}
+          >
             <input
               aria-invalid={Boolean(attemptedSubmit && errors.email)}
-              className={cn(inputClass, attemptedSubmit && errors.email && "border-red-400")}
+              className={cn(
+                inputClass,
+                attemptedSubmit && errors.email && "border-red-400"
+              )}
               type="email"
               placeholder="you@example.com"
               value={values.email}
@@ -181,20 +203,55 @@ export function ContactForm() {
           </FieldError>
         </div>
 
-        <FieldError label="Subject" error={attemptedSubmit ? errors.subject : undefined}>
-          <input
-            aria-invalid={Boolean(attemptedSubmit && errors.subject)}
-            className={cn(inputClass, attemptedSubmit && errors.subject && "border-red-400")}
-            placeholder="How can we help?"
-            value={values.subject}
-            onChange={(event) => updateValue("subject", event.target.value)}
-          />
+        {/* Service Required Dropdown */}
+        <FieldError
+          label="Service Required"
+          error={attemptedSubmit ? errors.service : undefined}
+        >
+          <select
+            aria-invalid={Boolean(attemptedSubmit && errors.service)}
+            className={cn(
+              inputClass,
+              "bg-white text-ink-950 cursor-pointer",
+              attemptedSubmit && errors.service && "border-red-400"
+            )}
+            value={values.service}
+            onChange={(event) => updateValue("service", event.target.value)}
+          >
+            <option value="" disabled className="bg-white text-slate-400">
+              Select a service...
+            </option>
+            <option value="Software Development" className="bg-white text-slate-900">
+              Software Development
+            </option>
+            <option value="Web Development & Design" className="bg-white text-slate-900">
+              Web Development & Design
+            </option>
+            <option value="Cloud & Cybersecurity" className="bg-white text-slate-900">
+              Cloud & Cybersecurity
+            </option>
+            <option value="IT Infrastructure & Support" className="bg-white text-slate-900">
+              IT Infrastructure & Support
+            </option>
+            <option value="Digital Transformation" className="bg-white text-slate-900">
+              Digital Transformation
+            </option>
+            <option value="Other / General Inquiry" className="bg-white text-slate-900">
+              Other / General Inquiry
+            </option>
+          </select>
         </FieldError>
 
-        <FieldError label="Message" error={attemptedSubmit ? errors.message : undefined}>
+        <FieldError
+          label="Message"
+          error={attemptedSubmit ? errors.message : undefined}
+        >
           <textarea
             aria-invalid={Boolean(attemptedSubmit && errors.message)}
-            className={cn(textareaClass, attemptedSubmit && errors.message && "border-red-400")}
+            className={cn(
+              textareaClass,
+              attemptedSubmit && errors.message && "border-red-400"
+            )}
             placeholder="Tell us about your project or support need."
             value={values.message}
             onChange={(event) => updateValue("message", event.target.value)}
@@ -202,8 +259,12 @@ export function ContactForm() {
         </FieldError>
 
         {submitError ? (
-          <div className="rounded-md border border-red-300/40 bg-red-500/10 p-3 text-sm leading-6 text-red-200" role="alert">
-            We could not send your message. Please try again, or contact us directly on WhatsApp.
+          <div
+            className="rounded-md border border-red-300/40 bg-red-500/10 p-3 text-sm leading-6 text-red-200"
+            role="alert"
+          >
+            We could not send your message. Please try again, or contact us
+            directly on WhatsApp.
           </div>
         ) : null}
 
@@ -233,7 +294,9 @@ function FieldError({
     <label className="text-sm font-medium text-slate-300">
       {label}
       {children}
-      {error ? <span className="mt-2 block text-xs text-red-300">{error}</span> : null}
+      {error ? (
+        <span className="mt-2 block text-xs text-red-300">{error}</span>
+      ) : null}
     </label>
   );
 }

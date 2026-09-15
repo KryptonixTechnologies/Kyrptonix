@@ -18,8 +18,7 @@ export const portfolioProjects = [
       "A professional website for a Nairobi-based supplier of water treatment, swimming pool, and solar equipment, with product presentation and enquiry functionality.",
 
     client: "Vortexus Industrial Excellence",
-    industry:
-      "Water Treatment, Swimming Pool & Solar Equipment Supply",
+    industry: "Water Treatment, Swimming Pool & Solar Equipment Supply",
     location: "Nairobi, Kenya",
 
     liveUrl: "https://vortexusindustrial.com/",
@@ -87,8 +86,7 @@ export const portfolioProjects = [
       "A professional website presenting water treatment, borehole, pumping, and solar solutions, with project information and a structured enquiry journey.",
 
     client: "Norwa Waters",
-    industry:
-      "Water Treatment, Borehole, Pumping & Solar Solutions",
+    industry: "Water Treatment, Borehole, Pumping & Solar Solutions",
     location: "Kenya / Africa",
 
     liveUrl: "https://norwawater.com/",
@@ -119,7 +117,7 @@ export const portfolioProjects = [
 
     duration: "3 weeks",
 
-    image: "/corporate-website.webp",
+    image: "/norwa.png",
 
     evidence: {
       status:
@@ -132,9 +130,7 @@ export const portfolioProjects = [
     },
 
     measurableResults: {
-      status:
-        "No verified Kryptonix website performance results available",
-
+      status: "Not yet verified",
       results: [],
     },
 
@@ -158,8 +154,7 @@ export const portfolioProjects = [
       "A professional website for an engineering-led water and wastewater treatment company serving industrial, commercial, institutional, and municipal clients.",
 
     client: "Volem Water Ltd",
-    industry:
-      "Industrial & Municipal Water/Wastewater Treatment",
+    industry: "Industrial & Municipal Water/Wastewater Treatment",
     location: "Kenya",
 
     liveUrl: "https://www.volemwater.com/",
@@ -192,7 +187,7 @@ export const portfolioProjects = [
 
     duration: "1.5 months",
 
-    image: "/corporate-website.webp",
+    image: "/volem.png",
 
     evidence: {
       status: "Project delivered; performance evidence pending",
@@ -231,7 +226,6 @@ export const portfolioProjects = [
     industry: "Water Treatment & Pumping Solutions",
     location: "Africa",
 
-    // Live website exists, but the project is not approved for public portfolio use yet.
     liveUrl: null,
 
     services: [
@@ -253,11 +247,10 @@ export const portfolioProjects = [
 
     duration: "To be confirmed",
 
-    image: "/corporate-website.webp",
+    image: "/nelda.png",
 
     evidence: {
-      status:
-        "Project information available; public-use approval pending",
+      status: "Project information available; public-use approval pending",
 
       details:
         "The available information includes company-reported business impact figures. These figures have not been independently verified as Kryptonix project results.",
@@ -323,7 +316,7 @@ export const portfolioProjects = [
 
     duration: "3 months",
 
-    image: "/e-commerce-platform.webp",
+    image: "/reesolmart.png",
 
     evidence: {
       status:
@@ -393,7 +386,7 @@ export const portfolioProjects = [
 
     duration: "1 month",
 
-    image: "/corporate-website.webp",
+    image: "/nelda.png",
 
     evidence: {
       status: "Project delivered; performance evidence pending",

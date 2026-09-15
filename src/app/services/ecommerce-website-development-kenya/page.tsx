@@ -69,48 +69,87 @@ export default function EcommerceKenyaPage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-kryptonix-cyan">
                 Commercial E-Commerce Engineering
               </p>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-black sm:text-4xl">
                 Turn Your Product Catalog Into a 24/7 Revenue Engine in Kenya
               </h2>
-              <p className="mt-4 text-base leading-7 text-slate-300">
-                Selling online in Kenya requires more than a simple product gallery. Customers expect instant M-Pesa mobile checkout, fast page loading on mobile phones, clear product specifications, and reliable order tracking.
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                Selling online in Kenya requires more than a simple product
+                gallery. Customers expect instant M-Pesa mobile checkout, fast
+                page loading on mobile phones, clear product specifications,
+                and reliable order tracking.
               </p>
-              <p className="mt-4 text-base leading-7 text-slate-300">
-                At Kryptonix Technologies, we build custom e-commerce stores engineered for the Kenyan retail and B2B environment — combining Daraja M-Pesa API integrations with real-time stock management and order administration.
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                At Kryptonix Technologies, we build custom e-commerce stores
+                engineered for the Kenyan retail and B2B environment —
+                combining Daraja M-Pesa API integrations with real-time stock
+                management and order administration.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-4">
                 <Button href="/quote/" showArrow>
                   Get E-Commerce Quote
                 </Button>
-                <Button href="/services/mpesa-integration-services/" variant="secondary">
+
+                <Button
+                  href="/services/mpesa-integration-services/"
+                  variant="secondary"
+                >
                   Explore M-Pesa API Services
                 </Button>
               </div>
             </div>
 
             <GlassCard className="p-8">
-              <h3 className="text-xl font-bold text-white">E-Commerce Features Tailored for Kenya</h3>
+              <h3 className="text-xl font-bold text-white">
+                E-Commerce Features Tailored for Kenya
+              </h3>
+
               <div className="mt-6 space-y-4">
                 <div className="flex gap-4">
                   <Smartphone className="h-6 w-6 shrink-0 text-kryptonix-green" />
+
                   <div>
-                    <h4 className="font-semibold text-white">Daraja M-Pesa STK Push</h4>
-                    <p className="text-sm text-slate-400">Instant mobile PIN prompt on customer phones for frictionless mobile checkout.</p>
+                    <h4 className="font-semibold text-white">
+                      Daraja M-Pesa STK Push
+                    </h4>
+
+                    <p className="text-sm text-slate-400">
+                      Instant mobile PIN prompt on customer phones for
+                      frictionless mobile checkout.
+                    </p>
                   </div>
                 </div>
+
                 <div className="flex gap-4">
                   <Package className="h-6 w-6 shrink-0 text-kryptonix-cyan" />
+
                   <div>
-                    <h4 className="font-semibold text-white">Stock & Inventory Controls</h4>
-                    <p className="text-sm text-slate-400">Automatic stock deduction upon payment with email notifications when inventory drops low.</p>
+                    <h4 className="font-semibold text-white">
+                      Stock & Inventory Controls
+                    </h4>
+
+                    <p className="text-sm text-slate-400">
+                      Automatic stock deduction upon payment with email
+                      notifications when inventory drops low.
+                    </p>
                   </div>
                 </div>
+
                 <div className="flex gap-4">
                   <Lock className="h-6 w-6 shrink-0 text-kryptonix-cyan" />
+
                   <div>
-                    <h4 className="font-semibold text-white">Secure Encrypted Transactions</h4>
-                    <p className="text-sm text-slate-400">SSL data encryption and secure callback handling protecting store owners and customers.</p>
+                    <h4 className="font-semibold text-white">
+                      Secure Encrypted Transactions
+                    </h4>
+
+                    <p className="text-sm text-slate-400">
+                      SSL data encryption and secure callback handling
+                      protecting store owners and customers.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -132,14 +171,15 @@ export default function EcommerceKenyaPage() {
             {deliverables.map((item, idx) => (
               <GlassCard key={idx} className="p-6">
                 <CheckCircle2 className="h-6 w-6 text-kryptonix-green" />
-                <p className="mt-4 text-sm font-medium leading-6 text-slate-200">{item}</p>
+
+                <p className="mt-4 text-sm font-medium leading-6 text-slate-700">
+                  {item}
+                </p>
               </GlassCard>
             ))}
           </div>
         </Container>
       </Section>
-
-
 
       {/* FAQS */}
       <Section className="bg-white/[0.02]">
@@ -154,11 +194,14 @@ export default function EcommerceKenyaPage() {
             <div className="mt-12 space-y-6">
               {faqs.map((faq, idx) => (
                 <GlassCard key={idx} className="p-6">
-                  <h3 className="text-lg font-semibold text-white flex items-center gap-3">
-                    <HelpCircle className="h-5 w-5 text-kryptonix-cyan shrink-0" />
+                  <h3 className="flex items-center gap-3 text-lg font-semibold text-white">
+                    <HelpCircle className="h-5 w-5 shrink-0 text-kryptonix-cyan" />
                     {faq.q}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-300 pl-8">{faq.a}</p>
+
+                  <p className="mt-3 pl-8 text-sm leading-6 text-slate-300">
+                    {faq.a}
+                  </p>
                 </GlassCard>
               ))}
             </div>
@@ -170,15 +213,27 @@ export default function EcommerceKenyaPage() {
       <Section>
         <Container>
           <GlassCard className="p-10 text-center">
-            <h2 className="text-2xl font-bold text-white sm:text-3xl">Start Selling Online with M-Pesa Integration</h2>
-            <p className="mt-4 max-w-xl mx-auto text-base text-slate-300">
-              Get an exact quotation for your e-commerce store project today. We respond to all inquiries within one business day.
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+              Start Selling Online with M-Pesa Integration
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-xl text-base text-slate-300">
+              Get an exact quotation for your e-commerce store project today.
+              We respond to all inquiries within one business day.
             </p>
+
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button href="/quote/" showArrow>
                 Get a E-Commerce Quote
               </Button>
-              <Button href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hello Kryptonix, I want to build an e-commerce website with M-Pesa integration.")}`} target="_blank" variant="secondary">
+
+              <Button
+                href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+                  "Hello Kryptonix, I want to build an e-commerce website with M-Pesa integration."
+                )}`}
+                target="_blank"
+                variant="secondary"
+              >
                 Chat on WhatsApp
               </Button>
             </div>

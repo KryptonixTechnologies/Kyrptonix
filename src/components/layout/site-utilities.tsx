@@ -49,7 +49,7 @@ export function SiteUtilities() {
           type="button"
           aria-label="Back to top"
           className={cn(
-            "grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-ink-900/85 text-white shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kryptonix-cyan",
+            "grid h-11 w-11 place-items-center rounded-full border border-ink-950/20 bg-ink-900 text-white shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:border-kryptonix-gold hover:bg-kryptonix-gold hover:text-ink-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kryptonix-cyan",
             showBackToTop ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
           )}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

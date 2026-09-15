@@ -28,10 +28,7 @@ export const siteConfig = {
     { label: "About", href: "/about/" },
     { label: "Services", href: "/services/" },
     { label: "Portfolio", href: "/portfolio/" },
-    { label: "Resources", href: "/resources/" },
-    { label: "Careers", href: "/careers/" },
     { label: "Contact", href: "/contact/" },
-    { label: "Quote", href: "/quote/" },
   ],
   socialLinks: [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/138474275/" },

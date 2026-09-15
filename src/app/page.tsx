@@ -1,4 +1,3 @@
-
 import {
   ArrowRight,
   Bot,
@@ -11,7 +10,6 @@ import {
   Headphones,
   HeartPulse,
   Hotel,
-  Linkedin,
   PackageCheck,
   PenTool,
   Phone,
@@ -30,14 +28,6 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { HeroImageCarousel } from "@/components/visuals/hero-image-carousel";
-
-const trustItems = [
-  "Custom Project Delivery",
-  "Consultation Available",
-  "Responsive Design",
-  "Ongoing Support",
-  "Built in Kenya",
-];
 
 const heroStats = [
   { value: "Custom", label: "Project Delivery" },
@@ -72,7 +62,8 @@ const solutions = [
       "Automated Order Receipts",
     ],
     image: "/e-commerce-platform.webp",
-    imageAlt: "E-commerce website development with M-Pesa integration in Kenya",
+    imageAlt:
+      "E-commerce website development with M-Pesa integration in Kenya",
   },
   {
     title: "Custom Business Systems",
@@ -98,35 +89,41 @@ const solutions = [
       "WhatsApp Business APIs",
     ],
     image: "/automation-ai-solutions.webp",
-    imageAlt: "Business process automation and AI integration in Kenya",
+    imageAlt:
+      "Business process automation and AI integration in Kenya",
   },
 ];
 
 const projects = [
   {
     title: "E-Commerce Platform",
-    problem: "Full-featured online store with payments and inventory.",
+    problem:
+      "Full-featured online store with payments and inventory.",
     solution: "React - Node.js - MongoDB",
     image: "/e-commerce-platform.webp",
     imageAlt: "E-commerce platform displayed on a laptop",
   },
   {
     title: "Water Industry ERP",
-    problem: "Complete ERP for water treatment business operations.",
+    problem:
+      "Complete ERP for water treatment business operations.",
     solution: "Next.js - PostgreSQL - Tailwind",
     image: "/water-industry.webp",
     imageAlt: "Water industry business software project",
   },
   {
     title: "Corporate Website",
-    problem: "Modern corporate website for a lead generation firm.",
+    problem:
+      "Modern corporate website for a lead generation firm.",
     solution: "WordPress - PHP - Elementor",
     image: "/corporate-website.webp",
-    imageAlt: "Corporate website shown across desktop and mobile screens",
+    imageAlt:
+      "Corporate website shown across desktop and mobile screens",
   },
   {
     title: "Service Booking Platform",
-    problem: "Appointment and booking system with payment integration.",
+    problem:
+      "Appointment and booking system with payment integration.",
     solution: "Vue.js - Laravel - MySQL",
     image: "/service-booking-platform.webp",
     imageAlt: "Online service booking platform",
@@ -266,17 +263,11 @@ export default function Home() {
               </span>
 
               <h1 className="mt-6 font-display text-4xl font-bold leading-[1.02] text-ink-950 sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
-                Website Development in{" "}
-                <span className="text-kryptonix-cyan">Kenya</span> for Growing
-                Businesses
+                Empoworing businesses in {" "}
+                <span className="text-kryptonix-cyan">Kenya </span> 
+                through technology 
+                and innovation
               </h1>
-
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-                Kryptonix Technologies provides website development,
-                e-commerce solutions, custom software, business systems,
-                automation, cloud services, and IT solutions for businesses
-                and organisations in Kenya.
-              </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/quote/" showArrow>
@@ -288,7 +279,7 @@ export default function Home() {
                   variant="secondary"
                   className="gap-2"
                 >
-                  Book a Free 20-Minute Consultation
+                  Book a Free Consultation
                 </Button>
               </div>
             </div>
@@ -324,28 +315,8 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* TRUST ITEMS */}
-      <Section className="bg-white pt-24">
-        <Container>
-          <Reveal className="grid gap-3 rounded-md border border-ink-950/10 bg-white p-4 shadow-sm sm:grid-cols-2 lg:grid-cols-5">
-            {trustItems.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-2 text-sm font-semibold text-ink-950"
-              >
-                <Check
-                  className="h-4 w-4 text-kryptonix-cyan"
-                  aria-hidden="true"
-                />
-                {item}
-              </div>
-            ))}
-          </Reveal>
-        </Container>
-      </Section>
-
       {/* SERVICES / SOLUTIONS */}
-      <Section className="bg-white pt-8">
+      <Section className="bg-white pt-24">
         <Container>
           <Reveal>
             <SectionIntro
@@ -442,7 +413,7 @@ export default function Home() {
                 href="/portfolio"
                 variant="secondary"
                 showArrow
-                className="border-white/20 bg-transparent text-white hover:bg-white/10"
+                className="!border-white/30 !bg-transparent !text-white hover:!bg-white/10"
               >
                 View All Projects
               </Button>
@@ -512,7 +483,10 @@ export default function Home() {
                 >
                   <div className="relative text-center">
                     <div className="mx-auto grid h-24 w-24 place-items-center rounded-full border-4 border-white bg-ink-950 text-kryptonix-cyan shadow-[0_0_0_1px_rgb(var(--color-gold-accent)/0.4)]">
-                      <Icon className="h-9 w-9" aria-hidden="true" />
+                      <Icon
+                        className="h-9 w-9"
+                        aria-hidden="true"
+                      />
                     </div>
 
                     <h3 className="mt-5 text-sm font-bold text-ink-950">
@@ -530,120 +504,44 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* INDUSTRIES + FOUNDER */}
+      {/* INDUSTRIES WE SERVE */}
       <Section className="relative isolate overflow-hidden bg-white">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-            <Reveal>
+          <Reveal>
+            <div className="w-full">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-kryptonix-cyan">
                 Industries We Serve
               </p>
 
-              <h2 className="mt-3 font-display text-3xl font-semibold text-ink-950 sm:text-4xl">
+              <h2 className="mt-3 max-w-4xl font-display text-3xl font-semibold text-ink-950 sm:text-4xl">
                 Technology Solutions for Businesses and Organisations
               </h2>
 
-              <div className="mt-8 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:grid-cols-4">
+              <div className="mt-8 grid grid-cols-1 gap-5 min-[420px]:grid-cols-2 sm:grid-cols-4">
                 {industries.map((industry) => {
                   const Icon = industry.icon;
 
                   return (
                     <div
                       key={industry.title}
-                      className="rounded-md border border-ink-950/10 bg-white p-4 text-center shadow-sm"
+                      className="flex min-h-[120px] items-center justify-center rounded-md border border-ink-950/10 bg-white p-5 text-center shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md"
                     >
-                      <Icon
-                        className="mx-auto h-8 w-8 text-kryptonix-cyan"
-                        aria-hidden="true"
-                      />
+                      <div>
+                        <Icon
+                          className="mx-auto h-8 w-8 text-kryptonix-cyan"
+                          aria-hidden="true"
+                        />
 
-                      <p className="mt-3 text-sm font-semibold leading-5 text-ink-950">
-                        {industry.title}
-                      </p>
+                        <p className="mt-3 text-sm font-semibold leading-5 text-ink-950">
+                          {industry.title}
+                        </p>
+                      </div>
                     </div>
                   );
                 })}
               </div>
-            </Reveal>
-
-            <Reveal>
-              <div className="grid gap-8 border-ink-950/10 lg:grid-cols-[1fr_0.8fr] lg:border-l lg:pl-10">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-kryptonix-cyan">
-                    Meet The Founder
-                  </p>
-
-                  <h2 className="mt-3 font-display text-3xl font-semibold text-ink-950">
-                    Hi, I&apos;m Newton Manyisa
-                  </h2>
-
-                  <p className="mt-5 text-base leading-7 text-slate-600">
-                    I&apos;m a software developer focused on building
-                    practical digital solutions that help businesses operate
-                    more efficiently, generate more leads, and scale with
-                    confidence.
-                  </p>
-
-                  <p className="mt-4 text-base leading-7 text-slate-600">
-                    With experience building software for different
-                    industries, I focus on quality, communication, and
-                    results.
-                  </p>
-
-                  <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                    <Button
-                      href="https://www.linkedin.com/"
-                      variant="secondary"
-                      className="gap-2"
-                    >
-                      <Linkedin
-                        className="h-4 w-4"
-                        aria-hidden="true"
-                      />
-                      LinkedIn
-                    </Button>
-
-                    <Button href="/portfolio" showArrow>
-                      View Portfolio
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="relative min-h-[390px] overflow-hidden rounded-md bg-[linear-gradient(160deg,#f4f6fb,#ffffff)]">
-                  <div className="absolute right-4 top-4 grid grid-cols-4 gap-2 opacity-35">
-                    {Array.from({ length: 20 }).map((_, index) => (
-                      <span
-                        key={index}
-                        className="h-1.5 w-1.5 rounded-full bg-kryptonix-cyan"
-                      />
-                    ))}
-                  </div>
-
-                  <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-t-full bg-[linear-gradient(180deg,rgb(var(--color-light-gold)/0.38),rgb(var(--color-primary-navy)/0.12))]" />
-
-                  <div className="absolute inset-x-8 bottom-0 h-28 rounded-t-full bg-ink-950/95 shadow-2xl" />
-
-                  <Image
-                    src="/founder.webp"
-                    alt="Newton Manyisa, founder of Kryptonix Technologies"
-                    fill
-                    sizes="(min-width: 1024px) 28vw, 100vw"
-                    className="object-contain object-bottom drop-shadow-2xl"
-                  />
-
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 via-ink-950/20 to-transparent p-5 pt-20">
-                    <p className="text-center text-sm font-bold text-white">
-                      Newton Manyisa
-                    </p>
-
-                    <p className="mt-1 text-center text-xs font-semibold uppercase tracking-[0.16em] text-kryptonix-green">
-                      Founder
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
@@ -710,8 +608,9 @@ export default function Home() {
 
                 <div className="mt-4 flex flex-col gap-1 text-sm font-semibold text-white">
                   <a href="tel:+254799425417">0799 425 417</a>
-                  <a href="mailto:manyisanewton26@gmail.com">
-                    manyisanewton26@gmail.com
+
+                  <a href="mailto:sales@kryptonixtechnologies.com">
+                    sales@kryptonixtechnologies.com
                   </a>
                 </div>
               </div>
@@ -722,13 +621,7 @@ export default function Home() {
                 Book Free Consultation
               </Button>
 
-              <Button
-                href="/contact"
-                variant="secondary"
-                className="border-white/20 bg-transparent text-white hover:bg-white/10"
-              >
-                Get a Quote
-              </Button>
+ 
             </Reveal>
           </div>
         </Container>
@@ -736,4 +629,3 @@ export default function Home() {
     </main>
   );
 }
-

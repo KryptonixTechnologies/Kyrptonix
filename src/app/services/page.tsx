@@ -84,7 +84,7 @@ export default function ServicesPage() {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-xl font-bold text-white mb-4">Primary Core Services</h2>
+                <h2 className="text-xl font-bold text-black mb-4">Primary Core Services</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   {[
                     {
@@ -147,7 +147,7 @@ export default function ServicesPage() {
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-white mb-4">Additional Capabilities</h2>
+                <h2 className="text-xl font-bold text-black mb-4">Additional Capabilities</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   {serviceCategories
                     .filter(

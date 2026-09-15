@@ -14,6 +14,9 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { portfolioProjects } from "@/data/portfolio";
 
+// Enforce strict static export routing for Next.js
+export const dynamicParams = false;
+
 type PortfolioPageProps = {
   params: Promise<{
     slug: string;
@@ -73,9 +76,6 @@ export default async function PortfolioCaseStudyPage({
   if (!project) {
     notFound();
   }
-
-  const hasResults =
-    project.measurableResults.results.length > 0;
 
   const hasTestimonial =
     Boolean(project.testimonial.quote) &&
@@ -350,76 +350,12 @@ export default async function PortfolioCaseStudyPage({
         </Container>
       </Section>
 
-      {/* Measurable Results */}
-      <Section className="py-12">
-        <Container>
-          <div className="mx-auto max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-              05
-            </p>
-
-            <h2 className="mt-2 text-3xl font-bold">
-              Measurable Results
-            </h2>
-
-            {hasResults ? (
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                {project.measurableResults.results.map(
-                  (
-                    result: {
-                      metric?: string;
-                      value?: string;
-                      description?: string;
-                    },
-                    index: number,
-                  ) => (
-                    <GlassCard
-                      key={`${result.metric}-${index}`}
-                      className="p-6"
-                    >
-                      {result.value ? (
-                        <p className="text-3xl font-bold">
-                          {result.value}
-                        </p>
-                      ) : null}
-
-                      {result.metric ? (
-                        <p className="mt-2 font-semibold">
-                          {result.metric}
-                        </p>
-                      ) : null}
-
-                      {result.description ? (
-                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                          {result.description}
-                        </p>
-                      ) : null}
-                    </GlassCard>
-                  ),
-                )}
-              </div>
-            ) : (
-              <GlassCard className="mt-6 p-6">
-                <p className="font-semibold">
-                  {project.measurableResults.status}
-                </p>
-
-                <p className="mt-3 text-muted-foreground">
-                  No verified Kryptonix project performance
-                  results are currently available for publication.
-                </p>
-              </GlassCard>
-            )}
-          </div>
-        </Container>
-      </Section>
-
       {/* Client Quote */}
       <Section className="py-12">
         <Container>
           <div className="mx-auto max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-              06
+              05
             </p>
 
             <h2 className="mt-2 text-3xl font-bold">

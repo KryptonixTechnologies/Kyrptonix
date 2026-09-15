@@ -1,11 +1,11 @@
-import { ArrowDownToLine, CheckCircle2 } from "lucide-react";
+import { ArrowDownToLine } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { aboutValues, leadershipPlaceholders, milestones, recognitionItems } from "@/data/about";
+import { aboutValues, milestones } from "@/data/about";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -13,7 +13,12 @@ export const metadata = pageMetadata({
   description:
     "Meet Kryptonix Technologies, a Kenya-based technology partner helping organisations build reliable software, modern websites, secure cloud infrastructure, automation, and practical digital systems.",
   path: "/about",
-  keywords: ["Kryptonix mission", "Kryptonix values", "technology partner Kenya", "software company Kenya"],
+  keywords: [
+    "Kryptonix mission",
+    "Kryptonix values",
+    "technology partner Kenya",
+    "software company Kenya",
+  ],
 });
 
 export default function AboutPage() {
@@ -130,54 +135,6 @@ export default function AboutPage() {
                 </GlassCard>
               ))}
             </div>
-          </div>
-        </Container>
-      </Section>
-
-      <Section className="border-t border-ink-950/10 bg-[var(--off-white)]">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-            <div>
-              <SectionHeading
-                eyebrow="Leadership"
-                title="Leadership and delivery focus."
-                description="Kryptonix is led with a practical delivery mindset: understand the business problem, choose reliable technology, communicate clearly, and support the solution after launch."
-              />
-              <div className="mt-8 grid gap-4">
-                {leadershipPlaceholders.map((person) => (
-                  <GlassCard key={person.name} className="p-5">
-                    <div className="flex gap-4">
-                      <div className="grid h-14 w-14 shrink-0 place-items-center rounded-md border border-white/10 bg-[linear-gradient(135deg,rgb(var(--color-secondary-navy)/0.22),rgb(var(--color-gold-accent)/0.22))] text-sm font-semibold text-white">
-                        KT
-                      </div>
-                      <div>
-                        <h3 className="text-base font-semibold text-white">{person.name}</h3>
-                        <p className="mt-1 text-sm text-kryptonix-cyan">{person.role}</p>
-                        <p className="mt-2 text-sm leading-6 text-slate-400">{person.focus}</p>
-                      </div>
-                    </div>
-                  </GlassCard>
-                ))}
-              </div>
-            </div>
-
-            <GlassCard className="p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-kryptonix-cyan">
-                Recognition
-              </p>
-              <h2 className="mt-4 text-2xl font-semibold text-white">Awards, certifications, and trust signals.</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
-                Trust is built through reliable delivery, clear documentation, secure implementation, responsive support, and transparent project communication.
-              </p>
-              <div className="mt-6 grid gap-3">
-                {recognitionItems.map((item) => (
-                  <div key={item} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-kryptonix-green" aria-hidden="true" />
-                    <span className="text-sm leading-6 text-slate-300">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </GlassCard>
           </div>
         </Container>
       </Section>
