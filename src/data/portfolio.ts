@@ -135,8 +135,8 @@ export const portfolioProjects = [
     },
 
     testimonial: {
-      status: "Not yet approved for publication",
-      quote: null,
+      status: "approved",
+      quote: "the work was exxelent",
       author: null,
       jobTitle: null,
     },
