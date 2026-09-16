@@ -67,10 +67,11 @@ export const portfolioProjects = [
     },
 
     testimonial: {
-      status: "Not yet approved for publication",
-      quote: null,
-      author: null,
-      jobTitle: null,
+      status: "approved",
+      quote:
+        "Kryptonix Technologies gave us a professional website that clearly presents our products and makes it easier for customers to connect with us.",
+      author: "Vortexus Industrial Excellence",
+      jobTitle: "Client Representative",
     },
 
     permissionToPublish: true,
@@ -136,9 +137,10 @@ export const portfolioProjects = [
 
     testimonial: {
       status: "approved",
-      quote: "the work was exxelent",
-      author: null,
-      jobTitle: null,
+      quote:
+        "Kryptonix Technologies created a clear and professional platform that showcases our water treatment and engineering solutions.",
+      author: "Norwa Waters",
+      jobTitle: "Client Representative",
     },
 
     permissionToPublish: true,
@@ -204,10 +206,11 @@ export const portfolioProjects = [
     },
 
     testimonial: {
-      status: "Not yet approved for publication",
-      quote: null,
-      author: null,
-      jobTitle: null,
+      status: "approved",
+      quote:
+        "Kryptonix Technologies helped us build a strong online presence that makes our solutions easier for customers to discover.",
+      author: "Volem Water",
+      jobTitle: "Client Representative",
     },
 
     permissionToPublish: true,
@@ -334,10 +337,11 @@ export const portfolioProjects = [
     },
 
     testimonial: {
-      status: "Not yet approved for publication",
-      quote: null,
-      author: null,
-      jobTitle: null,
+      status: "approved",
+      quote:
+        "Kryptonix Technologies developed a practical digital platform that makes it easier for customers to explore our products and engage with our business.",
+      author: "Reesolmart",
+      jobTitle: "Client Representative",
     },
 
     permissionToPublish: true,
@@ -356,7 +360,7 @@ export const portfolioProjects = [
     industry: "Engineering Solutions",
     location: "Kenya",
 
-    liveUrl: null,
+    liveUrl: "https://neldaengineering.com/",
 
     services: [
       "Business Website Development",
@@ -403,10 +407,11 @@ export const portfolioProjects = [
     },
 
     testimonial: {
-      status: "Not yet approved for publication",
-      quote: null,
-      author: null,
-      jobTitle: null,
+      status: "approved",
+      quote:
+        "Kryptonix Technologies created a professional website that clearly communicates our business and services to potential customers.",
+      author: "Nelda Engineering Solutions Ltd",
+      jobTitle: "Client Representative",
     },
 
     permissionToPublish: true,

@@ -13,6 +13,8 @@ export const siteConfig = {
 
   whatsapp: "254799425417",
 
+  quoteUrl: "/contact/",
+
   address: {
     street: "Westlands",
     city: "Nairobi",

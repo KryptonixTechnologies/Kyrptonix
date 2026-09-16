@@ -6,16 +6,31 @@ import { siteConfig } from "@/config/site";
 import { serviceCategories } from "@/data/services";
 import { Button } from "@/components/ui/button";
 
-const socialIcons = {
-  LinkedIn: Linkedin,
-  X: () => (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
-      <path d="M13.9 10.5 21.3 2h-1.8l-6.4 7.3L8 2H2.1l7.8 11.1L2.1 22h1.8l6.8-7.8 5.4 7.8H22l-8.1-11.5Zm-2.4 2.7-.8-1.1L4.4 3.3h2.7l5 7 .8 1.1 6.6 9.3h-2.7l-5.3-7.5Z" />
-    </svg>
-  ),
-  Facebook,
-  Instagram,
-  YouTube: Youtube,
+const socialBrandStyles: Record<string, { icon: React.ComponentType<any>; style: string }> = {
+  LinkedIn: {
+    icon: Linkedin,
+    style: "bg-[#0A66C2]/10 text-[#0A66C2] border-[#0A66C2]/20 hover:bg-[#0A66C2] hover:text-white",
+  },
+  X: {
+    icon: () => (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+        <path d="M13.9 10.5 21.3 2h-1.8l-6.4 7.3L8 2H2.1l7.8 11.1L2.1 22h1.8l6.8-7.8 5.4 7.8H22l-8.1-11.5Zm-2.4 2.7-.8-1.1L4.4 3.3h2.7l5 7 .8 1.1 6.6 9.3h-2.7l-5.3-7.5Z" />
+      </svg>
+    ),
+    style: "bg-slate-900/10 text-slate-900 border-slate-900/20 hover:bg-slate-900 hover:text-white",
+  },
+  Facebook: {
+    icon: Facebook,
+    style: "bg-[#1877F2]/10 text-[#1877F2] border-[#1877F2]/20 hover:bg-[#1877F2] hover:text-white",
+  },
+  Instagram: {
+    icon: Instagram,
+    style: "bg-[#E4405F]/10 text-[#E4405F] border-[#E4405F]/20 hover:bg-[#E4405F] hover:text-white",
+  },
+  YouTube: {
+    icon: Youtube,
+    style: "bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 hover:bg-[#FF0000] hover:text-white",
+  },
 };
 
 export function SiteFooter() {
@@ -76,18 +91,22 @@ export function SiteFooter() {
             <p className="mt-4 text-sm leading-6 text-[rgb(var(--color-text-medium))]">
               Tell us what you are building, improving, or protecting.
             </p>
-            <Button href="/quote" className="mt-5" showArrow>
+            {/* Directs to contact page */}
+            <Button href={siteConfig.quoteUrl || "/contact/"} className="mt-5" showArrow>
               Get a Quote
             </Button>
           </div>
         </div>
 
-        {/* Updated Bottom Container: Aligned items to the left so social links clear floating WhatsApp icon */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-ink-950/10 pt-6 text-sm text-[rgb(var(--color-text-medium))] sm:flex-row sm:items-center sm:justify-start sm:gap-8">
+        {/* Bottom Bar: Copyright on Left, Colored Socials on Right with Right Margin */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-ink-950/10 pt-6 text-sm text-[rgb(var(--color-text-medium))] sm:flex-row">
           <p>© 2026 Kryptonix Technologies. All rights reserved.</p>
-          <div className="flex flex-wrap gap-3">
+          
+          <div className="flex flex-wrap items-center gap-3 sm:mr-16">
             {siteConfig.socialLinks.map((link) => {
-              const Icon = socialIcons[link.label as keyof typeof socialIcons];
+              const brand = socialBrandStyles[link.label];
+              const Icon = brand?.icon || (() => null);
+              const brandStyle = brand?.style || "bg-slate-100 text-slate-600 border-slate-200";
 
               return (
                 <a
@@ -96,7 +115,7 @@ export function SiteFooter() {
                   aria-label={link.label}
                   target="_blank"
                   rel="noreferrer"
-                  className="grid h-9 w-9 place-items-center rounded-md border border-ink-950/10 bg-white text-[rgb(var(--color-text-medium))] transition hover:-translate-y-0.5 hover:border-ink-950/20 hover:bg-ink-950/[0.04] hover:text-ink-950"
+                  className={`grid h-9 w-9 place-items-center rounded-md border transition-all duration-200 hover:-translate-y-0.5 shadow-sm ${brandStyle}`}
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>

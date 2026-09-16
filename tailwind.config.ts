@@ -33,6 +33,15 @@ const config: Config = {
         "radial-violet": "radial-gradient(circle at center, rgb(var(--color-gold-accent) / 0.24), transparent 58%)",
         "radial-blue": "radial-gradient(circle at center, rgb(var(--color-secondary-navy) / 0.3), transparent 62%)",
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 25s linear infinite",
+      },
     },
   },
   plugins: [],

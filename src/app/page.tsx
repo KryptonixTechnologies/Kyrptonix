@@ -130,7 +130,7 @@ const projects = [
   },
 ];
 
-const process = [
+const processSteps = [
   {
     step: "01",
     title: "Discovery",
@@ -234,9 +234,7 @@ function Reveal({
   transition?: { delay?: number };
 }) {
   const style = transition?.delay
-    ? ({
-        "--reveal-delay": `${transition.delay * 1000}ms`,
-      } as CSSProperties)
+    ? ({ "--reveal-delay": `${transition.delay * 1000}ms` } as CSSProperties)
     : undefined;
 
   return (
@@ -252,7 +250,6 @@ export default function Home() {
       {/* HERO SECTION */}
       <Section className="relative overflow-visible bg-white !pb-0 !pt-0">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_47%,rgba(255,255,255,0.12)_74%)]" />
-
         <div className="ambient-grid pointer-events-none absolute inset-0 opacity-45" />
 
         <Container className="relative z-10">
@@ -263,14 +260,14 @@ export default function Home() {
               </span>
 
               <h1 className="mt-6 font-display text-4xl font-bold leading-[1.02] text-ink-950 sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
-                Empoworing businesses in {" "}
-                <span className="text-kryptonix-cyan">Kenya </span> 
-                through technology 
-                and innovation
+                Empowering businesses through{" "}
+                <span className="text-kryptonix-cyan">technology</span> and
+                innovation
               </h1>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="/quote/" showArrow>
+                {/* Updated to route to contact */}
+                <Button href="/contact/" showArrow>
                   Get a Website Quote
                 </Button>
 
@@ -291,20 +288,16 @@ export default function Home() {
             {heroStats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex items-center gap-4 border-white/10 lg:border-r last:lg:border-r-0"
+                className="flex items-center gap-4 border-white/10 last:lg:border-r-0 lg:border-r"
               >
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-kryptonix-cyan/50 text-kryptonix-cyan">
-                  <ShieldCheck
-                    className="h-6 w-6"
-                    aria-hidden="true"
-                  />
+                  <ShieldCheck className="h-6 w-6" aria-hidden="true" />
                 </span>
 
                 <div>
                   <p className="font-display text-2xl font-bold text-white">
                     {stat.value}
                   </p>
-
                   <p className="text-xs font-medium text-slate-300">
                     {stat.label}
                   </p>
@@ -347,7 +340,6 @@ export default function Home() {
                         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                         className="object-cover transition duration-500 group-hover:scale-105"
                       />
-
                       <div className="absolute inset-0 bg-gradient-to-t from-ink-950/25 to-transparent" />
                     </div>
 
@@ -398,11 +390,9 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-kryptonix-cyan">
                 Our Work
               </p>
-
               <h2 className="mt-2 font-display text-3xl font-semibold text-white">
                 Recent Projects
               </h2>
-
               <p className="mt-2 text-sm text-slate-300">
                 Website, software, and business technology solutions.
               </p>
@@ -410,7 +400,7 @@ export default function Home() {
 
             <Reveal>
               <Button
-                href="/portfolio"
+                href="/portfolio/"
                 variant="secondary"
                 showArrow
                 className="!border-white/30 !bg-transparent !text-white hover:!bg-white/10"
@@ -435,7 +425,6 @@ export default function Home() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition duration-500 hover:scale-105"
                     />
-
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-950/35 to-transparent" />
                   </div>
 
@@ -443,11 +432,9 @@ export default function Home() {
                     <h3 className="text-lg font-bold text-white">
                       {project.title}
                     </h3>
-
                     <p className="mt-3 text-sm leading-6 text-slate-300">
                       {project.problem}
                     </p>
-
                     <p className="mt-4 inline-flex rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-white">
                       {project.solution}
                     </p>
@@ -473,7 +460,7 @@ export default function Home() {
           <div className="relative mt-14 grid gap-8 md:grid-cols-3 xl:grid-cols-6">
             <div className="absolute left-10 right-10 top-12 hidden h-px bg-kryptonix-cyan/50 xl:block" />
 
-            {process.map((item, index) => {
+            {processSteps.map((item, index) => {
               const Icon = item.icon;
 
               return (
@@ -483,10 +470,7 @@ export default function Home() {
                 >
                   <div className="relative text-center">
                     <div className="mx-auto grid h-24 w-24 place-items-center rounded-full border-4 border-white bg-ink-950 text-kryptonix-cyan shadow-[0_0_0_1px_rgb(var(--color-gold-accent)/0.4)]">
-                      <Icon
-                        className="h-9 w-9"
-                        aria-hidden="true"
-                      />
+                      <Icon className="h-9 w-9" aria-hidden="true" />
                     </div>
 
                     <h3 className="mt-5 text-sm font-bold text-ink-950">
@@ -504,7 +488,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* INDUSTRIES WE SERVE */}
+      {/* INDUSTRIES WE SERVE (MARQUEE) */}
       <Section className="relative isolate overflow-hidden bg-white">
         <Container>
           <Reveal>
@@ -517,28 +501,29 @@ export default function Home() {
                 Technology Solutions for Businesses and Organisations
               </h2>
 
-              <div className="mt-8 grid grid-cols-1 gap-5 min-[420px]:grid-cols-2 sm:grid-cols-4">
-                {industries.map((industry) => {
-                  const Icon = industry.icon;
+              <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div className="flex w-max animate-marquee gap-5 hover:[animation-play-state:paused]">
+                  {[...industries, ...industries].map((industry, index) => {
+                    const Icon = industry.icon;
 
-                  return (
-                    <div
-                      key={industry.title}
-                      className="flex min-h-[120px] items-center justify-center rounded-md border border-ink-950/10 bg-white p-5 text-center shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md"
-                    >
-                      <div>
-                        <Icon
-                          className="mx-auto h-8 w-8 text-kryptonix-cyan"
-                          aria-hidden="true"
-                        />
-
-                        <p className="mt-3 text-sm font-semibold leading-5 text-ink-950">
-                          {industry.title}
-                        </p>
+                    return (
+                      <div
+                        key={`${industry.title}-${index}`}
+                        className="flex h-[120px] w-56 shrink-0 items-center justify-center rounded-md border border-ink-950/10 bg-white p-5 text-center shadow-sm transition duration-200 hover:shadow-md"
+                      >
+                        <div>
+                          <Icon
+                            className="mx-auto h-8 w-8 text-kryptonix-cyan"
+                            aria-hidden="true"
+                          />
+                          <p className="mt-3 text-sm font-semibold leading-5 text-ink-950">
+                            {industry.title}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </Reveal>
@@ -602,14 +587,19 @@ export default function Home() {
 
                 <p className="mt-2 text-sm leading-6 text-slate-300">
                   Whether you need a website, e-commerce platform, business
-                  system, automation solution, or cloud infrastructure,
-                  Kryptonix can help.
+                  system, automation solution, or cloud infrastructure, Kryptonix
+                  can help.
                 </p>
 
                 <div className="mt-4 flex flex-col gap-1 text-sm font-semibold text-white">
-                  <a href="tel:+254799425417">0799 425 417</a>
+                  <a href="tel:+254799425417" className="hover:underline">
+                    0799 425 417
+                  </a>
 
-                  <a href="mailto:sales@kryptonixtechnologies.com">
+                  <a
+                    href="mailto:sales@kryptonixtechnologies.com"
+                    className="hover:underline"
+                  >
                     sales@kryptonixtechnologies.com
                   </a>
                 </div>
@@ -617,11 +607,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <Button href="/quote" showArrow>
+              {/* Updated to route to contact */}
+              <Button href="/contact/" showArrow>
                 Book Free Consultation
               </Button>
-
- 
             </Reveal>
           </div>
         </Container>

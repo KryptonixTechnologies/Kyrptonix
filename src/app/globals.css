@@ -51,7 +51,20 @@ a:focus-visible {
   color: var(--white);
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @layer utilities {
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+
   [data-reveal] {
     opacity: 0;
     transform: translateY(22px);
@@ -72,6 +85,10 @@ a:focus-visible {
       opacity: 1;
       transform: none;
       transition: none;
+    }
+
+    .animate-marquee {
+      animation: none;
     }
   }
 
@@ -167,5 +184,4 @@ a:focus-visible {
     background-clip: text;
     color: transparent;
   }
-
 }
