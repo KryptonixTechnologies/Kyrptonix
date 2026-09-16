@@ -101,11 +101,12 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": absoluteUrl("/#business"),
 
     name: siteConfig.name,
-    alternateName: siteConfig.shortName,
+    alternateName: "KryptoniX",
 
-    url: siteConfig.url,
+    url: absoluteUrl("/"),
 
     logo: absoluteUrl("/Kryptonix logo.png"),
     image: absoluteUrl("/Kryptonix logo.png"),
@@ -113,13 +114,23 @@ export function organizationJsonLd() {
     email: siteConfig.email,
     telephone: siteConfig.phone,
 
-    description: siteConfig.description,
+    priceRange: "$$",
+    currenciesAccepted: "KES",
+    paymentAccepted: "Cash, M-Pesa, Bank Transfer",
+
+    description:
+      "Kryptonix Technologies builds custom websites, business systems, automation tools, cloud infrastructure, cybersecurity solutions, and digital products for startups, SMEs, enterprises, NGOs, and public sector teams in Kenya and East Africa.",
+
+    founder: {
+      "@type": "Person",
+      name: "Newton Manyisa",
+    },
 
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.address.city,
-      addressCountry: siteConfig.address.country,
-      streetAddress: siteConfig.address.full,
+      addressRegion: "Nairobi County",
+      addressCountry: "KE",
     },
 
     openingHoursSpecification: [
@@ -139,33 +150,72 @@ export function organizationJsonLd() {
 
     areaServed: [
       {
-        "@type": "City",
-        name: "Nairobi",
-      },
-      {
         "@type": "Country",
         name: "Kenya",
       },
+      {
+        "@type": "AdministrativeArea",
+        name: "East Africa",
+      },
     ],
+
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteConfig.phone,
+      email: siteConfig.email,
+      contactType: "customer service",
+      areaServed: "KE",
+      availableLanguage: ["English", "Swahili"],
+    },
 
     ...(sameAs.length ? { sameAs } : {}),
 
     knowsAbout: [
-      "Software development",
-      "Website development",
-      "E-commerce platforms",
-      "Business systems",
-      "Cloud services",
+      "Custom Software Development",
+      "Web Development",
+      "E-commerce Solutions",
+      "Mobile App Development",
+      "Cloud Hosting & Deployment",
+      "Cloud Migration",
       "Cybersecurity",
-      "IT infrastructure",
-      "Managed IT support",
-      "Digital transformation",
-      "Business automation",
-      "AI integration",
-      "ERP systems",
-      "POS systems",
-      "Inventory management systems",
+      "Penetration Testing",
+      "Managed IT Support",
+      "IT Infrastructure",
+      "Network Design",
+      "Server Management",
+      "Backup & Disaster Recovery",
+      "Digital Transformation",
+      "Workflow Automation",
+      "ERP Systems",
+      "CRM Systems",
+      "POS & Inventory Systems",
+      "HR & Payroll Systems",
+      "SEO & Digital Marketing",
+      "UI/UX Design",
+      "API Integrations",
+      "Business Process Automation",
     ],
+
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Kryptonix Technologies Services",
+      itemListElement: [
+        "Software Development",
+        "IT Infrastructure",
+        "Cloud Services",
+        "Cybersecurity",
+        "Managed IT Support",
+        "Digital Transformation",
+        "Web & Digital Solutions",
+        "Enterprise Solutions",
+      ].map((name) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name,
+        },
+      })),
+    },
   };
 }
 

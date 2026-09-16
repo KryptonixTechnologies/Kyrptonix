@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ComponentType, SVGProps } from "react";
 import { Facebook, Instagram, Linkedin, Mail, Phone, Youtube } from "lucide-react";
 import { CompanyLogo } from "@/components/brand/company-logo";
 import { Container } from "@/components/layout/container";
@@ -6,7 +7,7 @@ import { siteConfig } from "@/config/site";
 import { serviceCategories } from "@/data/services";
 import { Button } from "@/components/ui/button";
 
-const socialBrandStyles: Record<string, { icon: React.ComponentType<any>; style: string }> = {
+const socialBrandStyles: Record<string, { icon: ComponentType<SVGProps<SVGSVGElement>>; style: string }> = {
   LinkedIn: {
     icon: Linkedin,
     style: "bg-[#0A66C2]/10 text-[#0A66C2] border-[#0A66C2]/20 hover:bg-[#0A66C2] hover:text-white",
