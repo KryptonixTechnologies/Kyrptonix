@@ -10,6 +10,7 @@ import { serviceCategories } from "@/data/services";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
+import { CallbackRequest } from "@/components/forms/callback-request";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,8 +92,8 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* Desktop CTA: Removed 'Talk to us' */}
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
+          <CallbackRequest />
           <Button href="/quote" showArrow>
             Get a Quote
           </Button>
@@ -143,8 +144,8 @@ export function SiteHeader() {
               ))}
             </div>
           </div>
-          {/* Mobile CTA: Single button */}
-          <div className="mt-4 border-t border-ink-950/10 pt-4">
+          <div className="mt-4 grid gap-3 border-t border-ink-950/10 pt-4 sm:grid-cols-2">
+            <CallbackRequest className="w-full" />
             <Button href="/quote" showArrow className="w-full">
               Get a Quote
             </Button>
