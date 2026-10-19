@@ -13,7 +13,6 @@ export function GET() {
     `- Services: ${siteConfig.url}/services/`,
     `- Portfolio: ${siteConfig.url}/portfolio/`,
     `- Resources: ${siteConfig.url}/resources/`,
-    `- Careers: ${siteConfig.url}/careers/`,
     `- Contact: ${siteConfig.url}/contact/`,
     `- Quote request: ${siteConfig.url}/quote/`,
   ];
