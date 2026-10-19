@@ -1,4 +1,4 @@
-import { BadgeCheck, Handshake, Lightbulb, LockKeyhole, Scale, ShieldCheck } from "lucide-react";
+import { BadgeCheck, BriefcaseBusiness, Handshake, Lightbulb, LockKeyhole, Scale, ShieldCheck } from "lucide-react";
 
 export const aboutValues = [
   {
@@ -17,14 +17,34 @@ export const aboutValues = [
     icon: Scale,
   },
   {
+    title: "Honesty",
+    description: "We give straightforward advice, communicate openly, and set clear expectations at every stage.",
+    icon: BadgeCheck,
+  },
+  {
     title: "Accountability",
     description: "We communicate clearly, document decisions, and keep delivery aligned with agreed outcomes.",
     icon: BadgeCheck,
   },
   {
+    title: "Quality",
+    description: "We hold our work to high standards through careful planning, testing, and continuous improvement.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Ownership",
+    description: "We take responsibility for decisions and delivery, follow through on commitments, and keep work aligned with agreed outcomes.",
+    icon: BriefcaseBusiness,
+  },
+  {
     title: "Security",
     description: "We treat privacy, access control, resilience, and compliance as core requirements.",
     icon: LockKeyhole,
+  },
+  {
+    title: "We Stay",
+    description: "We stay engaged beyond launch, providing support and improvements as our clients' needs evolve.",
+    icon: Handshake,
   },
   {
     title: "Partnership",
