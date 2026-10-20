@@ -1,56 +1,27 @@
-import { BadgeCheck, BriefcaseBusiness, Handshake, Lightbulb, LockKeyhole, Scale, ShieldCheck } from "lucide-react";
+import { BadgeCheck, Handshake, Lightbulb, LockKeyhole, Scale, ShieldCheck } from "lucide-react";
 
 export const aboutValues = [
   {
-    title: "Reliability",
-    description: "We design for dependable operations, clear ownership, and systems clients can trust daily.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Innovation",
-    description: "We use modern tools practically, choosing technology that solves real business problems.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Affordability",
-    description: "We scope solutions with budget realities in mind, especially for startups, SMEs, and NGOs.",
-    icon: Scale,
-  },
-  {
     title: "Honesty",
-    description: "We give straightforward advice, communicate openly, and set clear expectations at every stage.",
-    icon: BadgeCheck,
-  },
-  {
-    title: "Accountability",
-    description: "We communicate clearly, document decisions, and keep delivery aligned with agreed outcomes.",
-    icon: BadgeCheck,
+    description: "We tell the truth , even when it is uncomfortable.",
+    icon: ShieldCheck,
   },
   {
     title: "Quality",
-    description: "We hold our work to high standards through careful planning, testing, and continuous improvement.",
-    icon: ShieldCheck,
+    description: " We do not ship work that we wouldn't use ourselves.",
+    icon: Lightbulb,
+  },
+  {
+    title: "We stay",
+    description: " The job is done when it works for them not at handover.",
+    icon: Scale,
   },
   {
     title: "Ownership",
-    description: "We take responsibility for decisions and delivery, follow through on commitments, and keep work aligned with agreed outcomes.",
-    icon: BriefcaseBusiness,
+    description: "We own our work and our mistakes.",
+    icon: BadgeCheck,
   },
-  {
-    title: "Security",
-    description: "We treat privacy, access control, resilience, and compliance as core requirements.",
-    icon: LockKeyhole,
-  },
-  {
-    title: "We Stay",
-    description: "We stay engaged beyond launch, providing support and improvements as our clients' needs evolve.",
-    icon: Handshake,
-  },
-  {
-    title: "Partnership",
-    description: "We aim to be a long-term technology partner, not just a vendor for one-off delivery.",
-    icon: Handshake,
-  },
+  
 ];
 
 export const milestones = [

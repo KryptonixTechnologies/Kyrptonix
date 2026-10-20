@@ -13,6 +13,7 @@ const staticPages = [
   { path: "/services/mpesa-integration-services/", priority: 0.9 },
   { path: "/portfolio/", priority: 0.8 },
   { path: "/resources/", priority: 0.7 },
+  { path: "/careers/", priority: 0.6 },
   { path: "/contact/", priority: 0.9 },
   { path: "/quote/", priority: 0.9 },
   { path: "/thank-you/", priority: 0.4 },
