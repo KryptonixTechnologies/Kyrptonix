@@ -23,6 +23,7 @@ export default function QuotePage() {
     <main>
       <PageHero
         eyebrow="Technology Solutions for Growing Businesses"
+        title="Request a tailored solution for your business"
         description="Select the services you need, describe your project, and shape an initial brief for the Kryptonix team."
       />
       

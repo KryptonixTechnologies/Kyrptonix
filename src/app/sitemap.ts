@@ -12,6 +12,7 @@ const staticPages = [
   { path: "/services/ecommerce-website-development-kenya/", priority: 1.0 },
   { path: "/services/mpesa-integration-services/", priority: 0.9 },
   { path: "/portfolio/", priority: 0.8 },
+  { path: "/blog/", priority: 0.7 },
   { path: "/resources/", priority: 0.7 },
   { path: "/careers/", priority: 0.6 },
   { path: "/contact/", priority: 0.9 },
