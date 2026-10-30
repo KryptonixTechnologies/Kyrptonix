@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { serviceCategories } from "@/data/services";
+import { blogPosts } from "@/data/blog";
 
 export const dynamic = "force-static";
 
@@ -31,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages.map((page) => ({
       url: new URL(page.path, siteConfig.url).toString(),
       lastModified,
-      changeFrequency: page.path === "/" ? "weekly" as const : "monthly" as const,
+      changeFrequency: page.path === "/" ? ("weekly" as const) : ("monthly" as const),
       priority: page.priority,
     })),
     ...serviceCategories.map((service) => ({
@@ -39,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.9,
+    })),
+    ...blogPosts.map((post) => ({
+      url: new URL(`/blog/${post.slug}/`, siteConfig.url).toString(),
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }
